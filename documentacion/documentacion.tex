@@ -1,0 +1,120 @@
+% !TeX spellcheck = es_ES
+\documentclass[a4paper, 12pt, spanish]{article}
+\usepackage[spanish]{babel}
+\selectlanguage{spanish}
+\usepackage[utf8]{inputenc} %Se usa para que admita texto con tildes
+\usepackage[T1]{fontenc}	%Se usa para que admita texto con tildes
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{color}	%Se usa para definir colores en el documento
+\usepackage{ulem}	%Se usa para poner código en el documento.
+\usepackage{bm}	%Se usa para hacer expresiones matemáticas en negrita
+\usepackage[a4paper,vmargin=2cm,hmargin=1cm]{geometry}
+\usepackage{diagbox}	%Se usa para hacer la linea diagonal dentro de la celda de una tabla
+
+\usepackage{mathtools}	%se usa para hacer recuadros dentro de align con \Aboxed{}
+\usepackage{chngcntr}	%se usa para resetear el contador de ecuaciones
+
+\usepackage{empheq}		%se usa para hacer ecuaciones alineadas dentro de una caja.
+\newcommand*\widefbox[1]{\fbox{\hspace{2em}#1\hspace{2em}}}
+
+\usepackage{alltt}
+\usepackage{pgfplots}
+\usepackage{multicol}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+
+%configuracion de package {chngcntr}
+\counterwithin*{equation}{section}
+\counterwithin*{equation}{subsection}
+
+%Definición de colores para el documento
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+%Definicion de ulem para el código
+\lstset{
+	language=PHP,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\ttfamily},
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
+
+\title{Secciones y Capítulos}
+\author{Juan Aparicio}
+\begin{document}
+\begin{titlepage}
+	\centering
+	\includegraphics[width=0.15\textwidth]{imagenes/logo.png}\par\vspace{1cm}
+	{\scshape\LARGE Taller de Informática\par}
+	\vspace{1cm}
+	{\scshape\Large Entrega\par}
+	\vspace{1.5cm}
+	{\huge\bfseries Documentación\par}
+	\vspace{2cm}
+	{\Large\itshape Juan Aparicio\par}
+	\vfill
+	supervisado por \par
+	Carolina 		
+	\vfill
+	% Bottom of the page
+	{\large 12, 2017\par}
+\end{titlepage}
+
+%Segunda página
+\tableofcontents
+\newpage
+
+%Tercera página
+%Acá van las secciones, etc
+
+\section{Desgloce de Requerimientos}
+\subsection{Registro usuario}
+\begin{alltt}
+SI ambas contraseñas son iguales
+    SI la cédula no se encuentra ingresada
+        inserto: nombre completo,
+                 cédula,
+                 fecha de nacimiento,
+                 dirección,
+                 teléfonos,
+                 email,
+                 sociedad medica,
+                 emergencia móvil,
+                 antecedentes de salud,
+                 observaciones
+    SINO
+        ERROR: La cédula ya se encuentra ingresada en el sistema.
+SINO
+    ERROR: Las contraseñas no coinciden.
+\end{alltt}
+
+\subsection{Login de usuario}
+\begin{alltt}
+SI la cédula es numérica
+    SI la cédula se encuentra ingresada
+        SI hay un usuario con la cédula y la contraseña en la DB.
+            Obtengo que tipo de usuario es de la DB.
+            Redirecciono a la pagina apropiada (webmaster, socio, admin)
+        SINO
+            ERROR: contraseña incorrecta.
+    SINO
+    	ERROR: La cédula no se encuentra ingresada en el sistema.
+SINO
+	ERROR: La cédula tiene que tener un formato numérico.
+\end{alltt}
+
+\subsection{Ingreso de actividad}
+\end{document}
+
