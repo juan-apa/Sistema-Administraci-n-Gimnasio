@@ -1,6 +1,11 @@
 CREATE DATABASE Gimnasio;
 USE Gimnasio;
 
+CREATE TABLE Gimnasio.Roles(
+	idRol int(2),
+    rol VARCHAR(20)
+);
+
 CREATE TABLE Gimnasio.Usuarios(
 	idUsuario INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     nombre varchar(20) not null,
@@ -15,11 +20,6 @@ CREATE TABLE Gimnasio.Usuarios(
     valido INT(1),
     idRol int(2),
     FOREIGN KEY (idRol) REFERENCES Roles(idRol)
-);
-
-CREATE TABLE Gimnasio.Roles(
-	idRol int(2),
-    rol VARCHAR(20)
 );
 
 CREATE TABLE Gimnasio.Rutinas(
