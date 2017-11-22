@@ -10,6 +10,8 @@ include_once(dirname(__FILE__).'/../persistencia/Conexion.php');
 include_once(dirname(__FILE__).'/../persistencia/daos/DAOUsuarios.php');
 include_once(dirname(__FILE__).'/objetos/Usuario.php');
 include_once(dirname(__FILE__).'/objetos/Rutina.php');
+include_once(dirname(__FILE__).'/../persistencia/excepciones/ExceptionPersistencia.php');
+include_once(dirname(__FILE__).'/../persistencia/excepciones/ExceptionUsuario.php');
 
 class Fachada
 {
@@ -21,7 +23,7 @@ class Fachada
      * Fachada constructor.
      * @throws ExceptionPersistencia si hay un error al establecer una conexion con la base de datos.
      */
-    private function __construct()
+    public function __construct()
     {
         $this -> conexion = new Conexion();
         $this -> usuarios = new DAOUsuarios();
@@ -46,6 +48,10 @@ class Fachada
         $this -> conexion = null;
         $this -> usuarios = null;
         $this -> instancia = null;
+    }
+
+    public function test(){
+        echo "<h1>Fachada construida</h1>";
     }
 
     /**
@@ -125,7 +131,7 @@ class Fachada
     {
         if($this -> usuarios -> member($this -> conexion, $cedulaUsuario))
         {
-            $this -> usuarios -> obtenerUsuario($this -> conexion, $cedulaUsuario) -> insertarRutina($rutina);
+            $this -> usuarios -> obtenerUsuario($this -> conexion, $cedulaUsuario) -> insertarRutina($this -> conexion, $rutina);
         }
         else
         {

@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,19 +16,25 @@
   <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
+    <?php
+    include_once(dirname(__FILE__).'/persistencia/excepciones/ExceptionPersistencia.php');
+    include_once(dirname(__FILE__).'/persistencia/excepciones/ExceptionUsuario.php');
+    include_once(dirname(__FILE__).'/logica/Fachada.php');
+    include_once(dirname(__FILE__).'/logica/objetos/Usuario.php');
+    ?>
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+    <a class="navbar-brand" href="index.php">Start Bootstrap</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="index.html">
+          <a class="nav-link" href="index.php">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">Dashboard</span>
           </a>
@@ -73,7 +81,7 @@
               <a href="forgot-password.html">Forgot Password Page</a>
             </li>
             <li>
-              <a href="blank.html">Blank Page</a>
+              <a href="blank.php">Blank Page</a>
             </li>
           </ul>
         </li>
@@ -224,14 +232,61 @@
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="index.html">Dashboard</a>
+          <a href="index.php">Dashboard</a>
         </li>
         <li class="breadcrumb-item active">Blank Page</li>
       </ol>
       <div class="row">
         <div class="col-12">
-          <h1>Blank</h1>
-          <p>This is an example of a blank page that you can use as a starting point for creating new ones.</p>
+          <h1>Registro de usuario</h1>
+            <form action="/grafica/ControladoraRegistroUsuario.php" method="POST">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese el nombre">
+                </div>
+                <div class="form-group">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido">
+                </div>
+                <div class="form-group">
+                    <label for="cedula">Cédula</label>
+                    <input type="number" class="form-control" id="cedula" name="cedula" placeholder="Cédula">
+                </div>
+                <div class="form-group">
+                    <label for="direccion">Dirección</label>
+                    <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Dirección">
+                </div>
+                <div class="form-group">
+                    <label for="fechaNacimiento">Fecha de Nacimiento</label>
+                    <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento">
+                </div>
+                <div class="form-group">
+                    <label for="socMedica">Sociedad Médica</label>
+                    <input type="text" class="form-control" id="socMedica" name="socMedica" placeholder="Sociedad médica">
+                </div>
+                <div class="form-group">
+                    <label for="emerMovil">Emergencia Móvil</label>
+                    <input type="text" class="form-control" id="emerMovil" name="emerMovil" placeholder="Emergencia Móvil">
+                </div>
+                <div class="form-group">
+                    <label for="antecedentes">Antecedentes</label>
+                    <textarea class="form-control" id="antecedentes" name="antecedentes" placeholder="Antecedentes" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="observaciones">Observaciones</label>
+                    <textarea class="form-control" id="observaciones" name="observaciones" placeholder="Observaciones" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="rol">Tipo de usuario</label>
+                    <select class="form-control" id="rol">
+                        <option>Usuario</option>
+                        <option>Administrador</option>
+                        <option>WebMaster</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Ingresar</button>
+            </form>
         </div>
       </div>
     </div>

@@ -9,6 +9,7 @@
 include_once(dirname(__FILE__).'/../Consultas.php');
 include_once(dirname(__FILE__).'/../../logica/objetos/Usuario.php');
 include_once(dirname(__FILE__).'/../Conexion.php');
+include_once(dirname(__FILE__).'/../excepciones/ExceptionPersistencia.php');
 
 class DAOUsuarios extends DAO
 {
@@ -21,8 +22,6 @@ class DAOUsuarios extends DAO
     {
         parent::__destruct();
     }
-
-
 
     public function member(Conexion $con, int $cedula)
     {
@@ -38,8 +37,8 @@ class DAOUsuarios extends DAO
         }
         else
         {
-            /*Si la cantidad de filas de los resultados no es 1, entonces es porque no hay un usuario con la cedula deseada.*/
-            if($rs -> num_rows == 0)
+            /*Si la cantidad de filas de los resultados no es 0, entonces es porque no hay un usuario con la cedula deseada.*/
+            if($rs -> num_rows > 0)
             {
                 $ret = 1;
             }
@@ -99,8 +98,7 @@ class DAOUsuarios extends DAO
                 $idUsuario = $user['idUsuario'];
                 $ret = new Usuario( $idUsuario, $user['nombre'], $user['apellido'], $user['cedula'], $user['direccion'],
                                     $user['fechaNacimiento'], $user['socMedica'], $user['emerMovil'], $user['antecedentes'],
-                                    $user['observaciones'], $user['valido'], $user['idRol'], new DAOTelefonos($idUsuario),
-                                    new DAORutinas($idUsuario), new DAOPagos($idUsuario)
+                                    $user['observaciones'], $user['valido'], $user['idRol']
                 );
             }
         }
@@ -127,8 +125,7 @@ class DAOUsuarios extends DAO
                 $idUsuario = $user['idUsuario'];
                 $usuario= new Usuario( $idUsuario, $user['nombre'], $user['apellido'], $user['cedula'], $user['direccion'],
                     $user['fechaNacimiento'], $user['socMedica'], $user['emerMovil'], $user['antecedentes'],
-                    $user['observaciones'], $user['valido'], $user['idRol'], new DAOTelefonos($idUsuario),
-                    new DAORutinas($idUsuario), new DAOPagos($idUsuario)
+                    $user['observaciones'], $user['valido'], $user['idRol']
                 );
                 array_push($ret, $usuario);
             }

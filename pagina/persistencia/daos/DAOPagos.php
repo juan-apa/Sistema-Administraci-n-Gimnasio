@@ -8,6 +8,7 @@
 
 include_once(dirname(__FILE__).'/DAO.php');
 include_once(dirname(__FILE__).'/../Consultas.php');
+include_once(dirname(__FILE__).'/../../persistencia/excepciones/ExceptionPersistencia.php');
 
 class DAOPagos extends DAO
 {

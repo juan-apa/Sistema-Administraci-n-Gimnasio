@@ -9,6 +9,8 @@
 include_once(dirname(__FILE__).'/../../persistencia/daos/DAORutinas.php');
 include_once(dirname(__FILE__).'/../../persistencia/daos/DAOPagos.php');
 include_once(dirname(__FILE__).'/../../persistencia/daos/DAOTelefonos.php');
+include_once(dirname(__FILE__).'/../../persistencia/excepciones/ExceptionPersistencia.php');
+include_once(dirname(__FILE__).'/../../persistencia/excepciones/ExceptionUsuario.php');
 include_once(dirname(__FILE__).'/Rutina.php');
 include_once(dirname(__FILE__).'/Telefono.php');
 include_once(dirname(__FILE__).'/Ejercicio.php');
@@ -46,14 +48,10 @@ class Usuario
      * @param string $observaciones
      * @param integer $valido
      * @param integer $idRol
-     * @param DAOTelefonos $telefonos
-     * @param DAORutinas $rutinas
-     * @param DAOPagos $pagos
      */
     public function __construct(int $idUsuario, string $nombre, string $apellido, int $cedula, string $direccion,
                                 string $fechaNacimiento, string $socMedica, string $emerMovil, string $antecedentes,
-                                string  $observaciones, int $valido, int $idRol, DAOTelefonos $telefonos, DAORutinas $rutinas,
-                                DAOPagos $pagos)
+                                string  $observaciones, int $valido, int $idRol)
     {
         $this->idUsuario = $idUsuario;
         $this->nombre = $nombre;
@@ -67,9 +65,14 @@ class Usuario
         $this->observaciones = $observaciones;
         $this->valido = $valido;
         $this->idRol = $idRol;
-        $this->telefonos = $telefonos;
-        $this->rutinas = $rutinas;
-        $this->pagos = $pagos;
+        $this->rutinas = new DAORutinas($cedula);
+        $this->telefonos = new DAOTelefonos($cedula);
+        $this->pagos = new DAOPagos($cedula);
+    }
+
+    public function test()
+    {
+        echo sprintf("<h1>%s, %d</h1>", $this -> nombre, $this -> cedula);
     }
 
     /**
