@@ -24,32 +24,32 @@ class DAORutinas extends DAO
         parent::__destruct();
     }
 
-    public function largo()
+    public function largo(Conexion $con): int
     {
         // TODO implementar el metodo
     }
 
-    public function insBack(Rutina $rutina)
+    public function insBack(Conexion $con, Rutina $rutina): void
     {
         // TODO implementar el metodo
     }
 
-    public function delete($idRutina)
+    public function delete(Conexion $con, int $idRutina): void
     {
         // TODO implementar el metodo
     }
 
-    public function listarRutina()
+    public function listarRutina(Conexion $con): array
     {
         // TODO implementar el metodo
     }
 
-    public function k_esimo($idRutina)
+    public function k_esimo(Conexion $con, int $idRutina): Rutina
     {
         // TODO implementar el metodo
     }
 
-    public function modify($idRutina, Rutina $rutina)
+    public function modify(Conexion $con, int $idRutina, Rutina $rutina): void
     {
         // TODO implementar el metodo
     }

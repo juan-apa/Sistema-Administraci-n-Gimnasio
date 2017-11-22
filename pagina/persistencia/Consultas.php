@@ -24,4 +24,6 @@ class Consultas
                                     idUsuario=%d, nombre='%s', apellido='%s', cedula=%d, direccion='%s', fechaNacimiento='%s', 
                                     socMedica='%s', emerMovil='%s', antecedentes='%s', observaciones='%s', valido=%d, idRol='%d'
                                     WHERE cedula = %d";
+
+    const TELEFONOS_LISTAR = "SELECT * FROM Telefonos";
 }

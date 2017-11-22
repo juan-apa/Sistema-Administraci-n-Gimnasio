@@ -8,6 +8,7 @@
 
 include_once(dirname(__FILE__).'/../Consultas.php');
 include_once(dirname(__FILE__).'/../../logica/objetos/Usuario.php');
+include_once(dirname(__FILE__).'/../Conexion.php');
 
 class DAOUsuarios extends DAO
 {
@@ -23,12 +24,13 @@ class DAOUsuarios extends DAO
 
 
 
-    public function member($cedula)
+    public function member(Conexion $con, int $cedula)
     {
+        $conexion = $con -> getConexion();
         $ret = 0;
         /*Preparo la query a la DB.*/
         $query = sprintf(Consultas::USUARIOS_EXISTE_CEDULA, $cedula);
-        $rs = $this -> conexion -> query($query);
+        $rs = $conexion -> query($query);
         /*Si la consulta a la DB no devolvió un objeto de resultados tiro una excepcion de persistencia.*/
         if(!$rs)
         {
@@ -50,8 +52,9 @@ class DAOUsuarios extends DAO
         return $ret;
     }
 
-    public function insert(Usuario $usuario)
+    public function insert(Conexion $con, Usuario $usuario)
     {
+        $conexion = $con -> getConexion();
         $query = sprintf(
                             Consultas::USUARIOS_INGRESAR, $usuario->getNombre(), $usuario -> getApellido(),
                             $usuario -> getCedula(), $usuario -> getDireccion(), $usuario -> getFechaNacimiento(),
@@ -59,28 +62,30 @@ class DAOUsuarios extends DAO
                             $usuario -> getObservaciones(), $usuario -> getValido(), $usuario -> getIdRol()
                         );
 
-        $this -> conexion -> query($query);
-        if($this -> conexion -> affected_rows == 0)
+        $conexion -> query($query);
+        if($conexion -> affected_rows == 0)
         {
             throw new ExceptionPersistencia(ExceptionPersistencia::ERROR_INSERT);
         }
     }
 
-    public function delete($cedula)
+    public function delete(Conexion $con, int $cedula)
     {
+        $conexion = $con -> getConexion();
         $query = sprintf(Consultas::USUARIOS_ELIMINAR, $cedula);
-        $this -> conexion -> query($query);
-        if($this -> conexion -> affected_rows == 0)
+        $conexion -> query($query);
+        if($conexion -> affected_rows == 0)
         {
             throw new ExceptionPersistencia(ExceptionPersistencia::ERROR_DELETE);
         }
     }
 
-    public function obtenerUsuario($cedula)
+    public function obtenerUsuario(Conexion $con, int $cedula)
     {
+        $conexion = $con -> getConexion();
         $ret = null;
         $query = sprintf(Consultas::USUARIOS_OBTENER, $cedula);
-        $rs = $this -> conexion -> query($query);
+        $rs = $conexion -> query($query);
         if(!$rs)
         {
             throw new ExceptionPersistencia(ExceptionPersistencia::ERROR_QUERY);
@@ -88,7 +93,8 @@ class DAOUsuarios extends DAO
         else
         {
             $usuario = null;
-            while($user = $rs -> fetch_assoc())
+            $user = $rs -> fetch_assoc();
+            while($user)
             {
                 $idUsuario = $user['idUsuario'];
                 $ret = new Usuario( $idUsuario, $user['nombre'], $user['apellido'], $user['cedula'], $user['direccion'],
@@ -98,14 +104,16 @@ class DAOUsuarios extends DAO
                 );
             }
         }
+        mysqli_free_result($rs);
         return $ret;
     }
 
-    public function listarUsuarios()
+    public function listarUsuarios(Conexion $con)
     {
+        $conexion = $con -> getConexion();
         $ret = array();
         $query = Consultas::USUARIOS_LISTAR;
-        $rs = $this -> conexion -> query($query);
+        $rs = $conexion -> query($query);
         if(!$rs)
         {
             throw new ExceptionPersistencia(ExceptionPersistencia::ERROR_QUERY);
@@ -113,7 +121,8 @@ class DAOUsuarios extends DAO
         else
         {
             $usuario = null;
-            while($user = $rs -> fetch_assoc())
+            $user = $rs -> fetch_assoc();
+            while($user)
             {
                 $idUsuario = $user['idUsuario'];
                 $usuario= new Usuario( $idUsuario, $user['nombre'], $user['apellido'], $user['cedula'], $user['direccion'],
@@ -124,19 +133,21 @@ class DAOUsuarios extends DAO
                 array_push($ret, $usuario);
             }
         }
+        mysqli_free_result($rs);
         return $ret;
     }
 
-    public function modify($cedula, Usuario $user)
+    public function modify(Conexion $con, int $cedula, Usuario $user)
     {
+        $conexion = $con -> getConexion();
         $idUsuario = $user['idUsuario'];
         $query = sprintf(Consultas::USUARIOS_MODIFICAR, $idUsuario, $user -> getNombre(), $user -> getApellido(),
             $user -> getCedula(), $user -> getDireccion(), $user -> getFechaNacimiento(), $user -> getSocMedica(),
             $user -> getEmerMovil(), $user -> getAntecedentes(), $user -> getObservaciones(), $user -> getValido(),
             $user -> getIdRol(), $cedula
         );
-        $this -> conexion -> query($query);
-        if($this -> conexion -> affected_rows == 0)
+        $conexion -> query($query);
+        if($conexion -> affected_rows == 0)
         {
             throw new ExceptionPersistencia(ExceptionPersistencia::ERROR_UPDATE);
         }

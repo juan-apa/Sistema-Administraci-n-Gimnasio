@@ -6,18 +6,22 @@
  * Time: 2:32 PM
  */
 
+include_once(dirname(__FILE__).'/../../persistencia/Conexion.php');
+include_once(dirname(__FILE__).'/../../persistencia/Consultas.php');
+include_once(dirname(__FILE__).'/../../logica/objetos/Telefono.php');
+
 class DAOTelefonos extends DAO
 {
-    private $idUsuario;
+    private $cedulaUsuario;
 
     /**
      * DAOTelefonos constructor.
      * @param integer $idUsuario
      */
-    public function __construct(int $idUsuario)
+    public function __construct(int $cedulaUsuario)
     {
         parent::__construct();
-        $this -> idUsuario = $idUsuario;
+        $this -> cedulaUsuario = $cedulaUsuario;
     }
 
     public function __destruct()
@@ -28,18 +32,39 @@ class DAOTelefonos extends DAO
     /**
      * @return integer
      */
-    public function getIdUsuario()
+    public function getCedulaUsuario()
     {
-        return $this -> idUsuario;
+        return $this -> cedulaUsuario;
     }
 
     /**
-     * @param integer $idUsuario
+     * @param integer $cedulaUsuario
      */
-    public function setIdUsuario(int $idUsuario)
+    public function setCedulaUsuario(int $cedulaUsuario)
     {
-        $this->idUsuario = $idUsuario;
+        $this -> cedulaUsuario = $cedulaUsuario;
     }
 
+    public function largo(Conexion $con)
+    {
+        $ret = 0;
+
+        return $ret;
+    }
+
+    public function insback(Conexion $con, Telefono $telefono)
+    {
+        // TODO implementar metodo.
+    }
+
+    public function delete(Conexion $con, int $idTelefono)
+    {
+        // TODO implementar metodo.
+    }
+
+    public function listarTelefonos(Conexion $con)
+    {
+        // TODO implementar metodo.
+    }
 
 }

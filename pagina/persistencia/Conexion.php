@@ -40,7 +40,7 @@ class Conexion
         }
     }
 
-    public function obtenerConexion()
+    public function getConexion()
     {
         return $this -> conexion;
     }

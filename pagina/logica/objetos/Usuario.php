@@ -7,6 +7,12 @@
  */
 
 include_once(dirname(__FILE__).'/../../persistencia/daos/DAORutinas.php');
+include_once(dirname(__FILE__).'/../../persistencia/daos/DAOPagos.php');
+include_once(dirname(__FILE__).'/../../persistencia/daos/DAOTelefonos.php');
+include_once(dirname(__FILE__).'/Rutina.php');
+include_once(dirname(__FILE__).'/Telefono.php');
+include_once(dirname(__FILE__).'/Ejercicio.php');
+include_once(dirname(__FILE__).'/Pago.php');
 
 class Usuario
 {
@@ -28,24 +34,26 @@ class Usuario
 
     /**
      * Usuario constructor.
-     * @param $idUsuario
-     * @param $nombre
-     * @param $apellido
-     * @param $cedula
-     * @param $direccion
-     * @param $fechaNacimiento
-     * @param $socMedica
-     * @param $emerMovil
-     * @param $antecedentes
-     * @param $observaciones
-     * @param $valido
-     * @param $idRol
-     * @param $telefonos
-     * @param $rutinas
-     * @param $pagos
+     * @param integer $idUsuario
+     * @param string $nombre
+     * @param string $apellido
+     * @param integer $cedula
+     * @param string $direccion
+     * @param string $fechaNacimiento
+     * @param string $socMedica
+     * @param string $emerMovil
+     * @param string $antecedentes
+     * @param string $observaciones
+     * @param integer $valido
+     * @param integer $idRol
+     * @param DAOTelefonos $telefonos
+     * @param DAORutinas $rutinas
+     * @param DAOPagos $pagos
      */
-    public function __construct($idUsuario, $nombre, $apellido, $cedula, $direccion, $fechaNacimiento, $socMedica,
-                                $emerMovil, $antecedentes, $observaciones, $valido, $idRol, $telefonos, $rutinas, $pagos)
+    public function __construct(int $idUsuario, string $nombre, string $apellido, int $cedula, string $direccion,
+                                string $fechaNacimiento, string $socMedica, string $emerMovil, string $antecedentes,
+                                string  $observaciones, int $valido, int $idRol, DAOTelefonos $telefonos, DAORutinas $rutinas,
+                                DAOPagos $pagos)
     {
         $this->idUsuario = $idUsuario;
         $this->nombre = $nombre;
@@ -67,7 +75,7 @@ class Usuario
     /**
      * @return integer
      */
-    public function getIdUsuario()
+    public function getIdUsuario(): int
     {
         return $this->idUsuario;
     }
@@ -75,7 +83,7 @@ class Usuario
     /**
      * @param integer $idUsuario
      */
-    public function setIdUsuario($idUsuario)
+    public function setIdUsuario(int $idUsuario): void
     {
         $this->idUsuario = $idUsuario;
     }
@@ -83,7 +91,7 @@ class Usuario
     /**
      * @return string
      */
-    public function getNombre()
+    public function getNombre(): string
     {
         return $this->nombre;
     }
@@ -91,7 +99,7 @@ class Usuario
     /**
      * @param string $nombre
      */
-    public function setNombre($nombre)
+    public function setNombre(string $nombre): void
     {
         $this->nombre = $nombre;
     }
@@ -99,7 +107,7 @@ class Usuario
     /**
      * @return string
      */
-    public function getApellido()
+    public function getApellido(): string
     {
         return $this->apellido;
     }
@@ -107,7 +115,7 @@ class Usuario
     /**
      * @param string $apellido
      */
-    public function setApellido($apellido)
+    public function setApellido(string $apellido): void
     {
         $this->apellido = $apellido;
     }
@@ -115,7 +123,7 @@ class Usuario
     /**
      * @return integer
      */
-    public function getCedula()
+    public function getCedula(): int
     {
         return $this->cedula;
     }
@@ -123,7 +131,7 @@ class Usuario
     /**
      * @param integer $cedula
      */
-    public function setCedula($cedula)
+    public function setCedula(int $cedula): void
     {
         $this->cedula = $cedula;
     }
@@ -131,7 +139,7 @@ class Usuario
     /**
      * @return string
      */
-    public function getDireccion()
+    public function getDireccion(): string
     {
         return $this->direccion;
     }
@@ -139,7 +147,7 @@ class Usuario
     /**
      * @param string $direccion
      */
-    public function setDireccion($direccion)
+    public function setDireccion(string $direccion): void
     {
         $this->direccion = $direccion;
     }
@@ -147,7 +155,7 @@ class Usuario
     /**
      * @return string
      */
-    public function getFechaNacimiento()
+    public function getFechaNacimiento(): string
     {
         return $this->fechaNacimiento;
     }
@@ -155,7 +163,7 @@ class Usuario
     /**
      * @param string $fechaNacimiento
      */
-    public function setFechaNacimiento($fechaNacimiento)
+    public function setFechaNacimiento(string $fechaNacimiento): void
     {
         $this->fechaNacimiento = $fechaNacimiento;
     }
@@ -163,7 +171,7 @@ class Usuario
     /**
      * @return string
      */
-    public function getSocMedica()
+    public function getSocMedica(): string
     {
         return $this->socMedica;
     }
@@ -171,7 +179,7 @@ class Usuario
     /**
      * @param string $socMedica
      */
-    public function setSocMedica($socMedica)
+    public function setSocMedica(string $socMedica): void
     {
         $this->socMedica = $socMedica;
     }
@@ -179,7 +187,7 @@ class Usuario
     /**
      * @return string
      */
-    public function getEmerMovil()
+    public function getEmerMovil(): string
     {
         return $this->emerMovil;
     }
@@ -187,7 +195,7 @@ class Usuario
     /**
      * @param string $emerMovil
      */
-    public function setEmerMovil($emerMovil)
+    public function setEmerMovil(string $emerMovil): void
     {
         $this->emerMovil = $emerMovil;
     }
@@ -195,7 +203,7 @@ class Usuario
     /**
      * @return string
      */
-    public function getAntecedentes()
+    public function getAntecedentes(): string
     {
         return $this->antecedentes;
     }
@@ -203,7 +211,7 @@ class Usuario
     /**
      * @param string $antecedentes
      */
-    public function setAntecedentes($antecedentes)
+    public function setAntecedentes(string $antecedentes): void
     {
         $this->antecedentes = $antecedentes;
     }
@@ -211,7 +219,7 @@ class Usuario
     /**
      * @return string
      */
-    public function getObservaciones()
+    public function getObservaciones(): string
     {
         return $this->observaciones;
     }
@@ -219,7 +227,7 @@ class Usuario
     /**
      * @param string $observaciones
      */
-    public function setObservaciones($observaciones)
+    public function setObservaciones(string $observaciones): void
     {
         $this->observaciones = $observaciones;
     }
@@ -227,7 +235,7 @@ class Usuario
     /**
      * @return integer
      */
-    public function getValido()
+    public function getValido(): int
     {
         return $this->valido;
     }
@@ -235,7 +243,7 @@ class Usuario
     /**
      * @param integer $valido
      */
-    public function setValido($valido)
+    public function setValido(int $valido): void
     {
         $this->valido = $valido;
     }
@@ -243,7 +251,7 @@ class Usuario
     /**
      * @return integer
      */
-    public function getIdRol()
+    public function getIdRol(): int
     {
         return $this->idRol;
     }
@@ -251,7 +259,7 @@ class Usuario
     /**
      * @param integer $idRol
      */
-    public function setIdRol($idRol)
+    public function setIdRol(int $idRol): void
     {
         $this->idRol = $idRol;
     }
@@ -259,7 +267,7 @@ class Usuario
     /**
      * @return DAOTelefonos
      */
-    public function getTelefonos()
+    public function getTelefonos(): DAOTelefonos
     {
         return $this->telefonos;
     }
@@ -267,7 +275,7 @@ class Usuario
     /**
      * @param DAOTelefonos $telefonos
      */
-    public function setTelefonos($telefonos)
+    public function setTelefonos(DAOTelefonos $telefonos): void
     {
         $this->telefonos = $telefonos;
     }
@@ -275,7 +283,7 @@ class Usuario
     /**
      * @return DAORutinas
      */
-    public function getRutinas()
+    public function getRutinas(): DAORutinas
     {
         return $this->rutinas;
     }
@@ -283,7 +291,7 @@ class Usuario
     /**
      * @param DAORutinas $rutinas
      */
-    public function setRutinas($rutinas)
+    public function setRutinas(DAORutinas $rutinas): void
     {
         $this->rutinas = $rutinas;
     }
@@ -291,19 +299,36 @@ class Usuario
     /**
      * @return DAOPagos
      */
-    public function getPagos()
+    public function getPagos(): DAOPagos
     {
-        return $this->pagos;
+        return $this -> pagos;
     }
 
     /**
      * @param DAOPagos $pagos
      */
-    public function setPagos($pagos)
+    public function setPagos(DAOPagos $pagos): void
     {
         $this->pagos = $pagos;
     }
 
+    /**
+     * @param Conexion $con
+     * @param Rutina $rutina
+     */
+    public function insertarRutina(Conexion $con, Rutina $rutina): void
+    {
+        $this -> rutinas -> insBack($con, $rutina);
+    }
 
+    public function insertarTelefono(Conexion $con, Telefono $telefono): void
+    {
+        $this -> telefonos -> insback($con, $telefono);
+    }
+
+    public function insertarPago(Conexion $con, Pago $pago): void
+    {
+
+    }
 
 }

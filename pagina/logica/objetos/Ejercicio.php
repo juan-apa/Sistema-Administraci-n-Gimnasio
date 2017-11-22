@@ -12,6 +12,7 @@ class Ejercicio
     private $nombre;
     private $repeticiones;
     private $series;
+    private $peso;
 
     /**
      * Ejercicio constructor.
@@ -19,19 +20,21 @@ class Ejercicio
      * @param string $nombre
      * @param integer $repeticiones
      * @param integer $series
+     * @param integer $peso
      */
-    public function __construct($idEjercicio, $nombre, $repeticiones, $series)
+    public function __construct(int $idEjercicio, string $nombre, int $repeticiones, int $series, int $peso)
     {
         $this->idEjercicio = $idEjercicio;
         $this->nombre = $nombre;
         $this->repeticiones = $repeticiones;
         $this->series = $series;
+        $this->peso = $peso;
     }
 
     /**
      * @return integer
      */
-    public function getIdEjercicio()
+    public function getIdEjercicio(): int
     {
         return $this->idEjercicio;
     }
@@ -39,7 +42,7 @@ class Ejercicio
     /**
      * @param integer $idEjercicio
      */
-    public function setIdEjercicio($idEjercicio)
+    public function setIdEjercicio($idEjercicio): void
     {
         $this->idEjercicio = $idEjercicio;
     }
@@ -47,7 +50,7 @@ class Ejercicio
     /**
      * @return string
      */
-    public function getNombre()
+    public function getNombre(): string
     {
         return $this->nombre;
     }
@@ -55,7 +58,7 @@ class Ejercicio
     /**
      * @param string $nombre
      */
-    public function setNombre($nombre)
+    public function setNombre($nombre): void
     {
         $this->nombre = $nombre;
     }
@@ -63,7 +66,7 @@ class Ejercicio
     /**
      * @return integer
      */
-    public function getRepeticiones()
+    public function getRepeticiones(): int
     {
         return $this->repeticiones;
     }
@@ -71,7 +74,7 @@ class Ejercicio
     /**
      * @param integer $repeticiones
      */
-    public function setRepeticiones($repeticiones)
+    public function setRepeticiones($repeticiones): void
     {
         $this->repeticiones = $repeticiones;
     }
@@ -79,7 +82,7 @@ class Ejercicio
     /**
      * @return integer
      */
-    public function getSeries()
+    public function getSeries(): int
     {
         return $this->series;
     }
@@ -87,9 +90,25 @@ class Ejercicio
     /**
      * @param integer $series
      */
-    public function setSeries($series)
+    public function setSeries($series): void
     {
         $this->series = $series;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPeso(): int
+    {
+        return $this->peso;
+    }
+
+    /**
+     * @param int $peso
+     */
+    public function setPeso(int $peso): void
+    {
+        $this->peso = $peso;
     }
 
 

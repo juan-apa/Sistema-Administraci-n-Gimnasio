@@ -1,8 +1,9 @@
+DROP DATABASE IF EXISTS Gimnasio;
 CREATE DATABASE Gimnasio;
 USE Gimnasio;
 
 CREATE TABLE Gimnasio.Roles(
-	idRol int(2),
+	idRol int(2) PRIMARY KEY,
     rol VARCHAR(20)
 );
 
@@ -31,10 +32,11 @@ CREATE TABLE Gimnasio.Rutinas(
 );
 
 CREATE TABLE Gimnasio.Ejercicios(
-	idEjercicio INT NOT NULL AUTO_INCREMENT,
+	idEjercicio INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     idRutina INT NOT NULL,
     nombre VARCHAR(30) NOT NULL,
-    repeticiones INT NOT NULL,
-    series INT NOT NULL,
+    repeticiones INT,
+    series INT,
+    peso int,
     FOREIGN KEY (idRutina) REFERENCES Rutinas(idRutina)
 );
