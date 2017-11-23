@@ -11,11 +11,11 @@
   <meta name="author" content="">
   <title>SB Admin - Start Bootstrap Template</title>
   <!-- Bootstrap core CSS-->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
-  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <!-- Custom styles for this template-->
-  <link href="css/sb-admin.css" rel="stylesheet">
+  <link href="/css/sb-admin.css" rel="stylesheet">
     <?php
     include_once(dirname(__FILE__).'/persistencia/excepciones/ExceptionPersistencia.php');
     include_once(dirname(__FILE__).'/persistencia/excepciones/ExceptionUsuario.php');
@@ -72,7 +72,7 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseExamplePages">
             <li>
-              <a href="login.html">Login Page</a>
+              <a href="login.php">Login Page</a>
             </li>
             <li>
               <a href="register.html">Registration Page</a>
@@ -238,7 +238,25 @@
       </ol>
       <div class="row">
         <div class="col-12">
+            <?php
+            $ok = $_GET['ok'];
+            if(isset($ok)){
+                $mensaje = $_GET['mensaje'];
+                echo "<script>alert('".$mensaje."')</script>";
+            }
+            ?>
           <h1>Registro de usuario</h1>
+            <?php
+            if(isset($_SESSION['usuario'])){
+                $user = $_SESSION['usuario'];
+                echo "<h1>".$user -> getNombre()."</h1>";
+                echo "<h1>".$user -> getApellido()."</h1>";
+                echo "<h1>".$user -> getDireccion()."</h1>";
+                echo "<h1>".$user -> getFechaNacimiento()."</h1>";
+                echo "<h1>2011/04/25</h1>";
+                echo "<h1>2011/04/25</h1>";
+            }
+            ?>
             <form action="/grafica/ControladoraRegistroUsuario.php" method="POST">
                 <div class="form-group">
                     <label for="nombre">Nombre</label>
@@ -258,7 +276,7 @@
                 </div>
                 <div class="form-group">
                     <label for="fechaNacimiento">Fecha de Nacimiento</label>
-                    <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento">
+                    <input type="date" class="form-control inputFecha" id="fechaNacimiento" name="fechaNacimiento" data-date-format="mm/dd/yyyy">
                 </div>
                 <div class="form-group">
                     <label for="socMedica">Sociedad Médica</label>
@@ -279,10 +297,10 @@
 
                 <div class="form-group">
                     <label for="rol">Tipo de usuario</label>
-                    <select class="form-control" id="rol">
-                        <option>Usuario</option>
-                        <option>Administrador</option>
-                        <option>WebMaster</option>
+                    <select class="form-control" id="rol" name="rol">
+                        <option value="2">Usuario</option>
+                        <option value="1">WebMaster</option>
+                        <option value="0">Administrador</option>
                     </select>
                 </div>
                 <button type="submit" class="btn btn-primary">Ingresar</button>
@@ -316,7 +334,7 @@
           <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
+            <a class="btn btn-primary" href="login.php">Logout</a>
           </div>
         </div>
       </div>
@@ -327,7 +345,9 @@
     <!-- Core plugin JavaScript-->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin.min.js"></script>
+    <script src="js/sb-admin.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.2/moment.min.js"></script>
+    <script src="js/scripts.js"></script>
   </div>
 </body>
 

@@ -1,4 +1,6 @@
-
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,6 +31,11 @@
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
+<?php
+    if(isset($_SESSION['usuario'])){
+        echo "<script>alert('usuario seteado')</script>";
+    }
+?>
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <a class="navbar-brand" href="index.php">Start Bootstrap</a>
@@ -76,7 +83,7 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseExamplePages">
             <li>
-              <a href="login.html">Login Page</a>
+              <a href="login.php">Login Page</a>
             </li>
             <li>
               <a href="register.html">Registration Page</a>
@@ -1112,7 +1119,7 @@
           <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
+            <a class="btn btn-primary" href="login.php">Logout</a>
           </div>
         </div>
       </div>
@@ -1127,10 +1134,11 @@
     <script src="./vendor/datatables/jquery.dataTables.js"></script>
     <script src="./vendor/datatables/dataTables.bootstrap4.js"></script>
     <!-- Custom scripts for all pages-->
-    <script src="./js/sb-admin.min.js"></script>
+    <script src="./js/sb-admin.js"></script>
     <!-- Custom scripts for this page-->
     <script src="./js/sb-admin-datatables.min.js"></script>
     <script src="./js/sb-admin-charts.min.js"></script>
+      <script src="js/scripts.js"></script>
   </div>
 </body>
 

@@ -11,10 +11,10 @@ class Consultas
     const USUARIOS_EXISTE_CEDULA = "SELECT * FROM Usuarios WHERE cedula = %d";
 
     const USUARIOS_INGRESAR = "INSERT INTO Usuarios ( nombre, apellido, cedula, direccion, fechaNacimiento, socMedica,
-                                                      emerMovil, antecedentes, observaciones, valido, idRol) 
-                                            VALUES('%s', '%s', %d, '%s', '%s', '%s', '%s', '%s', '%s', %d, %d)";
+                                                      emerMovil, antecedentes, observaciones, valido, idRol, contrasenia) 
+                                            VALUES('%s', '%s', %d, '%s', '%s', '%s', '%s', '%s', '%s', %d, %d, '%s')";
 
-    const USUARIOS_ELIMINAR = "DELETE FROM Usuarios WHERE cedula = %d";
+    const USUARIOS_ELIMINAR = "UPDATE Usuarios SET valido=0 WHERE cedula = %d";
 
     const USUARIOS_OBTENER = "SELECT * FROM Usuarios WHERE cedula = %d";
 
@@ -25,5 +25,8 @@ class Consultas
                                     socMedica='%s', emerMovil='%s', antecedentes='%s', observaciones='%s', valido=%d, idRol='%d'
                                     WHERE cedula = %d";
 
+    const USUARIOS_VALIDAR = "SELECT * FROM Usuarios WHERE cedula = %d AND contrasenia = '%d'";
+
     const TELEFONOS_LISTAR = "SELECT * FROM Telefonos";
+
 }

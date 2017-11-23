@@ -58,7 +58,8 @@ class Fachada
      * @param Usuario $usuario
      * @return void
      * @throws ExceptionUsuario en caso de que ya exista el usuario.
-     * @throws ExceptionPersistencia en caso de que haya un error al obtener datos de la DB.
+     * @throws ExceptionPersistencia en caso de que haya un error al obtener los datos de la DB.
+     * @throws ExceptionPersistencia en caso de que haya un error al insertar los datos en la DB.
      */
     public function registroUsuario(Usuario $usuario): void
     {
@@ -76,7 +77,8 @@ class Fachada
      * @param int $cedulaUsuario
      * @return void
      * @throws ExceptionUsuario en caso de que no exista el usuario.
-     * @throws ExceptionPersistencia en caso de que haya un error al obtener datos de la DB.
+     * @throws ExceptionPersistencia en caso de que haya un error al obtener los datos de la DB.
+     * @throws ExceptionPersistencia en caso de que haya un error al modificar los datos de la DB.
      */
     public function bajaUsuario(int $cedulaUsuario): void
     {
@@ -96,7 +98,8 @@ class Fachada
      * @return void
      * @throws ExceptionUsuario en caso de que el nuevo usuario ya tenga la cedula ingresada.
      * @throws ExceptionUsuario en caso de que no exista el usuario que se desea modificar.
-     * @throws ExceptionPersistencia en caso de que haya un error al obtener datos de la DB.
+     * @throws ExceptionPersistencia en caso de que haya un error al obtener los datos de la DB.
+     * @throws ExceptionPersistencia en caso de que haya un error al modificar los datos de la DB.
      */
     public function modificarUsuario(int $cedulaUsuario, Usuario $usuario): void
     {
@@ -157,5 +160,47 @@ class Fachada
             throw new ExceptionUsuario(ExceptionUsuario::NO_EXISTE_USUARIO);
         }
         return $ret;
+    }
+
+    /**
+     * @param int $cedulaUsuario
+     * @param string $password
+     * @throws ExceptionUsuario en caso de que no exista el usuario o la pareja cedula-contraseña sean inválidos
+     * @throws ExceptionPersistencia en caso de que haya un error al obtener datos de la DB
+     */
+    public function loginUsuario(int $cedulaUsuario, string $password): void
+    {
+        if($this -> usuarios -> member($this -> conexion, $cedulaUsuario))
+        {
+            echo "UNO";
+            if($this -> usuarios -> validarUsuario($this -> conexion, $cedulaUsuario, $password))
+            {
+                echo "DOS";
+                /*Como el la cedula y contrasenia coinciden, inicio una sesion con los datos del usuario*/
+                $usuario = $this -> usuarios -> obtenerUsuario($this -> conexion, $cedulaUsuario);
+                echo "TRES";
+                session_start();
+                if(session_status() == PHP_SESSION_ACTIVE){
+                    echo "<script>alert('fac: sesion iniciada')</script>";
+                }
+                if(session_status() == PHP_SESSION_NONE){
+                    echo "<script>alert('fac: sesion NONE')</script>";
+                }
+                if(session_status() == PHP_SESSION_DISABLED){
+                    echo "<script>alert('fac: sesion DISABLED')</script>";
+                }
+                echo "CUATRO";
+                $_SESSION['usuario'] = $usuario;
+                echo "CINCO";
+            }
+            else
+            {
+                throw new ExceptionUsuario(ExceptionUsuario::CEDULA_CONTRASENIA_INVALIDA);
+            }
+        }
+        else
+        {
+            throw new ExceptionUsuario(ExceptionUsuario::NO_EXISTE_USUARIO);
+        }
     }
 }

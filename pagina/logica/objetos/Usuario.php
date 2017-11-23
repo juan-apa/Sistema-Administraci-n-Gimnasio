@@ -33,6 +33,7 @@ class Usuario
     private $telefonos;
     private $rutinas;
     private $pagos;
+    private $contrasenia;
 
     /**
      * Usuario constructor.
@@ -48,10 +49,11 @@ class Usuario
      * @param string $observaciones
      * @param integer $valido
      * @param integer $idRol
+     * @param string $contrasenia
      */
     public function __construct(int $idUsuario, string $nombre, string $apellido, int $cedula, string $direccion,
                                 string $fechaNacimiento, string $socMedica, string $emerMovil, string $antecedentes,
-                                string  $observaciones, int $valido, int $idRol)
+                                string  $observaciones, int $valido, int $idRol, string $contrasenia)
     {
         $this->idUsuario = $idUsuario;
         $this->nombre = $nombre;
@@ -65,6 +67,7 @@ class Usuario
         $this->observaciones = $observaciones;
         $this->valido = $valido;
         $this->idRol = $idRol;
+        $this->contrasenia = $contrasenia;
         $this->rutinas = new DAORutinas($cedula);
         $this->telefonos = new DAOTelefonos($cedula);
         $this->pagos = new DAOPagos($cedula);
@@ -316,6 +319,22 @@ class Usuario
     }
 
     /**
+     * @return string
+     */
+    public function getContrasenia(): string
+    {
+        return $this->contrasenia;
+    }
+
+    /**
+     * @param string $contrasenia
+     */
+    public function setContrasenia(string $contrasenia): void
+    {
+        $this->contrasenia = $contrasenia;
+    }
+
+    /**
      * @param Conexion $con
      * @param Rutina $rutina
      */
@@ -333,5 +352,7 @@ class Usuario
     {
 
     }
+
+
 
 }

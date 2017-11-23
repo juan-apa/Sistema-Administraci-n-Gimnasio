@@ -7,6 +7,10 @@ CREATE TABLE Gimnasio.Roles(
     rol VARCHAR(20)
 );
 
+insert into Gimnasio.Roles VALUES(0, 'ADMINISTRADOR');
+insert into Gimnasio.Roles VALUES(1, 'WEBMASTER');
+insert into Gimnasio.Roles VALUES(2, 'USUARIO');
+
 CREATE TABLE Gimnasio.Usuarios(
 	idUsuario INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     nombre varchar(20) not null,
@@ -20,6 +24,7 @@ CREATE TABLE Gimnasio.Usuarios(
     observaciones VARCHAR(400),
     valido INT(1),
     idRol int(2),
+    contrasenia VARCHAR(100),
     FOREIGN KEY (idRol) REFERENCES Roles(idRol)
 );
 
