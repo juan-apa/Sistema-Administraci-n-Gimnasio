@@ -32,16 +32,25 @@ CREATE TABLE Gimnasio.Rutinas(
 	idUsuario INT NOT NULL,
     fechaInicio DATE,
     idRutina int not null,
+    nombreRutina VARCHAR(40),
     PRIMARY KEY(idUsuario, idRutina),
     FOREIGN KEY (idUsuario) REFERENCES Usuarios(idUsuario)
 );
 
 CREATE TABLE Gimnasio.Ejercicios(
-	idEjercicio INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	idEjercicio INT NOT NULL AUTO_INCREMENT,
     idRutina INT NOT NULL,
     nombre VARCHAR(30) NOT NULL,
     repeticiones INT,
     series INT,
     peso int,
+    PRIMARY KEY (idEjercicio, idRutina),
     FOREIGN KEY (idRutina) REFERENCES Rutinas(idRutina)
+);
+
+CREATE TABLE Gimnasio.Telefonos(
+	idUsuario INT NOT NULL,
+    telefono INT NOT NULL,
+    PRIMARY KEY (idUsuario, telefono),
+    FOREIGN KEY (idUsuario) REFERENCES Usuarios(idUsuario)
 );

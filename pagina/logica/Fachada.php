@@ -172,26 +172,21 @@ class Fachada
     {
         if($this -> usuarios -> member($this -> conexion, $cedulaUsuario))
         {
-            echo "UNO";
             if($this -> usuarios -> validarUsuario($this -> conexion, $cedulaUsuario, $password))
             {
-                echo "DOS";
                 /*Como el la cedula y contrasenia coinciden, inicio una sesion con los datos del usuario*/
                 $usuario = $this -> usuarios -> obtenerUsuario($this -> conexion, $cedulaUsuario);
-                echo "TRES";
                 session_start();
-                if(session_status() == PHP_SESSION_ACTIVE){
-                    echo "<script>alert('fac: sesion iniciada')</script>";
-                }
-                if(session_status() == PHP_SESSION_NONE){
-                    echo "<script>alert('fac: sesion NONE')</script>";
-                }
-                if(session_status() == PHP_SESSION_DISABLED){
-                    echo "<script>alert('fac: sesion DISABLED')</script>";
-                }
-                echo "CUATRO";
+//                if(session_status() == PHP_SESSION_ACTIVE){
+//                    echo "<script>alert('fac: sesion iniciada')</script>";
+//                }
+//                if(session_status() == PHP_SESSION_NONE){
+//                    echo "<script>alert('fac: sesion NONE')</script>";
+//                }
+//                if(session_status() == PHP_SESSION_DISABLED){
+//                    echo "<script>alert('fac: sesion DISABLED')</script>";
+//                }
                 $_SESSION['usuario'] = $usuario;
-                echo "CINCO";
             }
             else
             {
@@ -202,5 +197,19 @@ class Fachada
         {
             throw new ExceptionUsuario(ExceptionUsuario::NO_EXISTE_USUARIO);
         }
+    }
+
+    public function obtenerRolUsuario(int $cedulaUsuario):string
+    {
+        $rol = '';
+        if($this -> usuarios -> member($this -> conexion, $cedulaUsuario))
+        {
+            $rol = $this -> usuarios -> obtenerRolUsuario($this -> conexion, $cedulaUsuario);
+        }
+        else
+        {
+            throw new ExceptionUsuario(ExceptionUsuario::NO_EXISTE_USUARIO);
+        }
+        return $rol;
     }
 }

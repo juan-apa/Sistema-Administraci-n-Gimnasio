@@ -91,29 +91,22 @@ class DAOUsuarios extends DAO
         $conexion = $con -> getConexion();
         $ret = null;
         $query = sprintf(Consultas::USUARIOS_OBTENER, $cedula);
-        echo "m1";
         $rs = $conexion -> query($query);
         if(!$rs)
         {
-            echo "m2";
             throw new ExceptionPersistencia(ExceptionPersistencia::ERROR_QUERY);
         }
         else
         {
-            echo "m3";
             $usuario = null;
             $user = $rs -> fetch_assoc();
-            echo "m4";
             if($user)
             {
-                echo "m5";
                 $idUsuario = $user['idUsuario'];
-                echo "m6";
                 $ret = new Usuario( $idUsuario, $user['nombre'], $user['apellido'], $user['cedula'], $user['direccion'],
                                     $user['fechaNacimiento'], $user['socMedica'], $user['emerMovil'], $user['antecedentes'],
                                     $user['observaciones'], $user['valido'], $user['idRol'], $user['contrasenia']
                 );
-                echo "m7";
             }
         }
         mysqli_free_result($rs);
@@ -174,6 +167,25 @@ class DAOUsuarios extends DAO
         if($rs -> num_rows > 0)
         {
             $ret = 1;
+        }
+        mysqli_free_result($rs);
+        return $ret;
+    }
+
+    public function obtenerRolUsuario(Conexion $con, int $cedulaUsuario): string
+    {
+        $ret = '';
+        $conexion = $con -> getConexion();
+        $query = sprintf(Consultas::ROL_USUARIO, $cedulaUsuario);
+        $rs = $conexion -> query($query);
+        if($rs -> num_rows == 0)
+        {
+            throw new ExceptionPersistencia(ExceptionPersistencia::ERROR_SELECT);
+        }
+        else
+        {
+            $fila = $rs -> fetch_assoc();
+            $ret = $fila['rol'];
         }
         mysqli_free_result($rs);
         return $ret;

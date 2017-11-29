@@ -27,6 +27,8 @@ class Consultas
 
     const USUARIOS_VALIDAR = "SELECT * FROM Usuarios WHERE cedula = %d AND contrasenia = '%d'";
 
-    const TELEFONOS_LISTAR = "SELECT * FROM Telefonos";
+    const TELEFONOS_LISTAR = "SELECT T.* FROM Telefonos T, Usuarios U WHERE T.idUsuario=U.idUsuario AND U.cedula = %d";
+
+    const ROL_USUARIO = "SELECT R.rol FROM Usuarios U, Roles R WHERE U.idRol = R.idRol AND U.cedula=%d";
 
 }

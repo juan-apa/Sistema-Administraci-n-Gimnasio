@@ -2,22 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d21f85c9-ee94-411a-8f0b-978a23837b17" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/login.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/blank.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../documentacion/documentacion.pdf" afterPath="$PROJECT_DIR$/../documentacion/documentacion.pdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../documentacion/documentacion.synctex.gz" afterPath="$PROJECT_DIR$/../documentacion/documentacion.synctex.gz" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SQL/creacion_db.sql" afterPath="$PROJECT_DIR$/../SQL/creacion_db.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../documentacion/documentacion.aux" afterPath="$PROJECT_DIR$/../documentacion/documentacion.aux" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../documentacion/documentacion.toc" afterPath="$PROJECT_DIR$/../documentacion/documentacion.toc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/06be9203-7459-492c-b248-5765a6571e4f.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/06be9203-7459-492c-b248-5765a6571e4f.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/juan.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/juan.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/blank.php" afterPath="$PROJECT_DIR$/blank.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cards.html" afterPath="$PROJECT_DIR$/cards.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/charts.html" afterPath="$PROJECT_DIR$/charts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/forgot-password.html" afterPath="$PROJECT_DIR$/forgot-password.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grafica/ControladoraLogin.php" afterPath="$PROJECT_DIR$/grafica/ControladoraLogin.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grafica/ControladoraRegistroUsuario.php" afterPath="$PROJECT_DIR$/grafica/ControladoraRegistroUsuario.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logica/Fachada.php" afterPath="$PROJECT_DIR$/logica/Fachada.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logica/objetos/Usuario.php" afterPath="$PROJECT_DIR$/logica/objetos/Usuario.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/navbar.html" afterPath="$PROJECT_DIR$/navbar.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/persistencia/Consultas.php" afterPath="$PROJECT_DIR$/persistencia/Consultas.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/persistencia/daos/DAOUsuarios.php" afterPath="$PROJECT_DIR$/persistencia/daos/DAOUsuarios.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/persistencia/excepciones/ExceptionUsuario.php" afterPath="$PROJECT_DIR$/persistencia/excepciones/ExceptionUsuario.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/register.html" afterPath="$PROJECT_DIR$/register.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tables.html" afterPath="$PROJECT_DIR$/tables.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,30 +44,86 @@
         <item name="" type="eadb38e5:DatabaseStructure$Root" />
         <item name="Gimnasio@localhost" type="e3449647:DbNodeDescriptor" />
       </path>
+      <path>
+        <item name="" type="eadb38e5:DatabaseStructure$Root" />
+        <item name="Gimnasio@localhost" type="e3449647:DbNodeDescriptor" />
+        <item name="Gimnasio" type="e3449647:DbNodeDescriptor" />
+      </path>
+      <path>
+        <item name="" type="eadb38e5:DatabaseStructure$Root" />
+        <item name="Gimnasio@localhost" type="e3449647:DbNodeDescriptor" />
+        <item name="Gimnasio" type="e3449647:DbNodeDescriptor" />
+        <item name="Roles" type="e3449647:DbNodeDescriptor" />
+      </path>
     </expand>
     <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Consultas.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/persistencia/Consultas.php">
+      <file leaf-file-name="DAO.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/persistencia/daos/DAO.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="16" column="75" lean-forward="false" selection-start-line="16" selection-start-column="75" selection-end-line="16" selection-end-column="75" />
+            <state relative-caret-position="240">
+              <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="navbar.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/navbar.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="56" lean-forward="false" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="modificacionUsuario.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/modificacionUsuario.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-315">
+              <caret line="9" column="26" lean-forward="false" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
               <folding>
-                <marker date="1511460746843" expanded="true" signature="142:182" ph="SELECT * FRO... Usuarios" />
-                <marker date="1511460746843" expanded="true" signature="217:478" ph="INSERT INTO Usuarios... " />
-                <marker date="1511460746843" expanded="true" signature="217:544" ph="INSERT INTO Usuarios... " />
-                <marker date="1511460746843" expanded="true" signature="579:625" ph="UPDATE Usuar... " />
-                <marker date="1511460746843" expanded="true" signature="613:625" ph="DELETE FROM " />
-                <marker date="1511460746843" expanded="true" signature="659:699" ph="SELECT * FRO... Usuarios" />
-                <marker date="1511460746843" expanded="true" signature="732:754" ph="SELECT * FRO... Usuarios" />
-                <marker date="1511460746843" expanded="true" signature="790:1053" ph="UPDATE Usuar... " />
-                <marker date="1511460746843" expanded="true" signature="790:1067" ph="UPDATE Usuar... " />
-                <marker date="1511460746843" expanded="true" signature="790:1121" ph="UPDATE Usuar... " />
-                <marker date="1511460746843" expanded="true" signature="1155:1218" ph="SELECT * FRO... Usuarios" />
-                <marker date="1511460746843" expanded="true" signature="1252:1275" ph="SELECT * FRO... Telefonos" />
+                <marker date="1511967041544" expanded="true" signature="1342:5844" ph="..." />
+                <marker date="1511967041544" expanded="true" signature="1376:5765" ph="..." />
+                <marker date="1511967041544" expanded="true" signature="1436:1622" ph="..." />
+                <marker date="1511967041544" expanded="true" signature="1477:1545" ph="..." />
+                <marker date="1511967041544" expanded="true" signature="1648:5754" ph="..." />
+                <marker date="1511967041544" expanded="true" signature="1681:5739" ph="..." />
+                <marker date="1511967041544" expanded="true" signature="1901:2327" ph="..." />
+                <marker date="1511967041544" expanded="true" signature="1946:2210" ph="..." />
+                <marker date="1511967041544" expanded="true" signature="2120:2183" ph="..." />
+                <marker date="1511967041544" expanded="true" signature="2412:5584" ph="..." />
+                <marker date="1511967041544" expanded="true" signature="2457:2697" ph="..." />
+                <marker date="1511967041544" expanded="true" signature="2607:2670" ph="..." />
+                <marker date="1511967041544" expanded="true" signature="2742:2950" ph="..." />
+                <marker date="1511967041544" expanded="true" signature="2995:3195" ph="..." />
+                <marker date="1511967041544" expanded="true" signature="3240:3453" ph="..." />
+                <marker date="1511967041544" expanded="true" signature="3498:3787" ph="..." />
+                <marker date="1511967041544" expanded="true" signature="3699:3760" ph="..." />
+                <marker date="1511967041544" expanded="true" signature="3832:4088" ph="..." />
+                <marker date="1511967041544" expanded="true" signature="4000:4061" ph="..." />
+                <marker date="1511967041544" expanded="true" signature="4133:4391" ph="..." />
+                <marker date="1511967041544" expanded="true" signature="4302:4364" ph="..." />
+                <marker date="1511967041544" expanded="true" signature="4436:4709" ph="..." />
+                <marker date="1511967041544" expanded="true" signature="4628:4682" ph="..." />
+                <marker date="1511967041544" expanded="true" signature="4754:5032" ph="..." />
+                <marker date="1511967041544" expanded="true" signature="4923:5005" ph="..." />
+                <marker date="1511967041544" expanded="true" signature="5078:5475" ph="..." />
+                <marker date="1511967041544" expanded="true" signature="5217:5448" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="registroUsuario.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/registroUsuario.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="60" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -72,96 +131,59 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="33" column="5" lean-forward="false" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-              <folding>
-                <marker date="1511460291853" expanded="true" signature="7736:8010" ph="..." />
-                <marker date="1511460291853" expanded="true" signature="8106:8271" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DAOUsuarios.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/persistencia/daos/DAOUsuarios.php">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
-              <caret line="74" column="44" lean-forward="false" selection-start-line="74" selection-start-column="44" selection-end-line="74" selection-end-column="44" />
+              <caret line="4" column="64" lean-forward="true" selection-start-line="4" selection-start-column="64" selection-end-line="4" selection-end-column="64" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="blank.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blank.php">
+      <file leaf-file-name="footer.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/footer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1239">
-              <caret line="230" column="0" lean-forward="false" selection-start-line="230" selection-start-column="0" selection-end-line="230" selection-end-column="0" />
-              <folding>
-                <marker date="1511447271851" expanded="true" signature="7256:7421" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ControladoraRegistroUsuario.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grafica/ControladoraRegistroUsuario.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="19" column="5" lean-forward="false" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+            <state relative-caret-position="150">
+              <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ControladoraLogin.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/grafica/ControladoraLogin.php">
+      <file leaf-file-name="Controladora.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grafica/Controladora.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+            <state relative-caret-position="345">
+              <caret line="31" column="13" lean-forward="false" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/login.php">
+      <file leaf-file-name="Rol.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/logica/objetos/Rol.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="63" lean-forward="false" selection-start-line="30" selection-start-column="63" selection-end-line="30" selection-end-column="63" />
+            <state relative-caret-position="405">
+              <caret line="32" column="9" lean-forward="false" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Fachada.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logica/Fachada.php">
+      <file leaf-file-name="navbar.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/navbar.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="96" column="30" lean-forward="false" selection-start-line="96" selection-start-column="30" selection-end-line="96" selection-end-column="30" />
-              <folding>
-                <element signature="n#getInstancia#0;n#Fachada#0;n#!!top" expanded="false" />
-                <element signature="n#__destruct#0;n#Fachada#0;n#!!top" expanded="false" />
-                <element signature="n#test#0;n#Fachada#0;n#!!top" expanded="false" />
-                <element signature="n#registroUsuario#0;n#Fachada#0;n#!!top" expanded="false" />
-                <element signature="n#bajaUsuario#0;n#Fachada#0;n#!!top" expanded="false" />
-                <element signature="n#modificarUsuario#0;n#Fachada#0;n#!!top" expanded="false" />
-                <element signature="n#insertarRutina#0;n#Fachada#0;n#!!top" expanded="false" />
-                <element signature="n#obtenerUsuario#0;n#Fachada#0;n#!!top" expanded="false" />
-                <element signature="n#loginUsuario#0;n#Fachada#0;n#!!top" expanded="false" />
-              </folding>
+            <state relative-caret-position="-480">
+              <caret line="22" column="75" lean-forward="true" selection-start-line="22" selection-start-column="75" selection-end-line="22" selection-end-column="75" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Usuario.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logica/objetos/Usuario.php">
+      <file leaf-file-name="Conexion.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/persistencia/Conexion.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="28" lean-forward="false" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="28" />
-              <folding>
-                <element signature="e#6#86#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="197">
+              <caret line="25" column="35" lean-forward="true" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -187,6 +209,13 @@
       <find>exampleP</find>
       <find>example</find>
       <find>php</find>
+      <find>getNo</find>
+      <find>usu</find>
+      <find>sea</find>
+      <find>controla</find>
+      <find>echo</find>
+      <find>inicio</find>
+      <find>EXAMPL</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/persistencia/excepciones</dir>
@@ -199,9 +228,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.txt" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -226,12 +252,23 @@
         <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/logica/objetos/Usuario.php" />
         <option value="$PROJECT_DIR$/grafica/ControladoraRegistroUsuario.php" />
-        <option value="$PROJECT_DIR$/persistencia/daos/DAOUsuarios.php" />
+        <option value="$PROJECT_DIR$/logoutModal.php" />
         <option value="$PROJECT_DIR$/blank.php" />
-        <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/grafica/ControladoraLogin.php" />
+        <option value="$PROJECT_DIR$/grafica/ControladoraCargarUsuario.php" />
         <option value="$PROJECT_DIR$/persistencia/Consultas.php" />
+        <option value="$PROJECT_DIR$/grafica/ControladoraInicio.php" />
+        <option value="$PROJECT_DIR$/grafica/ControladoraLogout.php" />
+        <option value="$PROJECT_DIR$/grafica/ControladoraLogin.php" />
         <option value="$PROJECT_DIR$/logica/Fachada.php" />
+        <option value="$PROJECT_DIR$/persistencia/daos/DAOUsuarios.php" />
+        <option value="$PROJECT_DIR$/navbar.html" />
+        <option value="$PROJECT_DIR$/footer.php" />
+        <option value="$PROJECT_DIR$/navbar.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/logica/objetos/Rol.php" />
+        <option value="$PROJECT_DIR$/grafica/Controladora.php" />
+        <option value="$PROJECT_DIR$/registroUsuario.php" />
+        <option value="$PROJECT_DIR$/modificacionUsuario.php" />
       </list>
     </option>
   </component>
@@ -315,29 +352,12 @@
             <path>
               <item name="pagina" type="b2602c69:ProjectViewProjectNode" />
               <item name="pagina" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="pagina" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pagina" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sb-admin.css" type="620a8d5e:NestingTreeNode" />
-            </path>
-            <path>
-              <item name="pagina" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pagina" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="grafica" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="pagina" type="b2602c69:ProjectViewProjectNode" />
               <item name="pagina" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="logica" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="pagina" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pagina" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="logica" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="objetos" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="pagina" type="b2602c69:ProjectViewProjectNode" />
@@ -390,6 +410,7 @@
     <property name="nodejs_interpreter_path" value="/usr/bin/node" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="full.screen.before.presentation.mode" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -435,38 +456,62 @@
       <updated>1511209637748</updated>
       <workItem from="1511209639313" duration="10411000" />
       <workItem from="1511285486479" duration="33184000" />
-      <workItem from="1511458849458" duration="2477000" />
+      <workItem from="1511458849458" duration="6211000" />
+      <workItem from="1511784438264" duration="6981000" />
+      <workItem from="1511957565001" duration="6678000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46072000" />
+    <option name="totallyTimeSpent" value="63465000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="28" width="1368" height="741" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32779455" sideWeight="0.5064516" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32779455" sideWeight="0.4935484" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32978722" sideWeight="0.5025674" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23716012" sideWeight="0.4935484" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5025674" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24967907" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32978722" sideWeight="0.49743262" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32978722" sideWeight="0.49743262" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5025674" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32779455" sideWeight="0.5064516" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32978722" sideWeight="0.49743262" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23716012" sideWeight="0.4935484" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24967907" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -479,113 +524,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/persistencia/daos/DAOUsuarios.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2160">
-          <caret line="144" column="45" lean-forward="false" selection-start-line="144" selection-start-column="45" selection-end-line="144" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grafica/ControladoraRegistroUsuario.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="5" lean-forward="false" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grafica/ControladoraLogin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="21" lean-forward="true" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="63" lean-forward="false" selection-start-line="30" selection-start-column="63" selection-end-line="30" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logica/Fachada.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2400">
-          <caret line="165" column="36" lean-forward="false" selection-start-line="165" selection-start-column="36" selection-end-line="165" selection-end-column="36" />
-          <folding>
-            <element signature="n#getInstancia#0;n#Fachada#0;n#!!top" expanded="false" />
-            <element signature="n#__destruct#0;n#Fachada#0;n#!!top" expanded="false" />
-            <element signature="n#test#0;n#Fachada#0;n#!!top" expanded="false" />
-            <element signature="n#registroUsuario#0;n#Fachada#0;n#!!top" expanded="false" />
-            <element signature="n#bajaUsuario#0;n#Fachada#0;n#!!top" expanded="false" />
-            <element signature="n#modificarUsuario#0;n#Fachada#0;n#!!top" expanded="false" />
-            <element signature="n#insertarRutina#0;n#Fachada#0;n#!!top" expanded="false" />
-            <element signature="n#obtenerUsuario#0;n#Fachada#0;n#!!top" expanded="false" />
-            <element signature="n#loginUsuario#0;n#Fachada#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logica/objetos/Usuario.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="25" column="28" lean-forward="false" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="28" />
-          <folding>
-            <element signature="e#6#86#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blank.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3795">
-          <caret line="253" column="25" lean-forward="true" selection-start-line="253" selection-start-column="25" selection-end-line="253" selection-end-column="25" />
-          <folding>
-            <marker date="1511447271851" expanded="true" signature="7256:7421" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/persistencia/daos/DAO.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/persistencia/Consultas.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="23" column="50" lean-forward="false" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
-          <folding>
-            <marker date="1511460746843" expanded="true" signature="142:182" ph="SELECT * FRO... Usuarios" />
-            <marker date="1511460746843" expanded="true" signature="217:478" ph="INSERT INTO Usuarios... " />
-            <marker date="1511460746843" expanded="true" signature="217:544" ph="INSERT INTO Usuarios... " />
-            <marker date="1511460746843" expanded="true" signature="579:625" ph="UPDATE Usuar... " />
-            <marker date="1511460746843" expanded="true" signature="613:625" ph="DELETE FROM " />
-            <marker date="1511460746843" expanded="true" signature="659:699" ph="SELECT * FRO... Usuarios" />
-            <marker date="1511460746843" expanded="true" signature="732:754" ph="SELECT * FRO... Usuarios" />
-            <marker date="1511460746843" expanded="true" signature="790:1053" ph="UPDATE Usuar... " />
-            <marker date="1511460746843" expanded="true" signature="790:1067" ph="UPDATE Usuar... " />
-            <marker date="1511460746843" expanded="true" signature="790:1121" ph="UPDATE Usuar... " />
-            <marker date="1511460746843" expanded="true" signature="1155:1218" ph="SELECT * FRO... Usuarios" />
-            <marker date="1511460746843" expanded="true" signature="1252:1275" ph="SELECT * FRO... Telefonos" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/persistencia/daos/DAOUsuarios.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="42" column="13" lean-forward="false" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/persistencia/daos/DAORutinas.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -631,7 +569,7 @@
         <state relative-caret-position="375">
           <caret line="30" column="24" lean-forward="true" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
           <folding>
-            <element signature="e#6#86#0#PHP" expanded="true" />
+            <element signature="e#6#86#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -666,30 +604,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/persistencia/excepciones/ExceptionPersistencia.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="2" lean-forward="true" selection-start-line="22" selection-start-column="2" selection-end-line="22" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/persistencia/daos/DAO.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/persistencia/Conexion.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="43" column="5" lean-forward="true" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/logica/objetos/Telefono.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -702,14 +616,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="439">
           <caret line="66" column="35" lean-forward="false" selection-start-line="66" selection-start-column="35" selection-end-line="66" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/persistencia/daos/DAOEjercicios.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="18" column="30" lean-forward="true" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -824,24 +730,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/persistencia/excepciones/ExceptionUsuario.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="19" column="54" lean-forward="true" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blank.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1239">
-          <caret line="230" column="0" lean-forward="false" selection-start-line="230" selection-start-column="0" selection-end-line="230" selection-end-column="0" />
-          <folding>
-            <marker date="1511447271851" expanded="true" signature="7256:7421" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -852,85 +740,238 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grafica/ControladoraRegistroUsuario.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
+        <state relative-caret-position="285">
           <caret line="19" column="5" lean-forward="false" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logoutModal.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="6" lean-forward="false" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/persistencia/excepciones/ExceptionUsuario.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="19" column="54" lean-forward="false" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/persistencia/excepciones/ExceptionPersistencia.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="2" lean-forward="false" selection-start-line="22" selection-start-column="2" selection-end-line="22" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logica/objetos/Usuario.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="131" column="29" lean-forward="false" selection-start-line="131" selection-start-column="20" selection-end-line="131" selection-end-column="29" />
+          <folding>
+            <element signature="e#6#86#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/persistencia/Consultas.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="31" column="34" lean-forward="false" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+          <folding>
+            <marker date="1511792865316" expanded="true" signature="142:182" ph="SELECT * FRO... Usuarios" />
+            <marker date="1511792865316" expanded="true" signature="217:478" ph="INSERT INTO Usuarios... " />
+            <marker date="1511792865316" expanded="true" signature="217:544" ph="INSERT INTO Usuarios... " />
+            <marker date="1511792865316" expanded="true" signature="579:625" ph="UPDATE Usuar... " />
+            <marker date="1511792865316" expanded="true" signature="613:625" ph="DELETE FROM " />
+            <marker date="1511792865316" expanded="true" signature="659:699" ph="SELECT * FRO... Usuarios" />
+            <marker date="1511792865316" expanded="true" signature="732:754" ph="SELECT * FRO... Usuarios" />
+            <marker date="1511792865316" expanded="true" signature="790:1053" ph="UPDATE Usuar... " />
+            <marker date="1511792865316" expanded="true" signature="790:1067" ph="UPDATE Usuar... " />
+            <marker date="1511792865316" expanded="true" signature="790:1121" ph="UPDATE Usuar... " />
+            <marker date="1511792865316" expanded="true" signature="1155:1218" ph="SELECT * FRO... Usuarios" />
+            <marker date="1511792865316" expanded="true" signature="1252:1277" ph="SELECT * FRO... Telefonos" />
+            <marker date="1511792865316" expanded="true" signature="1252:1339" ph="SELECT T.* F... Telefonos" />
+            <marker date="1511792865316" expanded="true" signature="1368:1445" ph="SELECT R.ROL... Usuarios" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grafica/ControladoraInicio.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="42" column="5" lean-forward="false" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grafica/ControladoraLogout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grafica/ControladoraLogin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-285">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grafica/ControladoraCargarUsuario.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logica/Fachada.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="53" column="43" lean-forward="true" selection-start-line="53" selection-start-column="43" selection-end-line="53" selection-end-column="43" />
+          <folding>
+            <element signature="n#getInstancia#0;n#Fachada#0;n#!!top" expanded="false" />
+            <element signature="n#__destruct#0;n#Fachada#0;n#!!top" expanded="false" />
+            <element signature="n#registroUsuario#0;n#Fachada#0;n#!!top" expanded="false" />
+            <element signature="n#bajaUsuario#0;n#Fachada#0;n#!!top" expanded="false" />
+            <element signature="n#modificarUsuario#0;n#Fachada#0;n#!!top" expanded="false" />
+            <element signature="n#insertarRutina#0;n#Fachada#0;n#!!top" expanded="false" />
+            <element signature="n#obtenerUsuario#0;n#Fachada#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/persistencia/daos/DAOEjercicios.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-101">
+          <caret line="18" column="30" lean-forward="true" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/persistencia/daos/DAOUsuarios.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="108" column="18" lean-forward="false" selection-start-line="108" selection-start-column="18" selection-end-line="108" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/persistencia/Conexion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="25" column="35" lean-forward="true" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/navbar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="56" lean-forward="false" selection-start-line="12" selection-start-column="56" selection-end-line="12" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/navbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-480">
+          <caret line="22" column="75" lean-forward="true" selection-start-line="22" selection-start-column="75" selection-end-line="22" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/persistencia/daos/DAO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logica/objetos/Rol.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="32" column="9" lean-forward="false" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grafica/Controladora.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="31" column="13" lean-forward="false" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="33" column="5" lean-forward="false" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-          <folding>
-            <marker date="1511460291853" expanded="true" signature="7736:8010" ph="..." />
-            <marker date="1511460291853" expanded="true" signature="8106:8271" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logica/objetos/Usuario.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="28" lean-forward="false" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="28" />
-          <folding>
-            <element signature="e#6#86#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/persistencia/daos/DAOUsuarios.php">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="74" column="44" lean-forward="false" selection-start-line="74" selection-start-column="44" selection-end-line="74" selection-end-column="44" />
+          <caret line="4" column="64" lean-forward="true" selection-start-line="4" selection-start-column="64" selection-end-line="4" selection-end-column="64" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/persistencia/Consultas.php">
+    <entry file="file://$PROJECT_DIR$/registroUsuario.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="16" column="75" lean-forward="false" selection-start-line="16" selection-start-column="75" selection-end-line="16" selection-end-column="75" />
-          <folding>
-            <marker date="1511460746843" expanded="true" signature="142:182" ph="SELECT * FRO... Usuarios" />
-            <marker date="1511460746843" expanded="true" signature="217:478" ph="INSERT INTO Usuarios... " />
-            <marker date="1511460746843" expanded="true" signature="217:544" ph="INSERT INTO Usuarios... " />
-            <marker date="1511460746843" expanded="true" signature="579:625" ph="UPDATE Usuar... " />
-            <marker date="1511460746843" expanded="true" signature="613:625" ph="DELETE FROM " />
-            <marker date="1511460746843" expanded="true" signature="659:699" ph="SELECT * FRO... Usuarios" />
-            <marker date="1511460746843" expanded="true" signature="732:754" ph="SELECT * FRO... Usuarios" />
-            <marker date="1511460746843" expanded="true" signature="790:1053" ph="UPDATE Usuar... " />
-            <marker date="1511460746843" expanded="true" signature="790:1067" ph="UPDATE Usuar... " />
-            <marker date="1511460746843" expanded="true" signature="790:1121" ph="UPDATE Usuar... " />
-            <marker date="1511460746843" expanded="true" signature="1155:1218" ph="SELECT * FRO... Usuarios" />
-            <marker date="1511460746843" expanded="true" signature="1252:1275" ph="SELECT * FRO... Telefonos" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logica/Fachada.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="96" column="30" lean-forward="false" selection-start-line="96" selection-start-column="30" selection-end-line="96" selection-end-column="30" />
-          <folding>
-            <element signature="n#getInstancia#0;n#Fachada#0;n#!!top" expanded="false" />
-            <element signature="n#__destruct#0;n#Fachada#0;n#!!top" expanded="false" />
-            <element signature="n#test#0;n#Fachada#0;n#!!top" expanded="false" />
-            <element signature="n#registroUsuario#0;n#Fachada#0;n#!!top" expanded="false" />
-            <element signature="n#bajaUsuario#0;n#Fachada#0;n#!!top" expanded="false" />
-            <element signature="n#modificarUsuario#0;n#Fachada#0;n#!!top" expanded="false" />
-            <element signature="n#insertarRutina#0;n#Fachada#0;n#!!top" expanded="false" />
-            <element signature="n#obtenerUsuario#0;n#Fachada#0;n#!!top" expanded="false" />
-            <element signature="n#loginUsuario#0;n#Fachada#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grafica/ControladoraLogin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+        <state relative-caret-position="75">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="60" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modificacionUsuario.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-315">
+          <caret line="9" column="26" lean-forward="false" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+          <folding>
+            <marker date="1511967041544" expanded="true" signature="1342:5844" ph="..." />
+            <marker date="1511967041544" expanded="true" signature="1376:5765" ph="..." />
+            <marker date="1511967041544" expanded="true" signature="1436:1622" ph="..." />
+            <marker date="1511967041544" expanded="true" signature="1477:1545" ph="..." />
+            <marker date="1511967041544" expanded="true" signature="1648:5754" ph="..." />
+            <marker date="1511967041544" expanded="true" signature="1681:5739" ph="..." />
+            <marker date="1511967041544" expanded="true" signature="1901:2327" ph="..." />
+            <marker date="1511967041544" expanded="true" signature="1946:2210" ph="..." />
+            <marker date="1511967041544" expanded="true" signature="2120:2183" ph="..." />
+            <marker date="1511967041544" expanded="true" signature="2412:5584" ph="..." />
+            <marker date="1511967041544" expanded="true" signature="2457:2697" ph="..." />
+            <marker date="1511967041544" expanded="true" signature="2607:2670" ph="..." />
+            <marker date="1511967041544" expanded="true" signature="2742:2950" ph="..." />
+            <marker date="1511967041544" expanded="true" signature="2995:3195" ph="..." />
+            <marker date="1511967041544" expanded="true" signature="3240:3453" ph="..." />
+            <marker date="1511967041544" expanded="true" signature="3498:3787" ph="..." />
+            <marker date="1511967041544" expanded="true" signature="3699:3760" ph="..." />
+            <marker date="1511967041544" expanded="true" signature="3832:4088" ph="..." />
+            <marker date="1511967041544" expanded="true" signature="4000:4061" ph="..." />
+            <marker date="1511967041544" expanded="true" signature="4133:4391" ph="..." />
+            <marker date="1511967041544" expanded="true" signature="4302:4364" ph="..." />
+            <marker date="1511967041544" expanded="true" signature="4436:4709" ph="..." />
+            <marker date="1511967041544" expanded="true" signature="4628:4682" ph="..." />
+            <marker date="1511967041544" expanded="true" signature="4754:5032" ph="..." />
+            <marker date="1511967041544" expanded="true" signature="4923:5005" ph="..." />
+            <marker date="1511967041544" expanded="true" signature="5078:5475" ph="..." />
+            <marker date="1511967041544" expanded="true" signature="5217:5448" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

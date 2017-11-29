@@ -40,4 +40,4 @@ if(isset($nombre, $apellido, $cedula, $direccion, $fechaNacimiento, $socMedica, 
         $ok = 0;
     }
 }
-header('location: ./../blank.php?ok='.$ok.'&mensaje='.$mensaje);
+header('location: ./../registroUsuario.php?ok='.$ok.'&mensaje='.$mensaje);
