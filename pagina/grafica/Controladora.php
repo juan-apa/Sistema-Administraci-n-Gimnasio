@@ -27,6 +27,7 @@ class Controladora
             if(isset($this -> user))
             {
                 $this -> rol = $this -> f -> obtenerRolUsuario($this -> user -> getCedula());
+
             }
             else
             {

@@ -8,6 +8,17 @@ include_once(dirname(__FILE__) . '/grafica/Controladora.php');
 session_start();
 $con = new Controladora();
 $permiso = $con->getRol();
+$ok = 0;
+
+if(isset($_GET['ok'])){
+    $ok = $_GET['ok'];
+    $mensaje = $_GET['mensaje'];
+    echo "<script>alert('".$mensaje."')</script>";
+}
+if(isset($_SESSION['usuarioViejo'])){
+    $usuario = $_SESSION['usuarioViejo'];
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -46,68 +57,77 @@ $permiso = $con->getRol();
                 <h1>Modificación de usuario</h1>
 
                 <?php if ($permiso == Rol::obtenerRolDeIdRol(Rol::ADMINISTRADOR)): ?>
-                <form action="/grafica/ControladoraCargarUsuario.php" method="GET">
+                <form action="/grafica/ControladoraCargarUsuario.php" method="POST">
                     <div class="form-group">
-                        <label for="nombre">Cedula usuario a modificar</label>
-                        <input type="text" class="form-control" id="cedVieja" name="cedVieja"
-                               placeholder="Ingrese el nombre">
+                        <label for="cedVieja">Cedula usuario a modificar</label>
+                        <input type="number" class="form-control" id="cedVieja" name="cedVieja"
+                               placeholder="Ingrese la cédula">
                     </div>
                     <button type="submit" class="btn btn-primary">Cargar formulario</button>
                 </form>
-                <form action="/grafica/ControladoraCargarUsuario.php" method="POST">
+                <?php if($ok): ?>
+                <form action="/grafica/ControladoraModUsuario.php" method="POST">
+                    <input type="number" class="form-control"  style="display: none" id="cedVieja" name="cedVieja"
+                           placeholder="Cédula" value=<?php echo $usuario -> getCedula(); ?>>
+
+
                     <div class="form-group">
                         <label for="nombre">Nombre</label>
                         <input type="text" class="form-control" id="nombre" name="nombre"
-                               placeholder="Ingrese el nombre">
+                               placeholder="Ingrese el nombre" value=<?php echo $usuario -> getNombre(); ?>>
                     </div>
                     <div class="form-group">
                         <label for="apellido">Apellido</label>
-                        <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido">
+                        <input type="text" class="form-control" id="apellido" name="apellido"
+                               placeholder="Apellido" value=<?php echo $usuario -> getApellido(); ?>>
                     </div>
                     <div class="form-group">
                         <label for="cedula">Cédula</label>
-                        <input type="number" class="form-control" id="cedula" name="cedula" placeholder="Cédula">
+                        <input type="number" class="form-control" id="cedula" name="cedula"
+                               placeholder="Cédula" value=<?php echo $usuario -> getCedula(); ?>>
                     </div>
                     <div class="form-group">
                         <label for="direccion">Dirección</label>
-                        <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Dirección">
+                        <input type="text" class="form-control" id="direccion" name="direccion"
+                               placeholder="Dirección" value=<?php echo $usuario -> getDireccion(); ?>>
                     </div>
                     <div class="form-group">
                         <label for="fechaNacimiento">Fecha de Nacimiento</label>
                         <input type="date" class="form-control inputFecha" id="fechaNacimiento" name="fechaNacimiento"
-                               data-date-format="mm/dd/yyyy">
+                               data-date-format="mm/dd/yyyy" value=<?php echo $usuario -> getFechaNacimiento(); ?>>
                     </div>
                     <div class="form-group">
                         <label for="socMedica">Sociedad Médica</label>
                         <input type="text" class="form-control" id="socMedica" name="socMedica"
-                               placeholder="Sociedad médica">
+                               placeholder="Sociedad médica" value=<?php echo $usuario -> getSocMedica(); ?>>
                     </div>
                     <div class="form-group">
                         <label for="emerMovil">Emergencia Móvil</label>
                         <input type="text" class="form-control" id="emerMovil" name="emerMovil"
-                               placeholder="Emergencia Móvil">
+                               placeholder="Emergencia Móvil" value=<?php echo $usuario -> getEmerMovil(); ?>>
                     </div>
                     <div class="form-group">
                         <label for="antecedentes">Antecedentes</label>
                         <textarea class="form-control" id="antecedentes" name="antecedentes" placeholder="Antecedentes"
-                                  rows="3"></textarea>
+                                  rows="3"><?php echo $usuario -> getAntecedentes();?></textarea>
                     </div>
                     <div class="form-group">
                         <label for="observaciones">Observaciones</label>
                         <textarea class="form-control" id="observaciones" name="observaciones"
-                                  placeholder="Observaciones" rows="3"></textarea>
+                                  placeholder="Observaciones" rows="3" ><?php echo $usuario -> getObservaciones();?></textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="rol">Tipo de usuario</label>
                         <select class="form-control" id="rol" name="rol">
-                            <option value="2">Usuario</option>
-                            <option value="1">WebMaster</option>
-                            <option value="0">Administrador</option>
+                            <option value="2" <?php if(Rol::USUARIO == $usuario->getIdRol()){echo "selected";} ?>>Usuario</option>
+                            <option value="1" <?php if(Rol::WEBMASTER == $usuario->getIdRol()){echo "selected";} ?>>WebMaster</option>
+                            <option value="0" <?php if(Rol::ADMINISTRADOR == $usuario->getIdRol()){echo "selected";} ?>>Administrador</option>
                         </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Modificar</button>
                 </form>
+                <?php  endif; ?>
                 <?php else: ?>
                     <h2 class="text-danger">Permisos insuficientes.</h2>
                 <?php endif; ?>
@@ -117,8 +137,6 @@ $permiso = $con->getRol();
     <!-- /.container-fluid-->
     <!-- /.content-wrapper-->
     <?php include('footer.php'); ?>
-    <!-- Logout Modal-->
-    <?php include('logoutModal.php'); ?>
 
 
     <!-- Bootstrap core JavaScript-->

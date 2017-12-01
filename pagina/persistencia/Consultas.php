@@ -21,7 +21,7 @@ class Consultas
     const USUARIOS_LISTAR = "SELECT * FROM Usuarios";
 
     const USUARIOS_MODIFICAR = "UPDATE Usuarios SET 
-                                    idUsuario=%d, nombre='%s', apellido='%s', cedula=%d, direccion='%s', fechaNacimiento='%s', 
+                                    nombre='%s', apellido='%s', cedula=%d, direccion='%s', fechaNacimiento='%s', 
                                     socMedica='%s', emerMovil='%s', antecedentes='%s', observaciones='%s', valido=%d, idRol='%d'
                                     WHERE cedula = %d";
 

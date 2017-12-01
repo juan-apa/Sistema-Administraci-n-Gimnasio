@@ -32,22 +32,34 @@
             </li>
 
             <?php if (($permiso == Rol::obtenerRolDeIdRol(Rol::ADMINISTRADOR)) || $permiso == Rol::obtenerRolDeIdRol(Rol::USUARIO)) : ?>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-                    <a class="nav-link" href="tables.html">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Listados">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseListados"
+                       data-parent="#exampleAccordion">
                         <i class="fa fa-fw fa-table"></i>
-                        <span class="nav-link-text">Tablas</span>
+                        <span class="nav-link-text">Listados</span>
                     </a>
+                    <ul class="sidenav-second-level collapse" id="collapseListados">
+                        <li>
+                            <a href="listadoUsuarios.php">Listado de usuarios</a>
+                        </li>
+                        <li>
+                            <a href="listadoPagos.php">listado de pagos</a>
+                        </li>
+                        <li>
+                            <a href="listadoRutinas.php">Listado de rutinas</a>
+                        </li>
+                    </ul>
                 </li>
             <?php endif; ?>
 
             <?php if ($permiso == Rol::obtenerRolDeIdRol(Rol::WEBMASTER)): ?>
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents"
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseUsuarios"
                        data-parent="#exampleAccordion">
                         <i class="fa fa-fw fa-wrench"></i>
                         <span class="nav-link-text">Components</span>
                     </a>
-                    <ul class="sidenav-second-level collapse" id="collapseComponents">
+                    <ul class="sidenav-second-level collapse" id="collapseUsuarios">
                         <li>
                             <a href="navbar.html">Navbar</a>
                         </li>
@@ -59,7 +71,7 @@
             <?php endif; ?>
 
             <?php if($permiso == Rol::obtenerRolDeIdRol(Rol::ADMINISTRADOR)): ?>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Usuarios">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages"
                    data-parent="#exampleAccordion">
                     <i class="fa fa-fw fa-user"></i>
@@ -73,7 +85,7 @@
                         <a href="modificacionUsuario.php">Modificación Usuario</a>
                     </li>
                     <li>
-                        <a href="registroUsuario.php">Baja Usuario</a>
+                        <a href="bajaUsuario.php">Baja Usuario</a>
                     </li>
                 </ul>
             </li>

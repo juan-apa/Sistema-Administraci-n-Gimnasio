@@ -13,16 +13,29 @@ include_once(dirname(__FILE__).'/../excepciones/ExceptionPersistencia.php');
 
 class DAOUsuarios extends DAO
 {
+    /**
+     * DAOUsuarios constructor.
+     */
     public function __construct()
     {
         parent::__construct();
     }
 
+    /**
+     *
+     */
     public function __destruct()
     {
         parent::__destruct();
     }
 
+    /**
+     * Devuelve 1 si el usuario con la cedula $cedula se encuentra ingresado en el sistema. Devuelve 0 de lo contrario.
+     * @param Conexion $con
+     * @param int $cedula
+     * @return int devuelve 1 si existe el usuario, 0 de lo contrario
+     * @throws ExceptionPersistencia en caso de que haya un error al obtener los datos de la DB.
+     */
     public function member(Conexion $con, int $cedula)
     {
         $conexion = $con -> getConexion();
@@ -51,6 +64,12 @@ class DAOUsuarios extends DAO
         return $ret;
     }
 
+    /**
+     * Inserta el usuario $usuario en el sistema. \nPrecondición: No puede haber un usuario con la cédula que tiene $usuario ya ingresado en el sistema.
+     * @param Conexion $con
+     * @param Usuario $usuario
+     * @throws ExceptionPersistencia en caso de que haya un error al insertar los datos de la DB.
+     */
     public function insert(Conexion $con, Usuario $usuario)
     {
         $conexion = $con -> getConexion();
@@ -69,6 +88,12 @@ class DAOUsuarios extends DAO
         }
     }
 
+    /**
+     * Cambia el bit de validez del usuario con la misma $cedula ingresado en el sistema a 0.\nPrecondición: Debe haber un usuario con la misma $cedula ingresado en el sistema.
+     * @param Conexion $con
+     * @param int $cedula
+     * @throws ExceptionPersistencia en caso de que haya un error al borrar los datos de la DB.
+     */
     public function delete(Conexion $con, int $cedula)
     {
         $conexion = $con -> getConexion();
@@ -81,10 +106,11 @@ class DAOUsuarios extends DAO
     }
 
     /**
+     * Obtiene el usuario de la base de datos con la misma $cedula.
      * @param Conexion $con
      * @param int $cedula
      * @return null|Usuario
-     * @throws ExceptionPersistencia
+     * @throws ExceptionPersistencia en caso de que haya un error al obtener los datos de la DB.
      */
     public function obtenerUsuario(Conexion $con, int $cedula)
     {
@@ -113,6 +139,12 @@ class DAOUsuarios extends DAO
         return $ret;
     }
 
+    /**
+     * Devuelve un arreglo con todos los usuarios ingresados en el sistema.
+     * @param Conexion $con
+     * @return array
+     * @throws ExceptionPersistencia en caso de que haya un error al obtener los datos de la DB.
+     */
     public function listarUsuarios(Conexion $con)
     {
         $conexion = $con -> getConexion();
@@ -142,11 +174,17 @@ class DAOUsuarios extends DAO
         return $ret;
     }
 
+    /**
+     * Sustituye todos los datos del con la $cedula en la base de datos con los datos en $user
+     * @param Conexion $con
+     * @param int $cedula
+     * @param Usuario $user
+     * @throws ExceptionPersistencia en caso de que haya un error al modificar los datos de la DB.
+     */
     public function modify(Conexion $con, int $cedula, Usuario $user)
     {
         $conexion = $con -> getConexion();
-        $idUsuario = $user['idUsuario'];
-        $query = sprintf(Consultas::USUARIOS_MODIFICAR, $idUsuario, $user -> getNombre(), $user -> getApellido(),
+        $query = sprintf(Consultas::USUARIOS_MODIFICAR, $user -> getNombre(), $user -> getApellido(),
             $user -> getCedula(), $user -> getDireccion(), $user -> getFechaNacimiento(), $user -> getSocMedica(),
             $user -> getEmerMovil(), $user -> getAntecedentes(), $user -> getObservaciones(), $user -> getValido(),
             $user -> getIdRol(), $cedula
@@ -158,6 +196,13 @@ class DAOUsuarios extends DAO
         }
     }
 
+    /**
+     * Devuelve 1 si existe un usuario con la $cedulaUsuario y y la $passwordUsuario. Devuelve 0 de lo contrario.
+     * @param Conexion $con
+     * @param int $cedulaUsuario
+     * @param string $passwordUsuario
+     * @return int devuelve 1 si el usuario es válido, 0 de lo contrario.
+     */
     public function validarUsuario(Conexion $con, int $cedulaUsuario, string $passwordUsuario): int
     {
         $ret = 0;
@@ -172,6 +217,13 @@ class DAOUsuarios extends DAO
         return $ret;
     }
 
+    /**
+     * Devuelve el rol del usuario con la misma $cedulaUsuario de la base de datos.
+     * @param Conexion $con
+     * @param int $cedulaUsuario
+     * @return string Devuelve un string con el rol del usuario, puede ser 'ADMINISTRADOR', 'WEBMASTER', 'USUARIO'
+     * @throws ExceptionPersistencia en caso de que haya un error al obtener los datos de la DB.
+     */
     public function obtenerRolUsuario(Conexion $con, int $cedulaUsuario): string
     {
         $ret = '';

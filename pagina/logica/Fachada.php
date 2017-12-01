@@ -105,6 +105,7 @@ class Fachada
     {
         if($this -> usuarios -> member($this -> conexion, $cedulaUsuario))
         {
+            // Si las cedulas no son iguales me tengo que fijar que la nueva no esté ingresada.
             if($cedulaUsuario != $usuario -> getCedula())
             {
                 if(! $this -> usuarios -> member($this -> conexion, $usuario -> getCedula()))
@@ -115,6 +116,13 @@ class Fachada
                 {
                     throw new ExceptionUsuario(ExceptionUsuario::EXISTE_NUEVO_USUARIO);
                 }
+            }
+            else
+            {
+                // Si las cédulas son iguales, modifico asi nomas
+                echo "<script>alert('Antes modify');</script>";
+                $this -> usuarios -> modify($this -> conexion, $cedulaUsuario, $usuario);
+                echo "<script>alert('despues modify');</script>";
             }
         }
         else
@@ -199,6 +207,13 @@ class Fachada
         }
     }
 
+
+    /**
+     * @param int $cedulaUsuario
+     * @return string
+     * @throws ExceptionUsuario en caso de que no exista el usuario.
+     * @throws ExceptionPersistencia en caso de que haya un error al obtener los datos de la DB.
+     */
     public function obtenerRolUsuario(int $cedulaUsuario):string
     {
         $rol = '';
