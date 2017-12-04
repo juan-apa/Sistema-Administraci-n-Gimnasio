@@ -9,6 +9,7 @@ session_start();
 $con = new Controladora();
 $permiso = $con->getRol();
 $ok = 0;
+$cedPasada;
 
 if(isset($_GET['ok'])){
     $ok = $_GET['ok'];
@@ -17,6 +18,9 @@ if(isset($_GET['ok'])){
 }
 if(isset($_SESSION['usuarioViejo'])){
     $usuario = $_SESSION['usuarioViejo'];
+}
+if(isset($_GET['cedPasada'])){
+    $cedPasada = $_GET['cedPasada'];
 }
 
 ?>
@@ -61,7 +65,7 @@ if(isset($_SESSION['usuarioViejo'])){
                     <div class="form-group">
                         <label for="cedVieja">Cedula usuario a modificar</label>
                         <input type="number" class="form-control" id="cedVieja" name="cedVieja"
-                               placeholder="Ingrese la cédula">
+                               placeholder="Ingrese la cédula" <?php if(isset($cedPasada)){echo "value='".$cedPasada."'";}?>>
                     </div>
                     <button type="submit" class="btn btn-primary">Cargar formulario</button>
                 </form>

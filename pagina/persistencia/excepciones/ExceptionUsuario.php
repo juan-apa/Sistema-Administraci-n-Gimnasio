@@ -12,12 +12,16 @@ class ExceptionUsuario extends Exception
     public const NO_EXISTE_USUARIO = 1;
     public const EXISTE_NUEVO_USUARIO = 2;
     public const CEDULA_CONTRASENIA_INVALIDA = 3;
+    public const USUARIO_DE_BAJA = 4;
+    public const USUARIO_DE_ALTA = 5;
 
     private const MENSAJES_ERROR = [
         0 => "El usuario ya se encuentra ingresado en el sistema.",
         1 => "El usuario no se encuentra ingresado en el sistema.",
         2 => "El nuevo usuario ya se encuentra ingresado en el sistema.",
-        3 => "La cedula y/o contrasenia son invalidas"
+        3 => "La cedula y/o contrasenia son invalidas.",
+        4 => "El usuario ya se encuentra dado de baja.",
+        5 => "El usuario ya se encuentra dado de alta."
     ];
 
     public function __construct(int $codError)

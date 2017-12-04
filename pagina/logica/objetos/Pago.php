@@ -13,6 +13,7 @@ class Pago
     private $duracion;
     private $valido;
     private $idPago;
+    private $cedulaUsuario;
 
     /**
      * Pago constructor.
@@ -22,13 +23,14 @@ class Pago
      * @param int $valido
      * @param int $idPago
      */
-    public function __construct(string $fechaPago, int $tipoPago, int $duracion, int $valido, int $idPago)
+    public function __construct(string $fechaPago, int $tipoPago, int $duracion, int $valido, int $idPago, int $cedulaUsuario)
     {
         $this->fechaPago = $fechaPago;
         $this->tipoPago = $tipoPago;
         $this->duracion = $duracion;
         $this->valido = $valido;
         $this->idPago = $idPago;
+        $this -> cedulaUsuario = $cedulaUsuario;
     }
 
     /**
@@ -85,6 +87,22 @@ class Pago
     public function getValido(): int
     {
         return $this->valido;
+    }
+
+    /**
+     * @return int
+     */
+    public function getCedulaUsuario(): int
+    {
+        return $this->cedulaUsuario;
+    }
+
+    /**
+     * @param int $cedulaUsuario
+     */
+    public function setCedulaUsuario(int $cedulaUsuario)
+    {
+        $this->cedulaUsuario = $cedulaUsuario;
     }
 
     /**

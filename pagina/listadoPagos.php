@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: juan
- * Date: 12/1/17
- * Time: 7:37 PM
+ * Date: 12/4/17
+ * Time: 10:24 AM
  */
 
 include_once(dirname(__FILE__) . '/persistencia/excepciones/ExceptionPersistencia.php');
@@ -15,6 +15,7 @@ session_start();
 $con = new Controladora();
 $permiso = $con->getRol();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,43 +51,33 @@ $permiso = $con->getRol();
         <!-- Example DataTables Card-->
         <h1>Listado de Usuarios</h1>
         <?php  if($permiso == Rol::obtenerRolDeIdRol(Rol::ADMINISTRADOR)): ?>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead class="thead-inverse">
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Cedula</th>
-                        <th>Fecha Nacimiento</th>
-                        <th>Soc. Médica</th>
-                        <th>Emer. Móvil</th>
-                        <th>Tipo</th>
-                        <th>Estado</th>
-                        <th>Modificar</th>
-                    </tr>
-                    </thead>
-                    <tfoot class="thead-inverse">
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Cedula</th>
-                        <th>Fecha Nacimiento</th>
-                        <th>Soc. Médica</th>
-                        <th>Emer. Móvil</th>
-                        <th>Tipo</th>
-                        <th>Estado</th>
-                        <th>Modificar</th>
-                    </tr>
-                    </tfoot>
-                    <tbody>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead class="thead-inverse">
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Tipo</th>
+                            <th>Duracion</th>
+                            <th>ID</th>
+                        </tr>
+                        </thead>
+                        <tfoot class="thead-inverse">
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Tipo</th>
+                            <th>Duracion</th>
+                            <th>ID</th>
+                        </tr>
+                        </tfoot>
+                        <tbody>
 
-                    <?php include(dirname(__FILE__) . '/grafica/ControladoraListadoUsuarios.php'); ?>
+                        <?php include(dirname(__FILE__) . '/grafica/ControladoraListadoPagos.php'); ?>
 
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
         <?php else: ?>
             <h2 class="text-danger">Permisos insuficientes.</h2>
         <?php endif; ?>
@@ -109,3 +100,4 @@ $permiso = $con->getRol();
 </body>
 
 </html>
+

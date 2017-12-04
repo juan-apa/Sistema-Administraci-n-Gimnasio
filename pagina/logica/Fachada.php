@@ -8,6 +8,7 @@
 
 include_once(dirname(__FILE__).'/../persistencia/Conexion.php');
 include_once(dirname(__FILE__).'/../persistencia/daos/DAOUsuarios.php');
+include_once(dirname(__FILE__).'/../persistencia/daos/DAOPagos.php');
 include_once(dirname(__FILE__).'/objetos/Usuario.php');
 include_once(dirname(__FILE__).'/objetos/Rutina.php');
 include_once(dirname(__FILE__).'/../persistencia/excepciones/ExceptionPersistencia.php');
@@ -51,7 +52,7 @@ class Fachada
     }
 
     public function test(){
-        echo "<h1>Fachada construida</h1>";
+        echo "<h1>Test Fachada</h1>";
     }
 
     /**
@@ -84,7 +85,38 @@ class Fachada
     {
         if($this -> usuarios -> member($this -> conexion, $cedulaUsuario))
         {
-            $this -> usuarios -> delete($this -> conexion, $cedulaUsuario);
+            if($this -> usuarios -> estadoDeUsuario($this -> conexion, $cedulaUsuario))
+            {
+                $this -> usuarios -> delete($this -> conexion, $cedulaUsuario);
+            }
+            else
+            {
+                throw new ExceptionUsuario(ExceptionUsuario::USUARIO_DE_BAJA);
+            }
+        }
+        else
+        {
+            throw new ExceptionUsuario(ExceptionUsuario::NO_EXISTE_USUARIO);
+        }
+    }
+
+    /**
+     * @param int $cedulaUsuario
+     * @throws ExceptionUsuario en caso de que el usuario ya se encuentre dado de alta.ExceptionUsuario
+     * @throws ExceptionPersistencia en caso de que haya un error al obtener/modificar los datos de la DB.
+     */
+    public function altaUsuario(int $cedulaUsuario): void
+    {
+        if($this -> usuarios -> member($this -> conexion, $cedulaUsuario))
+        {
+            if(! $this -> usuarios -> estadoDeUsuario($this -> conexion, $cedulaUsuario))
+            {
+                $this -> usuarios -> alta($this -> conexion, $cedulaUsuario);
+            }
+            else
+            {
+                throw new ExceptionUsuario(ExceptionUsuario::USUARIO_DE_ALTA);
+            }
         }
         else
         {
@@ -120,9 +152,7 @@ class Fachada
             else
             {
                 // Si las cédulas son iguales, modifico asi nomas
-                echo "<script>alert('Antes modify');</script>";
                 $this -> usuarios -> modify($this -> conexion, $cedulaUsuario, $usuario);
-                echo "<script>alert('despues modify');</script>";
             }
         }
         else
@@ -226,5 +256,14 @@ class Fachada
             throw new ExceptionUsuario(ExceptionUsuario::NO_EXISTE_USUARIO);
         }
         return $rol;
+    }
+
+    /**
+     * @return array
+     * @throws ExceptionPersistencia en caso de que haya un error al obtener los datos de la DB.
+     */
+    public function listadoUsuarios():array
+    {
+        return $this -> usuarios -> listarUsuarios($this -> conexion);
     }
 }

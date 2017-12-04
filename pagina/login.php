@@ -31,12 +31,7 @@
             <input class="form-control" id="password" type="password" name="password" placeholder="Contrasenia">
           </div>
             <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
-<!--          <input class="btn btn-primary btn-block" type="submit">Login</input>-->
         </form>
-<!--        <div class="text-center">-->
-<!--          <a class="d-block small mt-3" href="register.html">Register an Account</a>-->
-<!--          <a class="d-block small" href="forgot-password.html">Forgot Password?</a>-->
-<!--        </div>-->
       </div>
     </div>
   </div>

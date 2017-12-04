@@ -38,9 +38,9 @@ $permiso = $con->getRol();
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="index.php">Dashboard</a>
+          <a href="index.php">Usuarios</a>
         </li>
-        <li class="breadcrumb-item active">Blank Page</li>
+        <li class="breadcrumb-item active">Registro</li>
       </ol>
       <div class="row">
         <div class="col-12">

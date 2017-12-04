@@ -87,6 +87,9 @@
                     <li>
                         <a href="bajaUsuario.php">Baja Usuario</a>
                     </li>
+                    <li>
+                        <a href="altaUsuario.php">Alta Usuario</a>
+                    </li>
                 </ul>
             </li>
             <?php endif; ?>

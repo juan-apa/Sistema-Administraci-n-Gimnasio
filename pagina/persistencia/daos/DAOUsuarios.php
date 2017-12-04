@@ -106,6 +106,22 @@ class DAOUsuarios extends DAO
     }
 
     /**
+     * @param Conexion $con
+     * @param int $cedula
+     * @throws ExceptionPersistencia en caso de que haya un error al modificar los datos en la DB.
+     */
+    public function alta(Conexion $con, int $cedula)
+    {
+        $conexion = $con -> getConexion();
+        $query = sprintf(Consultas::USUARIOS_ALTA, $cedula);
+        $conexion -> query($query);
+        if($conexion -> affected_rows == 0)
+        {
+            throw new ExceptionPersistencia(ExceptionPersistencia::ERROR_UPDATE);
+        }
+    }
+
+    /**
      * Obtiene el usuario de la base de datos con la misma $cedula.
      * @param Conexion $con
      * @param int $cedula
@@ -164,7 +180,7 @@ class DAOUsuarios extends DAO
                 $idUsuario = $user['idUsuario'];
                 $usuario= new Usuario( $idUsuario, $user['nombre'], $user['apellido'], $user['cedula'], $user['direccion'],
                     $user['fechaNacimiento'], $user['socMedica'], $user['emerMovil'], $user['antecedentes'],
-                    $user['observaciones'], $user['valido'], $user['idRol']
+                    $user['observaciones'], $user['valido'], $user['idRol'], $user['contrasenia']
                 );
                 array_push($ret, $usuario);
                 $user = $rs -> fetch_assoc();
@@ -238,6 +254,31 @@ class DAOUsuarios extends DAO
         {
             $fila = $rs -> fetch_assoc();
             $ret = $fila['rol'];
+        }
+        mysqli_free_result($rs);
+        return $ret;
+    }
+
+    /**
+     * @param Conexion $con
+     * @param int $cedulaUsuario
+     * @return int devuelve un int con el campo valido del usuario (puede ser 0 o 1).
+     * @throws ExceptionPersistencia en caso de que haya un error al obtener los datos de la DB.
+     */
+    public function estadoDeUsuario(Conexion $con, int $cedulaUsuario): int
+    {
+        $ret = 0;
+        $conexion = $con -> getConexion();
+        $query = sprintf(Consultas::USUARIOS_ESTADO, $cedulaUsuario);
+        $rs = $conexion -> query($query);
+        if($rs -> num_rows == 0)
+        {
+            throw new ExceptionPersistencia(ExceptionPersistencia::ERROR_SELECT);
+        }
+        else
+        {
+            $fila = $rs -> fetch_assoc();
+            $ret = $fila['valido'];
         }
         mysqli_free_result($rs);
         return $ret;

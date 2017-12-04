@@ -5,6 +5,7 @@
  * Date: 12/1/17
  * Time: 7:13 PM
  */
+
 include_once(dirname(__FILE__) . '/persistencia/excepciones/ExceptionPersistencia.php');
 include_once(dirname(__FILE__) . '/persistencia/excepciones/ExceptionUsuario.php');
 include_once(dirname(__FILE__) . '/logica/Fachada.php');
@@ -17,15 +18,12 @@ $permiso = $con->getRol();
 $ok = 0;
 $cedPasada = $_GET['cedPasada'];
 
+
 if(isset($_GET['ok'])){
     $ok = $_GET['ok'];
     $mensaje = $_GET['mensaje'];
     echo "<script>alert('".$mensaje."')</script>";
 }
-if(isset($_SESSION['usuarioViejo'])){
-    $usuario = $_SESSION['usuarioViejo'];
-}
-
 
 ?>
 
@@ -58,20 +56,20 @@ if(isset($_SESSION['usuarioViejo'])){
             <li class="breadcrumb-item">
                 <a href="index.php">Usuarios</a>
             </li>
-            <li class="breadcrumb-item active">Baja Usuario</li>
+            <li class="breadcrumb-item active">Alta Usuario</li>
         </ol>
         <div class="row">
             <div class="col-12">
-                <h1>Baja de usuario</h1>
+                <h1>Alta de usuario</h1>
 
                 <?php if ($permiso == Rol::obtenerRolDeIdRol(Rol::ADMINISTRADOR)): ?>
-                    <form action="/grafica/ControladoraBajaUsuario.php" method="POST">
+                    <form action="/grafica/ControladoraAltaUsuario.php" method="POST">
                         <div class="form-group">
-                            <label for="cedVieja">Cedula usuario a dar de baja</label>
+                            <label for="cedVieja">Cedula usuario a dar de alta</label>
                             <input type="number" class="form-control" id="cedula" name="cedula"
                                    placeholder="Ingrese la cédula" <?php if(isset($cedPasada)){echo "value='". $cedPasada."'";} ?>>
                         </div>
-                        <button type="submit" class="btn btn-primary">Dar de Baja</button>
+                        <button type="submit" class="btn btn-primary">Dar de Alta</button>
                     </form>
                 <?php else: ?>
                     <h2 class="text-danger">Permisos insuficientes.</h2>
