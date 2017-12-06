@@ -68,9 +68,9 @@ class Usuario
         $this->valido = $valido;
         $this->idRol = $idRol;
         $this->contrasenia = $contrasenia;
-        $this->rutinas = new DAORutinas($cedula);
-        $this->telefonos = new DAOTelefonos($cedula);
-        $this->pagos = new DAOPagos($cedula);
+        $this->rutinas = new DAORutinas($idUsuario);
+        $this->telefonos = new DAOTelefonos($idUsuario);
+        $this->pagos = new DAOPagos($idUsuario);
     }
 
     public function test()
@@ -350,9 +350,8 @@ class Usuario
 
     public function insertarPago(Conexion $con, Pago $pago): void
     {
-
+        echo "<script>alert('Antes insback')</script>";
+        $this -> pagos -> insBack($con, $pago);
     }
-
-
 
 }

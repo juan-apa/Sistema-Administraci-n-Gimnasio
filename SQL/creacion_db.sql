@@ -54,3 +54,22 @@ CREATE TABLE Gimnasio.Telefonos(
     PRIMARY KEY (idUsuario, telefono),
     FOREIGN KEY (idUsuario) REFERENCES Usuarios(idUsuario)
 );
+
+CREATE TABLE IF NOT EXISTS Gimnasio.TipoPago(
+    tipoPago INT NOT NULL,
+    descripcion VARCHAR(20),
+    duracion INT NOT NULL,
+    PRIMARY KEY (tipoPago)
+);
+
+CREATE TABLE Gimnasio.Pagos(
+    idUsuario INT NOT NULL,
+    idPago INT NOT NULL,
+    fechaPago DATE NOT NULL,
+    tipoPago INT NOT NULL,
+	monto INT NOT NULL,
+    valido INT(1) NOT NULL,
+    PRIMARY KEY (idUsuario, idPago),
+    FOREIGN KEY (idUsuario) REFERENCES Usuarios(idUsuario),
+    FOREIGN KEY (tipoPago) REFERENCES TipoPagos(tipoPago)
+);

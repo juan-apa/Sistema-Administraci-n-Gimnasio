@@ -6,7 +6,6 @@
  * Time: 11:39 AM
  */
 
-
 include_once(dirname(__FILE__).'/../logica/Fachada.php');
 include_once(dirname(__FILE__).'/../persistencia/excepciones/ExceptionUsuario.php');
 include_once(dirname(__FILE__).'/../persistencia/excepciones/ExceptionPersistencia.php');

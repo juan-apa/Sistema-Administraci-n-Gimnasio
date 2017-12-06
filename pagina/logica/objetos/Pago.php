@@ -10,27 +10,30 @@ class Pago
 {
     private $fechaPago;
     private $tipoPago;
-    private $duracion;
     private $valido;
     private $idPago;
-    private $cedulaUsuario;
+    private $idUsuario;
+    private $monto;
+    private $descripcion;
+    private $duracion;
 
     /**
      * Pago constructor.
      * @param string $fechaPago
      * @param int $tipoPago
-     * @param int $duracion
      * @param int $valido
      * @param int $idPago
      */
-    public function __construct(string $fechaPago, int $tipoPago, int $duracion, int $valido, int $idPago, int $cedulaUsuario)
+    public function __construct(string $fechaPago, int $tipoPago, int $valido, int $monto, int $idPago, int $idUsuario, string $descripcion, int $duracion)
     {
         $this->fechaPago = $fechaPago;
         $this->tipoPago = $tipoPago;
-        $this->duracion = $duracion;
         $this->valido = $valido;
         $this->idPago = $idPago;
-        $this -> cedulaUsuario = $cedulaUsuario;
+        $this -> idUsuario = $idUsuario;
+        $this -> monto = $monto;
+        $this -> descripcion = $descripcion;
+        $this -> duracion = $duracion;
     }
 
     /**
@@ -68,22 +71,6 @@ class Pago
     /**
      * @return int
      */
-    public function getDuracion(): int
-    {
-        return $this->duracion;
-    }
-
-    /**
-     * @param int $duracion
-     */
-    public function setDuracion(int $duracion)
-    {
-        $this->duracion = $duracion;
-    }
-
-    /**
-     * @return int
-     */
     public function getValido(): int
     {
         return $this->valido;
@@ -92,17 +79,17 @@ class Pago
     /**
      * @return int
      */
-    public function getCedulaUsuario(): int
+    public function getIdUsuario(): int
     {
-        return $this->cedulaUsuario;
+        return $this->idUsuario;
     }
 
     /**
      * @param int $cedulaUsuario
      */
-    public function setCedulaUsuario(int $cedulaUsuario)
+    public function setIdUsuario(int $idUsuario)
     {
-        $this->cedulaUsuario = $cedulaUsuario;
+        $this->idUsuario = $idUsuario;
     }
 
     /**
@@ -129,7 +116,53 @@ class Pago
         $this->idPago = $idPago;
     }
 
+    /**
+     * @return int
+     */
+    public function getMonto(): int
+    {
+        return $this->monto;
+    }
 
+    /**
+     * @param int $monto
+     */
+    public function setMonto(int $monto)
+    {
+        $this->monto = $monto;
+    }
 
+    /**
+     * @return string
+     */
+    public function getDescripcion(): string
+    {
+        return $this->descripcion;
+    }
+
+    /**
+     * @param string $descripcion
+     */
+    public function setDescripcion(string $descripcion)
+    {
+        $this->descripcion = $descripcion;
+    }
+
+    /**
+     * @return int
+     */
+    public function getDuracion(): int
+    {
+        return $this->duracion;
+    }
+
+    /**
+     * @param int $duracion
+     */
+    public function setDuracion(int $duracion)
+    {
+        $this->duracion = $duracion;
+    }
+    
 
 }

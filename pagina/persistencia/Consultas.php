@@ -35,14 +35,14 @@ class Consultas
 
     const ROL_USUARIO = "SELECT R.rol FROM Usuarios U, Roles R WHERE U.idRol = R.idRol AND U.cedula=%d";
 
-    const PAGOS_LARGO = "SELECT P.idPago FROM Pagos P WHERE P.cedulaUsuario=%d";
+    const PAGOS_LARGO = "SELECT P.idPago FROM Pagos P WHERE P.idUsuario=%d";
 
-    const PAGOS_KESIMO = "SELECT * FROM Pagos P WHERE P.cedulaUsuario = %d ORDER BY fechaPago";
+    const PAGOS_KESIMO = "SELECT P.*, T.descripcion, T.duracion FROM Pagos P, TipoPago T WHERE P.idUsuario = %d AND P.idPago=%d AND P.tipoPago = T.tipoPago ORDER BY P.fechaPago";
 
-    const PAGOS_LISTADO = "SELECT * FROM Pagos P WHERE P.cedulaUsuario = %d";
+    const PAGOS_LISTADO = "SELECT P.*, T.descripcion, T.duracion FROM Pagos P, TipoPago T WHERE P.idUsuario = %d AND P.tipoPago = T.tipoPago";
 
-    const PAGOS_INSBACK = "INSERT INTO Pagos (fechaPago, tipoPago, duracion, valido, idPago, cedulaUsuario) VALUES ('%s', %d, %d, %d, %d, %d)";
+    const PAGOS_INSBACK = "INSERT INTO Pagos (fechaPago, tipoPago, monto, valido, idPago, idUsuario) VALUES ('%s', %d, %d, %d, %d, %d)";
 
-    const PAGOS_DELETE = "UPDATE Pagos SET valido = 0 WHERE cedulaUsuario=%d AND idPago=%d";
+    const TIPOS_PAGOS = "SELECT * FROM TipoPago T";
 
 }

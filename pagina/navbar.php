@@ -94,6 +94,30 @@
             </li>
             <?php endif; ?>
 
+            <?php if($permiso == Rol::obtenerRolDeIdRol(Rol::ADMINISTRADOR)): ?>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Pagos">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapsePagos"
+                       data-parent="#exampleAccordion">
+                        <i class="fa fa-fw fa-usd"></i>
+                        <span class="nav-link-text">Pagos</span>
+                    </a>
+                    <ul class="sidenav-second-level collapse" id="collapsePagos">
+                        <li>
+                            <a href="registroPago.php">Registro Pago</a>
+                        </li>
+                        <li>
+                            <a href="modificacionPago.php">Modificación Pago</a>
+                        </li>
+                        <li>
+                            <a href="bajaPago.php">Baja Pago</a>
+                        </li>
+                        <li>
+                            <a href="altaPago.php">Alta Pago</a>
+                        </li>
+                    </ul>
+                </li>
+            <?php endif; ?>
+
 
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Sobre nosotros">
                 <a class="nav-link" href="#">

@@ -9,11 +9,14 @@
 include_once(dirname(__FILE__) . '/persistencia/excepciones/ExceptionPersistencia.php');
 include_once(dirname(__FILE__) . '/persistencia/excepciones/ExceptionUsuario.php');
 include_once(dirname(__FILE__) . '/logica/objetos/Usuario.php');
+include_once(dirname(__FILE__) . '/persistencia/daos/DAOPagos.php');
 include_once(dirname(__FILE__) . '/logica/objetos/Rol.php');
 include_once(dirname(__FILE__).'/grafica/Controladora.php');
+include_once(dirname(__FILE__) . '/grafica/ControladoraListadoPagos.php');
 session_start();
 $con = new Controladora();
 $permiso = $con->getRol();
+$cedPasada = $_GET['cedPasada'];
 ?>
 
 <!DOCTYPE html>
@@ -51,6 +54,14 @@ $permiso = $con->getRol();
         <!-- Example DataTables Card-->
         <h1>Listado de Usuarios</h1>
         <?php  if($permiso == Rol::obtenerRolDeIdRol(Rol::ADMINISTRADOR)): ?>
+            <form action="/listadoPagos.php" method="GET">
+                <div class="form-group">
+                    <label for="cedVieja">Cedula usuario</label>
+                    <input type="number" class="form-control" id="cedPasada" name="cedPasada"
+                           placeholder="Ingrese la cédula" <?php if(isset($cedPasada)){echo "value='".$cedPasada."'";}?>>
+                </div>
+                <button type="submit" class="btn btn-primary">Cargar tabla</button>
+            </form>
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -58,21 +69,28 @@ $permiso = $con->getRol();
                         <tr>
                             <th>Fecha</th>
                             <th>Tipo</th>
+                            <th>Monto</th>
                             <th>Duracion</th>
-                            <th>ID</th>
+                            <th>Estado</th>
                         </tr>
                         </thead>
                         <tfoot class="thead-inverse">
                         <tr>
                             <th>Fecha</th>
                             <th>Tipo</th>
+                            <th>Monto</th>
                             <th>Duracion</th>
-                            <th>ID</th>
+                            <th>Estado</th>
                         </tr>
                         </tfoot>
                         <tbody>
 
-                        <?php include(dirname(__FILE__) . '/grafica/ControladoraListadoPagos.php'); ?>
+                        <?php
+                            if(isset($cedPasada)){
+                                $controladoraPagos = new ControladoraListadoPagos();
+                                $controladoraPagos -> listarPagos($cedPasada);
+                            }
+                        ?>
 
                         </tbody>
                     </table>

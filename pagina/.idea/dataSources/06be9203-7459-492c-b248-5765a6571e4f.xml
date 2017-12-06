@@ -15,143 +15,236 @@
     <schema id="9" parent="1" name="P4EJ1"/>
     <schema id="10" parent="1" name="performance_schema"/>
     <schema id="11" parent="1" name="test"/>
-    <table id="12" parent="2" name="Roles"/>
-    <table id="13" parent="2" name="Rutinas"/>
-    <table id="14" parent="2" name="Telefonos"/>
-    <table id="15" parent="2" name="Usuarios"/>
-    <column id="16" parent="12" name="idRol">
+    <schema id="12" parent="1" name="Prueba"/>
+    <table id="13" parent="2" name="Pagos"/>
+    <table id="14" parent="2" name="Roles"/>
+    <table id="15" parent="2" name="Rutinas"/>
+    <table id="16" parent="2" name="Telefonos"/>
+    <table id="17" parent="2" name="TipoPago"/>
+    <table id="18" parent="2" name="TipoPagos"/>
+    <table id="19" parent="2" name="Usuarios"/>
+    <column id="20" parent="13" name="idUsuario">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="21" parent="13" name="idPago">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="22" parent="13" name="fechaPago">
+      <Position>3</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="13" name="tipoPago">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="24" parent="13" name="monto">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="25" parent="13" name="valido">
+      <Position>6</Position>
+      <DataType>int(1)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="26" parent="13" name="tipoPago">
+      <ColNames>tipoPago</ColNames>
+    </index>
+    <key id="27" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>idUsuario
+idPago</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="28" parent="13" name="Pagos_ibfk_1">
+      <ColNames>idUsuario</ColNames>
+      <RefSchemaName>Gimnasio</RefSchemaName>
+      <RefTableName>Usuarios</RefTableName>
+      <RefColNames>idUsuario</RefColNames>
+    </foreign-key>
+    <foreign-key id="29" parent="13" name="Pagos_ibfk_2">
+      <ColNames>tipoPago</ColNames>
+      <RefSchemaName>Gimnasio</RefSchemaName>
+      <RefTableName>TipoPagos</RefTableName>
+      <RefColNames>tipoPago</RefColNames>
+    </foreign-key>
+    <column id="30" parent="14" name="idRol">
       <Position>1</Position>
       <DataType>int(2)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="17" parent="12" name="rol">
+    <column id="31" parent="14" name="rol">
       <Position>2</Position>
       <DataType>varchar(20)|0</DataType>
     </column>
-    <key id="18" parent="12" name="PRIMARY">
+    <key id="32" parent="14" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idRol</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="19" parent="13" name="idUsuario">
+    <column id="33" parent="15" name="idUsuario">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="20" parent="13" name="fechaInicio">
+    <column id="34" parent="15" name="fechaInicio">
       <Position>2</Position>
       <DataType>date|0</DataType>
     </column>
-    <column id="21" parent="13" name="idRutina">
+    <column id="35" parent="15" name="idRutina">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="22" parent="13" name="nombre">
+    <column id="36" parent="15" name="nombre">
       <Position>4</Position>
       <DataType>varchar(40)|0</DataType>
     </column>
-    <key id="23" parent="13" name="PRIMARY">
+    <key id="37" parent="15" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idUsuario
 idRutina</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="24" parent="13" name="Rutinas_ibfk_1">
+    <foreign-key id="38" parent="15" name="Rutinas_ibfk_1">
       <ColNames>idUsuario</ColNames>
       <RefSchemaName>Gimnasio</RefSchemaName>
       <RefTableName>Usuarios</RefTableName>
       <RefColNames>idUsuario</RefColNames>
     </foreign-key>
-    <column id="25" parent="14" name="idUsuario">
+    <column id="39" parent="16" name="idUsuario">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="26" parent="14" name="telefono">
+    <column id="40" parent="16" name="telefono">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="27" parent="14" name="PRIMARY">
+    <key id="41" parent="16" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idUsuario
 telefono</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="28" parent="14" name="Telefonos_ibfk_1">
+    <foreign-key id="42" parent="16" name="Telefonos_ibfk_1">
       <ColNames>idUsuario</ColNames>
       <RefSchemaName>Gimnasio</RefSchemaName>
       <RefTableName>Usuarios</RefTableName>
       <RefColNames>idUsuario</RefColNames>
     </foreign-key>
-    <column id="29" parent="15" name="idUsuario">
+    <column id="43" parent="17" name="tipoPago">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="44" parent="17" name="descripcion">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="45" parent="17" name="duracion">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="46" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>tipoPago</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="47" parent="18" name="tipoPago">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="48" parent="18" name="descripcion">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="49" parent="18" name="duracion">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="50" parent="18" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>tipoPago</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="51" parent="19" name="idUsuario">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="30" parent="15" name="nombre">
+    <column id="52" parent="19" name="nombre">
       <Position>2</Position>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="31" parent="15" name="apellido">
+    <column id="53" parent="19" name="apellido">
       <Position>3</Position>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="32" parent="15" name="cedula">
+    <column id="54" parent="19" name="cedula">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="33" parent="15" name="direccion">
+    <column id="55" parent="19" name="direccion">
       <Position>5</Position>
       <DataType>varchar(100)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="34" parent="15" name="fechaNacimiento">
+    <column id="56" parent="19" name="fechaNacimiento">
       <Position>6</Position>
       <DataType>date|0</DataType>
     </column>
-    <column id="35" parent="15" name="socMedica">
+    <column id="57" parent="19" name="socMedica">
       <Position>7</Position>
       <DataType>varchar(40)|0</DataType>
     </column>
-    <column id="36" parent="15" name="emerMovil">
+    <column id="58" parent="19" name="emerMovil">
       <Position>8</Position>
       <DataType>varchar(40)|0</DataType>
     </column>
-    <column id="37" parent="15" name="antecedentes">
+    <column id="59" parent="19" name="antecedentes">
       <Position>9</Position>
       <DataType>varchar(400)|0</DataType>
     </column>
-    <column id="38" parent="15" name="observaciones">
+    <column id="60" parent="19" name="observaciones">
       <Position>10</Position>
       <DataType>varchar(400)|0</DataType>
     </column>
-    <column id="39" parent="15" name="valido">
+    <column id="61" parent="19" name="valido">
       <Position>11</Position>
       <DataType>int(1)|0</DataType>
     </column>
-    <column id="40" parent="15" name="idRol">
+    <column id="62" parent="19" name="idRol">
       <Position>12</Position>
       <DataType>int(2)|0</DataType>
     </column>
-    <column id="41" parent="15" name="contrasenia">
+    <column id="63" parent="19" name="contrasenia">
       <Position>13</Position>
       <DataType>varchar(100)|0</DataType>
     </column>
-    <index id="42" parent="15" name="idRol">
+    <index id="64" parent="19" name="idRol">
       <ColNames>idRol</ColNames>
     </index>
-    <key id="43" parent="15" name="PRIMARY">
+    <key id="65" parent="19" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idUsuario</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="44" parent="15" name="Usuarios_ibfk_1">
+    <foreign-key id="66" parent="19" name="Usuarios_ibfk_1">
       <ColNames>idRol</ColNames>
       <RefSchemaName>Gimnasio</RefSchemaName>
       <RefTableName>Roles</RefTableName>

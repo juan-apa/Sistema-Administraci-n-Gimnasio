@@ -266,4 +266,40 @@ class Fachada
     {
         return $this -> usuarios -> listarUsuarios($this -> conexion);
     }
+
+    public function listadoPagos(int $cedulaUsuario) : array
+    {
+        $ret = array();
+        if($this -> usuarios -> member($this -> conexion, $cedulaUsuario))
+        {
+            $ret = $this -> usuarios -> obtenerUsuario($this -> conexion, $cedulaUsuario) -> getPagos() -> listado($this -> conexion);
+        }
+        else
+        {
+            throw new ExceptionUsuario(ExceptionUsuario::NO_EXISTE_USUARIO);
+        }
+        return $ret;
+    }
+
+    public function listadoTipoPagos() : array
+    {
+        $ret = DAOPagos::listadoTiposPagos($this -> conexion);
+        return $ret;
+    }
+
+    public function registroPagoUsuario(int $cedulaUsuario, Pago $pago)
+    {
+        if($this -> usuarios -> member($this -> conexion, $cedulaUsuario))
+        {
+            echo "<script>alert('adentro member')</script>";
+            $usuario = $this -> usuarios -> obtenerUsuario($this -> conexion, $cedulaUsuario);
+            echo "<script>alert('Antes insertar')</script>";
+            $usuario -> insertarPago($this->conexion, $pago);
+        }
+        else
+        {
+            throw new ExceptionUsuario(ExceptionUsuario::NO_EXISTE_USUARIO);
+        }
+    }
+
 }

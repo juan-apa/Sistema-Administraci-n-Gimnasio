@@ -11,15 +11,16 @@ include_once(dirname(__FILE__) . '/../Consultas.php');
 include_once(dirname(__FILE__) . '/../../persistencia/excepciones/ExceptionPersistencia.php');
 include_once(dirname(__FILE__) . '/../Conexion.php');
 include_once(dirname(__FILE__) . '/../../logica/objetos/Pago.php');
+include_once(dirname(__FILE__) . '/../../logica/objetos/TipoPago.php');
 
 class DAOPagos extends DAO
 {
-    private $cedulaUsuario;
+    private $idUsuario;
 
-    public function __construct(int $cedulaUsuario)
+    public function __construct(int $idUsuario)
     {
         parent::__construct();
-        $this->cedulaUsuario = $cedulaUsuario;
+        $this->idUsuario = $idUsuario;
     }
 
     public function __destruct()
@@ -49,7 +50,7 @@ class DAOPagos extends DAO
     {
         $ret = 0;
         $conexion = $con -> getConexion();
-        $query = sprintf(Consultas::PAGOS_LARGO, $this -> cedulaUsuario);
+        $query = sprintf(Consultas::PAGOS_LARGO, $this -> idUsuario);
         $rs = $conexion -> query($query);
         $ret = $rs -> num_rows;
         mysqli_free_result($rs);
@@ -66,29 +67,22 @@ class DAOPagos extends DAO
     {
         $ret = null;
         $conexion = $con -> getConexion();
-        $query = sprintf(Consultas::PAGOS_KESIMO, $this -> cedulaUsuario);
+        $query = sprintf(Consultas::PAGOS_KESIMO, $this -> idUsuario, $kesimo);
 
         $rs = $conexion -> query($query);
         if($rs -> num_rows == 0){
             throw new ExceptionPersistencia(ExceptionPersistencia::ERROR_SELECT);
         }
-        $i = 0;
-        $salir = 0;
         $pago = null;
         $pago = $rs -> fetch_assoc();
-        while($pago && !$salir)
+        if($pago)
         {
-            if($i == $kesimo)
-            {
-                $salir = 1;
-            }
-            else
-            {
-                $pago = $rs -> fetch_assoc();
-                $i++;
-            }
+            $ret = new Pago($pago['fechaPago'], $pago['tipoPago'], $pago['valido'], $pago['monto'], $pago['idPago'], $pago['idUsuario'], $pago['descripcion'], $pago['duracion']);
         }
-        $ret = new Pago($pago['fechaPago'], $pago['tipoPago'], $pago['duracion'], $pago['valido'], $pago['idPago'], $this -> cedulaUsuario);
+        else
+        {
+            throw new ExceptionPersistencia(ExceptionPersistencia::ERROR_SELECT);
+        }
         mysqli_free_result($rs);
         return $ret;
     }
@@ -101,7 +95,7 @@ class DAOPagos extends DAO
     {
         $conexion = $con -> getConexion();
         $ret = array();
-        $query = sprintf(Consultas::PAGOS_LISTADO, $this -> cedulaUsuario);
+        $query = sprintf(Consultas::PAGOS_LISTADO, $this -> idUsuario);
 
         $rs = $conexion -> query($query);
 
@@ -109,7 +103,7 @@ class DAOPagos extends DAO
         $aux = null;
         while($pago)
         {
-            $aux = new Pago($pago['fechaPago'], $pago['tipoPago'], $pago['duracion'], $pago['valido'], $pago['idPago'], $this -> cedulaUsuario);
+            $aux = new Pago($pago['fechaPago'], $pago['tipoPago'], $pago['valido'], $pago['monto'], $pago['idPago'], $pago['idUsuario'], $pago['descripcion'], $pago['duracion']);
             array_push($ret, $aux);
             $pago = $rs -> fetch_assoc();
         }
@@ -124,10 +118,11 @@ class DAOPagos extends DAO
      */
     public function insBack(Conexion $con, Pago $pago) : void
     {
+        echo "<script>alert('adentro insback')</script>";
         $conexion = $con -> getConexion();
         $query = sprintf(Consultas::PAGOS_INSBACK, $pago -> getFechaPago(),
-            $pago -> getTipoPago(), $pago -> getDuracion(), $pago -> getValido(),
-            $this -> largo($con), $this -> cedulaUsuario
+            $pago -> getTipoPago(), $pago -> getMonto(), $pago -> getValido(),
+            $this -> largo($con), $this -> idUsuario
         );
 
         $conexion -> query($query);
@@ -137,19 +132,26 @@ class DAOPagos extends DAO
         }
     }
 
-    /**
-     * @param Conexion $con
-     * @param int $idPago
-     * @throws ExceptionPersistencia en caso de que haya un error al modificar los datos de la DB.
-     */
-    public function remove(Conexion $con, int $idPago)
+    public static function listadoTiposPagos(Conexion $con)
     {
+        $ret = array();
         $conexion = $con -> getConexion();
-        $query = sprintf(Consultas::PAGOS_DELETE, $this -> cedulaUsuario, $idPago);
-        $conexion -> query($query);
-        if($conexion -> affected_rows == 0)
+        $query = Consultas::TIPOS_PAGOS;
+        $rs = $conexion -> query($query);
+        if($rs -> num_rows == 0)
         {
-            throw new ExceptionPersistencia(ExceptionPersistencia::ERROR_UPDATE);
+            throw new ExceptionPersistencia(ExceptionPersistencia::ERROR_SELECT);
         }
+        else
+        {
+            $fila = $rs -> fetch_assoc();
+            while($fila)
+            {
+                array_push($ret, new TipoPago($fila['tipoPago'], $fila['descripcion'], $fila['duracion']));
+                $fila = $rs -> fetch_assoc();
+            }
+        }
+        mysqli_free_result($rs);
+        return $ret;
     }
 }
