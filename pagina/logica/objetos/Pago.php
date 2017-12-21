@@ -163,6 +163,5 @@ class Pago
     {
         $this->duracion = $duracion;
     }
-    
 
 }

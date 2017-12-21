@@ -42,6 +42,7 @@ class ControladoraRegistroPago
         }
     }
 
+
     public function registroPago(string $fechaPago, int $tipoPago, int $monto, int $cedulaUsuario) : void
     {
         $tiposPagos = $this -> fachada -> listadoTipoPagos();

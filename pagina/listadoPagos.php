@@ -72,6 +72,7 @@ $cedPasada = $_GET['cedPasada'];
                             <th>Monto</th>
                             <th>Duracion</th>
                             <th>Estado</th>
+                            <th>Modificación</th>
                         </tr>
                         </thead>
                         <tfoot class="thead-inverse">
@@ -81,6 +82,7 @@ $cedPasada = $_GET['cedPasada'];
                             <th>Monto</th>
                             <th>Duracion</th>
                             <th>Estado</th>
+                            <th>Modificación</th>
                         </tr>
                         </tfoot>
                         <tbody>

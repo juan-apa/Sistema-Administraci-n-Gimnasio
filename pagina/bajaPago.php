@@ -3,39 +3,28 @@
  * Created by PhpStorm.
  * User: juan
  * Date: 12/6/17
- * Time: 9:22 AM
+ * Time: 9:55 PM
  */
-
 include_once(dirname(__FILE__) . '/persistencia/excepciones/ExceptionPersistencia.php');
 include_once(dirname(__FILE__) . '/persistencia/excepciones/ExceptionUsuario.php');
+include_once(dirname(__FILE__) . '/persistencia/excepciones/ExceptionPago.php');
 include_once(dirname(__FILE__) . '/logica/Fachada.php');
 include_once(dirname(__FILE__) . '/logica/objetos/Usuario.php');
 include_once(dirname(__FILE__) . '/logica/objetos/Rol.php');
 include_once(dirname(__FILE__) . '/grafica/Controladora.php');
-include_once(dirname(__FILE__) . '/grafica/ControladoraRegistroPago.php');
-
 session_start();
-//echo "<script>alert('Antes Controladora');</script>";
 $con = new Controladora();
-//echo "<script>alert('Despues Controladora');</script>";
-$conRegistro = new ControladoraRegistroPago();
-//echo "<script>alert('Despues ControladoraPago');</script>";
 $permiso = $con->getRol();
+$ok = 0;
+$cedPasada = $_GET['cedPasada'];
+$idPagoPasada = $_GET['idPagoPasada'];
 
-$fechaPagoPasado = $_GET['fechaPago'];
-$tipoPagoPasado = $_GET['tipoPago'];
-$montoPasado = $_GET['monto'];
-$cedulaUsuarioPasado = $_GET['cedulaUsuario'];
-if(isset($fechaPagoPasado, $tipoPagoPasado, $montoPasado, $cedulaUsuarioPasado))
-{
-
-    try{
-        echo "<script>alert('".$cedulaUsuarioPasado."')</script>";
-        $conRegistro -> registroPago($fechaPagoPasado, (int) $tipoPagoPasado, (int) $montoPasado, (int) $cedulaUsuarioPasado);
-    } catch (Exception $e){
-        echo "<script>alert('".$e -> getMessage()."')</script>";
-    }
+if(isset($_GET['ok'])){
+    $ok = $_GET['ok'];
+    $mensaje = $_GET['mensaje'];
+    echo "<script>alert('".$mensaje."')</script>";
 }
+
 
 ?>
 
@@ -68,42 +57,25 @@ if(isset($fechaPagoPasado, $tipoPagoPasado, $montoPasado, $cedulaUsuarioPasado))
             <li class="breadcrumb-item">
                 <a href="index.php">Pagos</a>
             </li>
-            <li class="breadcrumb-item active">Registro</li>
+            <li class="breadcrumb-item active">Baja Pago</li>
         </ol>
         <div class="row">
             <div class="col-12">
-                <?php
-                $ok = $_GET['ok'];
-                if(isset($ok)){
-                    $mensaje = $_GET['mensaje'];
-                    echo "<script>alert('".$mensaje."')</script>";
-                }
-                ?>
-                <h1>Registro de Pago</h1>
+                <h1>Baja de Pago</h1>
 
-                <?php  if($permiso == Rol::obtenerRolDeIdRol(Rol::ADMINISTRADOR)): ?>
-                    <form action="/registroPago.php" method="GET">
+                <?php if ($permiso == Rol::obtenerRolDeIdRol(Rol::ADMINISTRADOR)): ?>
+                    <form action="/grafica/ControladoraBajaPago.php" method="POST">
                         <div class="form-group">
-                            <label for="cedula">Cédula</label>
-                            <input type="number" class="form-control" id="cedulaUsuario" name="cedulaUsuario" placeholder="Cédula">
+                            <label for="cedula">Cedula del usuario</label>
+                            <input type="number" class="form-control" id="cedula" name="cedula"
+                                   placeholder="Ingrese la cédula" <?php if(isset($cedPasada)){echo "value='". $cedPasada."'";} ?>>
                         </div>
                         <div class="form-group">
-                            <label for="fechaNacimiento">Fecha de pago</label>
-                            <input type="date" class="form-control inputFecha" id="fechaPago" name="fechaPago" data-date-format="mm/dd/yyyy">
+                            <label for="idPago">ID del Pago</label>
+                            <input type="number" class="form-control" id="idPago" name="idPago"
+                                   placeholder="Ingrese la cédula" <?php if(isset($idPagoPasada)){echo "value='". $idPagoPasada."'";} ?>>
                         </div>
-                        <div class="form-group">
-                            <label for="cedula">Monto</label>
-                            <input type="number" class="form-control" id="monto" name="monto" placeholder="Monto">
-                        </div>
-                        <div class="form-group">
-                            <label for="rol">Tipo de Pago</label>
-                            <select class="form-control" id="tipoPago" name="tipoPago">
-                                <?php
-                                    $conRegistro -> listadoTiposPagos();
-                                ?>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Ingresar</button>
+                        <button type="submit" class="btn btn-primary">Dar de Baja</button>
                     </form>
                 <?php else: ?>
                     <h2 class="text-danger">Permisos insuficientes.</h2>

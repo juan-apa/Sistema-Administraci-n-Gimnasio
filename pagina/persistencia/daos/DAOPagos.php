@@ -132,7 +132,12 @@ class DAOPagos extends DAO
         }
     }
 
-    public static function listadoTiposPagos(Conexion $con)
+    /**
+     * @param Conexion $con
+     * @return array
+     * @throws ExceptionPersistencia
+     */
+    public static function listadoTiposPagos(Conexion $con) : array
     {
         $ret = array();
         $conexion = $con -> getConexion();
@@ -153,5 +158,57 @@ class DAOPagos extends DAO
         }
         mysqli_free_result($rs);
         return $ret;
+    }
+
+    /**
+     * @param Conexion $con
+     * @param int $idPago
+     * @throws ExceptionPersistencia
+     */
+    public function delete(Conexion $con, int $idPago) : void
+    {
+        $conexion = $con -> getConexion();
+        $query = sprintf(Consultas::PAGOS_BAJA, $this -> idUsuario, $idPago);
+        $conexion -> query($query);
+        if($conexion -> affected_rows == 0)
+        {
+            throw new ExceptionPersistencia(ExceptionPersistencia::ERROR_UPDATE);
+        }
+    }
+
+
+    /**
+     * @param Conexion $con
+     * @param int $idPago
+     * @throws ExceptionPersistencia
+     */
+    public function alta(Conexion $con, int $idPago) : void
+    {
+        $conexion = $con -> getConexion();
+        $query = sprintf(Consultas::PAGOS_ALTA, $this -> idUsuario, $idPago);
+        $conexion -> query($query);
+        if($conexion -> affected_rows == 0)
+        {
+            throw new ExceptionPersistencia(ExceptionPersistencia::ERROR_UPDATE);
+        }
+    }
+
+    /**
+     * @param Conexion $con
+     * @param int $idPago
+     * @param string $fecNuevo
+     * @param int $tipoNuevo
+     * @param int $montoNuevo
+     * @throws ExceptionPersistencia
+     */
+    public function modificarPago(Conexion $con, int $idPago, string $fecNuevo, int $tipoNuevo, int $montoNuevo) : void
+    {
+        $conexion = $con -> getConexion();
+        $query = sprintf(Consultas::PAGOS_MODIFICAR, $fecNuevo, $tipoNuevo, $montoNuevo, $this -> idUsuario, $idPago);
+        $conexion -> query($query);
+        if($conexion -> affected_rows == 0)
+        {
+            throw new ExceptionPersistencia(ExceptionPersistencia::ERROR_UPDATE);
+        }
     }
 }

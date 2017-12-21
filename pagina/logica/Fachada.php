@@ -13,6 +13,7 @@ include_once(dirname(__FILE__).'/objetos/Usuario.php');
 include_once(dirname(__FILE__).'/objetos/Rutina.php');
 include_once(dirname(__FILE__).'/../persistencia/excepciones/ExceptionPersistencia.php');
 include_once(dirname(__FILE__).'/../persistencia/excepciones/ExceptionUsuario.php');
+include_once(dirname(__FILE__).'/../persistencia/excepciones/ExceptionPago.php');
 
 class Fachada
 {
@@ -267,6 +268,12 @@ class Fachada
         return $this -> usuarios -> listarUsuarios($this -> conexion);
     }
 
+    /**
+     * @param int $cedulaUsuario
+     * @return array
+     * @throws ExceptionPersistencia
+     * @throws ExceptionUsuario
+     */
     public function listadoPagos(int $cedulaUsuario) : array
     {
         $ret = array();
@@ -281,13 +288,23 @@ class Fachada
         return $ret;
     }
 
+    /**
+     * @return array
+     * @throws ExceptionPersistencia
+     */
     public function listadoTipoPagos() : array
     {
         $ret = DAOPagos::listadoTiposPagos($this -> conexion);
         return $ret;
     }
 
-    public function registroPagoUsuario(int $cedulaUsuario, Pago $pago)
+    /**
+     * @param int $cedulaUsuario
+     * @param Pago $pago
+     * @throws ExceptionPersistencia
+     * @throws ExceptionUsuario
+     */
+    public function registroPagoUsuario(int $cedulaUsuario, Pago $pago) : void
     {
         if($this -> usuarios -> member($this -> conexion, $cedulaUsuario))
         {
@@ -302,4 +319,98 @@ class Fachada
         }
     }
 
+    /**
+     * @param int $cedulaUsuario
+     * @param int $kesimo
+     * @return Pago
+     * @throws ExceptionPersistencia
+     * @throws ExceptionUsuario
+     */
+    public function kesimoPagoDeUsuario(int $cedulaUsuario, int $kesimo) : Pago{
+        $ret = null;
+        if($this -> usuarios -> member($this -> conexion, $cedulaUsuario))
+        {
+            $ret = $this -> usuarios -> obtenerUsuario($this -> conexion, $cedulaUsuario) -> kesimoPago($this -> conexion, $kesimo);
+        }
+        else
+        {
+            throw new ExceptionUsuario(ExceptionUsuario::NO_EXISTE_USUARIO);
+        }
+        return $ret;
+    }
+
+    /**
+     * @param int $cedulaUsuario
+     * @param int $idPago
+     * @throws ExceptionPago
+     * @throws ExceptionPersistencia
+     * @throws ExceptionUsuario
+     */
+    public function bajaPago(int $cedulaUsuario, int $idPago) : void
+    {
+        if($this -> usuarios -> member($this -> conexion, $cedulaUsuario))
+        {
+            if($idPago < $this -> usuarios -> obtenerUsuario($this -> conexion, $cedulaUsuario) -> largoPagos($this -> conexion))
+            {
+                $this -> usuarios -> obtenerUsuario($this -> conexion, $cedulaUsuario) -> bajaPago($this -> conexion, $idPago);
+            }
+            else
+            {
+                throw new ExceptionPago(ExceptionPago::NO_EXISTE_PAGO);
+            }
+        }
+        else
+        {
+            throw new ExceptionUsuario(ExceptionUsuario::NO_EXISTE_USUARIO);
+        }
+    }
+
+    /**
+     * @param int $cedulaUsuario
+     * @param int $idPago
+     * @throws ExceptionPago
+     * @throws ExceptionPersistencia
+     * @throws ExceptionUsuario
+     */
+    public function altaPago(int $cedulaUsuario, int $idPago) : void
+    {
+        if($this -> usuarios -> member($this -> conexion, $cedulaUsuario))
+        {
+            if($idPago < $this -> usuarios -> obtenerUsuario($this -> conexion, $cedulaUsuario) -> largoPagos($this -> conexion))
+            {
+                $this -> usuarios -> obtenerUsuario($this -> conexion, $cedulaUsuario) -> altaPago($this -> conexion, $idPago);
+            }
+            else
+            {
+                throw new ExceptionPago(ExceptionPago::NO_EXISTE_PAGO);
+            }
+        }
+        else
+        {
+            throw new ExceptionUsuario(ExceptionUsuario::NO_EXISTE_USUARIO);
+        }
+    }
+
+
+    /**
+     * @param int $cedulaUsuario
+     * @param int $idPago
+     * @param string $fecNuevo
+     * @param int $tipoNuevo
+     * @param int $montoNuevo
+     * @throws ExceptionPersistencia
+     * @throws ExceptionUsuario
+     */
+    public function modificacionPago(int $cedulaUsuario, int $idPago, string $fecNuevo, int $tipoNuevo, int $montoNuevo) : void
+    {
+        if($this -> usuarios -> member($this -> conexion, $cedulaUsuario))
+        {
+            $usuario = $this -> usuarios -> obtenerUsuario($this -> conexion, $cedulaUsuario);
+            $usuario -> modificacionPago($this -> conexion, $idPago, $fecNuevo, $tipoNuevo, $montoNuevo);
+        }
+        else
+        {
+            throw new ExceptionUsuario(ExceptionUsuario::NO_EXISTE_USUARIO);
+        }
+    }
 }

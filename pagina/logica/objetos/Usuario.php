@@ -11,6 +11,7 @@ include_once(dirname(__FILE__).'/../../persistencia/daos/DAOPagos.php');
 include_once(dirname(__FILE__).'/../../persistencia/daos/DAOTelefonos.php');
 include_once(dirname(__FILE__).'/../../persistencia/excepciones/ExceptionPersistencia.php');
 include_once(dirname(__FILE__).'/../../persistencia/excepciones/ExceptionUsuario.php');
+include_once(dirname(__FILE__).'/../../persistencia/excepciones/ExceptionPago.php');
 include_once(dirname(__FILE__).'/Rutina.php');
 include_once(dirname(__FILE__).'/Telefono.php');
 include_once(dirname(__FILE__).'/Ejercicio.php');
@@ -348,10 +349,69 @@ class Usuario
         $this -> telefonos -> insback($con, $telefono);
     }
 
+    /**
+     * @param Conexion $con
+     * @param Pago $pago
+     * @throws ExceptionPersistencia
+     */
     public function insertarPago(Conexion $con, Pago $pago): void
     {
         echo "<script>alert('Antes insback')</script>";
         $this -> pagos -> insBack($con, $pago);
     }
 
+    /**
+     * @param Conexion $con
+     * @param int $kesimo
+     * @return Pago
+     * @throws ExceptionPersistencia
+     */
+    public function kesimoPago(Conexion $con, int $kesimo) : Pago
+    {
+        return $this -> pagos -> k_esimo($con, $kesimo);
+    }
+
+    /**
+     * @param Conexion $con
+     * @param int $idPago
+     * @throws ExceptionPersistencia
+     */
+    public function bajaPago(Conexion $con, int $idPago) : void
+    {
+        $this -> pagos -> delete($con, $idPago);
+    }
+
+
+    /**
+     * @param Conexion $con
+     * @param int $idPago
+     * @throws ExceptionPersistencia
+     */
+    public function altaPago(Conexion $con, int $idPago) : void
+    {
+        $this -> pagos -> alta($con, $idPago);
+    }
+
+    /**
+     * @param Conexion $con
+     * @return int
+     */
+    public function largoPagos(Conexion $con) : int
+    {
+        return $this -> pagos -> largo($con);
+    }
+
+    /**
+     * @param Conexion $con
+     * @param int $idPago
+     * @param string $fecNuevo
+     * @param int $tipoNuevo
+     * @param int $montoNuevo
+     * @return void
+     * @throws ExceptionPersistencia
+     */
+    public function modificacionPago(Conexion $con, int $idPago, string $fecNuevo, int $tipoNuevo, int $montoNuevo) : void
+    {
+        $this -> pagos -> modificarPago($con, $idPago, $fecNuevo, $tipoNuevo, $montoNuevo);
+    }
 }

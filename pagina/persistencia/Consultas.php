@@ -37,12 +37,18 @@ class Consultas
 
     const PAGOS_LARGO = "SELECT P.idPago FROM Pagos P WHERE P.idUsuario=%d";
 
-    const PAGOS_KESIMO = "SELECT P.*, T.descripcion, T.duracion FROM Pagos P, TipoPago T WHERE P.idUsuario = %d AND P.idPago=%d AND P.tipoPago = T.tipoPago ORDER BY P.fechaPago";
+    const PAGOS_KESIMO = "SELECT P.*, T.descripcion, T.duracion FROM Pagos P, TipoPago T WHERE P.idUsuario = %d AND P.idPago=%d AND P.tipoPago = T.tipoPago";
 
-    const PAGOS_LISTADO = "SELECT P.*, T.descripcion, T.duracion FROM Pagos P, TipoPago T WHERE P.idUsuario = %d AND P.tipoPago = T.tipoPago";
+    const PAGOS_LISTADO = "SELECT P.*, T.descripcion, T.duracion FROM Pagos P, TipoPago T WHERE P.idUsuario = %d AND P.tipoPago = T.tipoPago ORDER BY P.fechaPago DESC";
 
     const PAGOS_INSBACK = "INSERT INTO Pagos (fechaPago, tipoPago, monto, valido, idPago, idUsuario) VALUES ('%s', %d, %d, %d, %d, %d)";
 
     const TIPOS_PAGOS = "SELECT * FROM TipoPago T";
+
+    const PAGOS_BAJA = "UPDATE Pagos SET valido=0 WHERE idUsuario=%d AND idPago=%d";
+
+    const PAGOS_ALTA = "UPDATE Pagos SET valido=1 WHERE idUsuario=%d AND idPago=%d";
+
+    const PAGOS_MODIFICAR = "UPDATE Pagos SET fechaPago='%s', tipoPago=%d, monto=%d WHERE idUsuario=%d AND idPago=%d";
 
 }

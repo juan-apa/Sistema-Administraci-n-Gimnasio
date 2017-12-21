@@ -50,11 +50,11 @@ class ControladoraListadoPagos{
                 echo "<td>".$this->listado[$i] -> getDuracion()."</td>";
                 if($this->listado[$i] -> getValido())
                 {
-                    echo "<td> <a href='../bajaUsuario.php?cedPasada=".$this->listado[$i] -> getIdUsuario()."'>Activo</a> </td>";
+                    echo "<td> <a href='../bajaPago.php?cedPasada=".$cedulaUsuario."&idPagoPasada=".$this -> listado[$i] -> getIdPago()."'>Activo</a> </td>";
                 }
                 else
                 {
-                    echo "<td> <a href='../altaUsuario.php?cedPasada=".$this->listado[$i] -> getIdUsuario()."'>Inactivo</a> </td>";
+                    echo "<td> <a href='../altaPago.php?cedPasada=".$cedulaUsuario."&idPagoPasada=".$this -> listado[$i] -> getIdPago()."'>Inactivo</a> </td>";
                 }
                 echo "<td style='text-align: center'> <a href='../modificacionPago.php?cedPasada=".$cedulaUsuario."&idPago=".$this -> listado[$i] -> getIdPago()."' class='btn btn-warning' role='button'><i class='fa fa-fw fa-pencil'></i></a> </td>";
                 echo "</tr>";
