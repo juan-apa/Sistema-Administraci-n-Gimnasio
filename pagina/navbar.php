@@ -140,25 +140,6 @@ $permiso = $con->getRol();
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
-<!--            <li class="nav-item dropdown">-->
-<!--                <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown"-->
-<!--                   aria-haspopup="true" aria-expanded="false">-->
-<!--                    <i class="fa fa-fw fa-envelope"></i>-->
-<!--                    <span class="d-lg-none">Usuario-->
-<!--			  <span class="badge badge-pill badge-primary">12 New</span>-->
-<!--			</span>-->
-<!--                    <span class="indicator text-primary d-none d-lg-block">-->
-<!--			  <i class="fa fa-fw fa-circle"></i>-->
-<!--			</span>-->
-<!--                </a>-->
-<!--                <div class="dropdown-menu" aria-labelledby="messagesDropdown">-->
-<!--                    <h6 class="dropdown-header">New Messages:</h6>-->
-<!--                    <div class="dropdown-divider"></div>-->
-<!--                    <a class="dropdown-item" href="#"> </a>-->
-<!--                    <div class="dropdown-divider"></div>-->
-<!--                    <a class="dropdown-item small" href="#">View all messages</a>-->
-<!--                </div>-->
-<!--            </li>-->
 
             <?php if ($permiso != Rol::obtenerRolDeIdRol(Rol::PUBLICO)) : ?>
                 <li class="nav-item">
