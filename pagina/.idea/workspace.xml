@@ -5,12 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d21f85c9-ee94-411a-8f0b-978a23837b17" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/grafica/ControladoraListadoActividades.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/listadoActividades.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/logica/objetos/Actividad.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/modificarPagina.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/persistencia/daos/DAOActividades.php" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/06be9203-7459-492c-b248-5765a6571e4f.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/06be9203-7459-492c-b248-5765a6571e4f.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/cards.html" afterPath="" />
       <change beforePath="$PROJECT_DIR$/grafica/ControladoraListadoUsuarios.php" afterPath="$PROJECT_DIR$/grafica/ControladoraListadoUsuarios.php" />
       <change beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="" />
       <change beforePath="$PROJECT_DIR$/index_test.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/listadoPagos.php" afterPath="$PROJECT_DIR$/listadoPagos.php" />
       <change beforePath="$PROJECT_DIR$/listadoUsuarios.php" afterPath="$PROJECT_DIR$/listadoUsuarios.php" />
       <change beforePath="$PROJECT_DIR$/logica/Fachada.php" afterPath="$PROJECT_DIR$/logica/Fachada.php" />
       <change beforePath="$PROJECT_DIR$/logica/objetos/Pago.php" afterPath="$PROJECT_DIR$/logica/objetos/Pago.php" />
@@ -94,21 +100,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DAOTelefonos.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/persistencia/daos/DAOTelefonos.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="538">
-              <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="DAOUsuarios.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/persistencia/daos/DAOUsuarios.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="285" column="0" lean-forward="true" selection-start-line="285" selection-start-column="0" selection-end-line="285" selection-end-column="0" />
+            <state relative-caret-position="260">
+              <caret line="300" column="28" lean-forward="true" selection-start-line="300" selection-start-column="28" selection-end-line="300" selection-end-column="28" />
               <folding>
                 <element signature="n#__destruct#0;n#DAOUsuarios#0;n#!!top" expanded="false" />
                 <element signature="n#member#0;n#DAOUsuarios#0;n#!!top" expanded="false" />
@@ -139,11 +135,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Fachada.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Fachada.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logica/Fachada.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="458" column="9" lean-forward="false" selection-start-line="458" selection-start-column="9" selection-end-line="458" selection-end-column="9" />
+            <state relative-caret-position="426">
+              <caret line="479" column="47" lean-forward="false" selection-start-line="479" selection-start-column="47" selection-end-line="479" selection-end-column="47" />
               <folding>
                 <element signature="n#getInstancia#0;n#Fachada#0;n#!!top" expanded="false" />
                 <element signature="n#registroUsuario#0;n#Fachada#0;n#!!top" expanded="false" />
@@ -170,11 +166,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="navbar.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="navbar.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/navbar.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="45" column="39" lean-forward="true" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
+            <state relative-caret-position="180">
+              <caret line="157" column="55" lean-forward="false" selection-start-line="157" selection-start-column="55" selection-end-line="157" selection-end-column="55" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="listadoPagos.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/listadoPagos.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1560">
+              <caret line="109" column="19" lean-forward="false" selection-start-line="109" selection-start-column="19" selection-end-line="109" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -183,8 +189,8 @@
       <file leaf-file-name="Consultas.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/persistencia/Consultas.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="8" column="7" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="7" />
+            <state relative-caret-position="352">
+              <caret line="59" column="101" lean-forward="true" selection-start-line="59" selection-start-column="101" selection-end-line="59" selection-end-column="101" />
               <folding>
                 <marker date="1513910659126" expanded="true" signature="142:182" ph="SELECT * FRO... Usuarios" />
                 <marker date="1513910659126" expanded="true" signature="217:478" ph="INSERT INTO Usuarios... " />
@@ -269,8 +275,8 @@
       <find>usuario</find>
       <find>tipopago</find>
       <find>valido()</find>
-      <find>tipo</find>
       <find>echo</find>
+      <find>tipo</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/persistencia/excepciones</dir>
@@ -310,7 +316,6 @@
         <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/ControladoraListadoPagos.php" />
         <option value="$PROJECT_DIR$/logica/objetos/TipoPago.php" />
-        <option value="$PROJECT_DIR$/listadoPagos.php" />
         <option value="$PROJECT_DIR$/grafica/ControladoraRegistroPago.php" />
         <option value="$PROJECT_DIR$/persistencia/excepciones/ExceptionPago.php" />
         <option value="$PROJECT_DIR$/grafica/ControladoraListadoPagos.php" />
@@ -334,10 +339,11 @@
         <option value="$PROJECT_DIR$/persistencia/daos/DAOPagos.php" />
         <option value="$PROJECT_DIR$/grafica/ControladoraListadoUsuarios.php" />
         <option value="$PROJECT_DIR$/listadoUsuarios.php" />
-        <option value="$PROJECT_DIR$/navbar.php" />
         <option value="$PROJECT_DIR$/persistencia/Consultas.php" />
-        <option value="$PROJECT_DIR$/persistencia/daos/DAOUsuarios.php" />
+        <option value="$PROJECT_DIR$/navbar.php" />
         <option value="$PROJECT_DIR$/logica/Fachada.php" />
+        <option value="$PROJECT_DIR$/persistencia/daos/DAOUsuarios.php" />
+        <option value="$PROJECT_DIR$/listadoPagos.php" />
       </list>
     </option>
   </component>
@@ -483,12 +489,12 @@
     <property name="full.screen.before.presentation.mode" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/persistencia/excepciones" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/persistencia/daos" />
       <recent name="$PROJECT_DIR$/persistencia" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/persistencia/excepciones" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -539,12 +545,12 @@
       <workItem from="1512598641590" duration="10105000" />
       <workItem from="1513740225906" duration="1003000" />
       <workItem from="1513768605762" duration="1283000" />
-      <workItem from="1513858488899" duration="19776000" />
+      <workItem from="1513858488899" duration="22059000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131114000" />
+    <option name="totallyTimeSpent" value="133397000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="28" width="1368" height="741" extended-state="6" />
@@ -626,13 +632,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
           <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/listadoPagos.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="81" column="42" lean-forward="true" selection-start-line="81" selection-start-column="42" selection-end-line="81" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -916,14 +915,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/persistencia/excepciones/ExceptionPago.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grafica/ControladoraListadoUsuarios.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -934,10 +925,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logica/objetos/Usuario.php">
+    <entry file="file://$PROJECT_DIR$/persistencia/daos/DAO.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="48" column="34" lean-forward="true" selection-start-line="48" selection-start-column="34" selection-end-line="48" selection-end-column="34" />
+        <state relative-caret-position="75">
+          <caret line="10" column="15" lean-forward="false" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
           <folding />
         </state>
       </provider>
@@ -950,26 +941,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logica/objetos/Actividad.php">
+    <entry file="file://$PROJECT_DIR$/logica/Fachada.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="228" column="33" lean-forward="false" selection-start-line="228" selection-start-column="20" selection-end-line="228" selection-end-column="33" />
+        <state relative-caret-position="426">
+          <caret line="479" column="47" lean-forward="false" selection-start-line="479" selection-start-column="47" selection-end-line="479" selection-end-column="47" />
+          <folding>
+            <element signature="n#getInstancia#0;n#Fachada#0;n#!!top" expanded="false" />
+            <element signature="n#registroUsuario#0;n#Fachada#0;n#!!top" expanded="false" />
+            <element signature="n#altaUsuario#0;n#Fachada#0;n#!!top" expanded="false" />
+            <element signature="n#modificarUsuario#0;n#Fachada#0;n#!!top" expanded="false" />
+            <element signature="n#insertarRutina#0;n#Fachada#0;n#!!top" expanded="false" />
+            <element signature="n#obtenerUsuario#0;n#Fachada#0;n#!!top" expanded="false" />
+            <element signature="n#loginUsuario#0;n#Fachada#0;n#!!top" expanded="false" />
+            <element signature="n#obtenerRolUsuario#0;n#Fachada#0;n#!!top" expanded="false" />
+            <element signature="n#registroPagoUsuario#0;n#Fachada#0;n#!!top" expanded="false" />
+            <element signature="n#kesimoPagoDeUsuario#0;n#Fachada#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/persistencia/excepciones/ExceptionPago.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/persistencia/daos/DAO.php">
+    <entry file="file://$PROJECT_DIR$/logica/objetos/Usuario.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="10" column="15" lean-forward="false" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
+        <state relative-caret-position="167">
+          <caret line="48" column="34" lean-forward="true" selection-start-line="48" selection-start-column="34" selection-end-line="48" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/persistencia/Consultas.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="8" column="7" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="7" />
+        <state relative-caret-position="352">
+          <caret line="59" column="101" lean-forward="true" selection-start-line="59" selection-start-column="101" selection-end-line="59" selection-end-column="101" />
           <folding>
             <marker date="1513910659126" expanded="true" signature="142:182" ph="SELECT * FRO... Usuarios" />
             <marker date="1513910659126" expanded="true" signature="217:478" ph="INSERT INTO Usuarios... " />
@@ -1010,18 +1020,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/navbar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="45" column="39" lean-forward="true" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/persistencia/daos/DAOUsuarios.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="285" column="0" lean-forward="true" selection-start-line="285" selection-start-column="0" selection-end-line="285" selection-end-column="0" />
+        <state relative-caret-position="260">
+          <caret line="300" column="28" lean-forward="true" selection-start-line="300" selection-start-column="28" selection-end-line="300" selection-end-column="28" />
           <folding>
             <element signature="n#__destruct#0;n#DAOUsuarios#0;n#!!top" expanded="false" />
             <element signature="n#member#0;n#DAOUsuarios#0;n#!!top" expanded="false" />
@@ -1031,22 +1033,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logica/Fachada.php">
+    <entry file="file://$PROJECT_DIR$/logica/objetos/Actividad.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="458" column="9" lean-forward="false" selection-start-line="458" selection-start-column="9" selection-end-line="458" selection-end-column="9" />
-          <folding>
-            <element signature="n#getInstancia#0;n#Fachada#0;n#!!top" expanded="false" />
-            <element signature="n#registroUsuario#0;n#Fachada#0;n#!!top" expanded="false" />
-            <element signature="n#altaUsuario#0;n#Fachada#0;n#!!top" expanded="false" />
-            <element signature="n#modificarUsuario#0;n#Fachada#0;n#!!top" expanded="false" />
-            <element signature="n#insertarRutina#0;n#Fachada#0;n#!!top" expanded="false" />
-            <element signature="n#obtenerUsuario#0;n#Fachada#0;n#!!top" expanded="false" />
-            <element signature="n#loginUsuario#0;n#Fachada#0;n#!!top" expanded="false" />
-            <element signature="n#obtenerRolUsuario#0;n#Fachada#0;n#!!top" expanded="false" />
-            <element signature="n#registroPagoUsuario#0;n#Fachada#0;n#!!top" expanded="false" />
-            <element signature="n#kesimoPagoDeUsuario#0;n#Fachada#0;n#!!top" expanded="false" />
-          </folding>
+        <state relative-caret-position="228">
+          <caret line="228" column="33" lean-forward="false" selection-start-line="228" selection-start-column="20" selection-end-line="228" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/listadoPagos.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1560">
+          <caret line="109" column="19" lean-forward="false" selection-start-line="109" selection-start-column="19" selection-end-line="109" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/navbar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="157" column="55" lean-forward="false" selection-start-line="157" selection-start-column="55" selection-end-line="157" selection-end-column="55" />
+          <folding />
         </state>
       </provider>
     </entry>

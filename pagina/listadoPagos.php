@@ -17,6 +17,15 @@ session_start();
 $con = new Controladora();
 $permiso = $con->getRol();
 $cedPasada = $_GET['cedPasada'];
+$facAnio = 0;
+try{
+    $hoyA = date('Y');
+    $hoyM = date('m');
+    $facAnio = $con -> getF() -> facturacionAnio((int) $hoyA);
+    $facMes = $con -> getF() -> facturacionMes((int) $hoyM);
+} catch (Exception $e) {
+    echo "<script>alert('Error al obtener el total de facturación por mes/año');</script>";
+}
 ?>
 
 <!DOCTYPE html>
@@ -97,6 +106,8 @@ $cedPasada = $_GET['cedPasada'];
                         </tbody>
                     </table>
                 </div>
+                <h4>Facturación por mes: <?php echo $facMes; ?></h4>
+                <h4>Facturación por anio: <?php echo $facAnio; ?></h4>
             </div>
         <?php else: ?>
             <h2 class="text-danger">Permisos insuficientes.</h2>

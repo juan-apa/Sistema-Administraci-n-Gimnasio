@@ -295,9 +295,10 @@ class DAOUsuarios extends DAO
         $conexion = $con -> getConexion();
         $query = sprintf(Consultas::PAGOS_FACTURACION_MES, $mes);
         $rs = $conexion -> query($query);
-        if(isset($rs -> fetch_row()[0]))
+        $fila = $rs -> fetch_row();
+        if(isset($fila[0]))
         {
-            $ret = $rs -> fetch_row()[0];
+            $ret = $fila[0];
         }
         mysqli_free_result($rs);
         return $ret;
@@ -314,9 +315,10 @@ class DAOUsuarios extends DAO
         $conexion = $con -> getConexion();
         $query = sprintf(Consultas::PAGOS_FACTURACION_ANIO, $anio);
         $rs = $conexion -> query($query);
-        if(isset($rs -> fetch_row()[0]))
+        $fila = $rs -> fetch_row();
+        if(isset($fila[0]))
         {
-            $ret = $rs -> fetch_row()[0];
+            $ret = $fila[0];
         }
         mysqli_free_result($rs);
         return $ret;

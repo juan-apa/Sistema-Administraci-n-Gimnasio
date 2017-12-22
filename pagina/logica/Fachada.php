@@ -477,6 +477,6 @@ class Fachada
      */
     public function facturacionAnio($anio) : int
     {
-        return $this -> usuarios -> facturacionMes($this -> conexion, $anio);
+        return $this -> usuarios -> facturacionAnio($this -> conexion, $anio);
     }
 }
