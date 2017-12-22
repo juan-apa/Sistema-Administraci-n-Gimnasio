@@ -53,7 +53,7 @@ $permiso = $con->getRol();
                             </li>
                         <?php endif; ?>
                         <li>
-                            <a href="listadoPagos.php">listado de pagos</a>
+                            <a href=<?php echo "'listadoPagos.php?cedPasada=".$con -> getUser() -> getCedula()."'"; ?> >listado de pagos</a>
                         </li>
                         <li>
                             <a href="listadoRutinas.php">Listado de rutinas</a>
@@ -67,7 +67,7 @@ $permiso = $con->getRol();
                     <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseUsuarios"
                        data-parent="#exampleAccordion">
                         <i class="fa fa-fw fa-wrench"></i>
-                        <span class="nav-link-text">Components</span>
+                        <span class="nav-link-text">Componentes</span>
                     </a>
                     <ul class="sidenav-second-level collapse" id="collapseUsuarios">
                         <li>
@@ -122,15 +122,6 @@ $permiso = $con->getRol();
                             <a href="altaPago.php">Alta Pago</a>
                         </li>
                     </ul>
-                </li>
-            <?php endif; ?>
-
-            <?php if ($permiso == Rol::obtenerRolDeIdRol(Rol::WEBMASTER)): ?>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="modificacion pagina">
-                    <a class="nav-link" href="modificarPagina.php">
-                        <i class="fa fa-fw fa-wrench"></i>
-                        <span class="nav-link-text">Página</span>
-                    </a>
                 </li>
             <?php endif; ?>
 

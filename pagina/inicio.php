@@ -18,11 +18,9 @@ $con = new Controladora();
 $t = $con -> getF() -> obtenerDatosPagina();
 ?>
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/camera.css" rel="stylesheet" type="text/css" media="all" />
-<script type='text/javascript' src="js/jquery.min.js"></script>
-<script type='text/javascript' src="js/jquery.easing.1.3.js"></script>
-<script type='text/javascript' src="js/camera.min.js"></script>
-<script>
+<!--<link href="css/camera.css" rel="stylesheet" type="text/css" media="all" />-->
+<!--<script type='text/javascript' src="js/camera.min.js"></script>-->
+<script>/*
     jQuery(function(){
 
         jQuery('#camera_wrap_4').camera({
@@ -35,7 +33,7 @@ $t = $con -> getF() -> obtenerDatosPagina();
             imagePath: '../images/'
         });
 
-    });
+    });*/
     function myMap() {
         var mapOptions = {
             center: new google.maps.LatLng(51.5, -0.12),
@@ -127,8 +125,9 @@ $t = $con -> getF() -> obtenerDatosPagina();
 </div>
 </div>
 </div>
-<?php
-echo "<script>alert('aca1')</script>";
-?>
+
 <!--<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>-->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAS9jEtD4t6KIYnVMjrdUCb2_u7pLAjObUY&callback=myMap">
+<?php
+echo "<script>alert('Inicio')</script>";
+?>

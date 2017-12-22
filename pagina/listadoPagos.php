@@ -71,6 +71,7 @@ try{
                 </div>
                 <button type="submit" class="btn btn-primary">Cargar tabla</button>
             </form>
+        <?php endif; ?>
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -106,12 +107,14 @@ try{
                         </tbody>
                     </table>
                 </div>
+                <?php if($permiso == Rol::obtenerRolDeIdRol(Rol::ADMINISTRADOR)): ?>
                 <h4>Facturación por mes: <?php echo $facMes; ?></h4>
                 <h4>Facturación por anio: <?php echo $facAnio; ?></h4>
+                <?php endif;?>
             </div>
-        <?php else: ?>
-            <h2 class="text-danger">Permisos insuficientes.</h2>
-        <?php endif; ?>
+<!--        --><?php //else: ?>
+<!--            <h2 class="text-danger">Permisos insuficientes.</h2>-->
+<!--        --><?php //endif; ?>
     </div>
     <!-- /.container-fluid-->
     <?php include(dirname(__FILE__) . '/footer.php'); ?>

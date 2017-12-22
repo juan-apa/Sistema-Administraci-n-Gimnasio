@@ -7,8 +7,10 @@
  */
 
 include_once(dirname(__FILE__).'/../logica/Fachada.php');
+include_once(dirname(__FILE__).'/Controladora.php');
 include_once(dirname(__FILE__).'/../persistencia/daos/DAOPagina.php');
 include_once(dirname(__FILE__).'/../persistencia/excepciones/ExceptionPersistencia.php');
+$con = new Controladora();
 echo "<script>alert('UNO');</script>";
 $titulo = $_POST['titulo'];
 $c1Titulo = $_POST['c1Titulo'];
@@ -27,19 +29,17 @@ $c6Texto = $_POST['c6Texto'];
 $fTitulo = $_POST['fTitulo'];
 $fTexto = $_POST['fTexto'];
 $r = array(0=>'',1=>'',2=>'',3=>'',4=>'',5=>'');
-echo "<script>alert('DOS');</script>";
 
-$directorio_destino = 'images';
+$directorio_destino = './images';
 
 
 for($i = 1; $i < 7; $i++)
 {
-    echo "<script>alert('TRES');</script>";
     $nombre_fichero = 'c'.$i.'i';
-    $tmp_name = $_FILES[$nombre_fichero]['tmp_name'];
     $tmp_name = $_FILES[$nombre_fichero]['tmp_name'];
 
     if (is_dir($directorio_destino) && is_uploaded_file($tmp_name)){
+        echo "<script>alert('entra upload');</script>";
 
         $img_file = $_FILES[$nombre_fichero]['name'];
         $img_type = $_FILES[$nombre_fichero]['type'];
@@ -51,13 +51,13 @@ for($i = 1; $i < 7; $i++)
         }
     }
 }
-
+/** @var array $arr */
+$arr = array($titulo,$c1Titulo, $c1Texto, $c2Titulo, $c2Texto, $c3Titulo, $c3Texto, $titulo2,
+    $c4Titulo, $c4Texto, $c5Titulo, $c5Texto, $c6Titulo, $c6Texto, $fTitulo, $fTexto,
+    (string) $r[0], (string) $r[1], (string) $r[2], (string) $r[3], (string) $r[4], (string) $r[5]);
 try{
-    echo "<script>alert('CUATRO');</script>";
-    $con -> getF() -> modificarPagina($titulo, $c1Titulo, $c1Texto, $c2Titulo, $c2Texto, $c3Titulo, $c3Texto, $titulo2,
-        $c4Titulo, $c4Texto, $c5Titulo, $c5Texto, $c6Titulo, $c6Texto, $fTitulo, $fTexto,
-        (string) $r[0], (string) $r[1], (string) $r[2], (string) $r[3], (string) $r[4], (string) $r[5]);
-    echo "<script>alert('CINCO');</script>";
+
+    $con -> getF() -> modificarPagina($arr);
     header('location: ../edicionPagina.php?ok=1&mensaje=Modificacion exitosa');
 } catch (Exception $e)
 {
