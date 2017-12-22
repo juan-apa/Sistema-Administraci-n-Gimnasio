@@ -55,9 +55,12 @@ $permiso = $con->getRol();
                         <li>
                             <a href=<?php echo "'listadoPagos.php?cedPasada=".$con -> getUser() -> getCedula()."''"; ?> >listado de pagos</a>
                         </li>
+                        <?php if(0): ?>
+<!--                        Funcionalidad no implementada-->
                         <li>
                             <a href="listadoRutinas.php">Listado de rutinas</a>
                         </li>
+                        <?php endif; ?>
                     </ul>
                 </li>
             <?php endif; ?>

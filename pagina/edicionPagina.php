@@ -56,7 +56,7 @@ $permiso = $con->getRol();
                     echo "<script>alert('".$mensaje."')</script>";
                 }
                 ?>
-                <h1>Registro de usuario</h1>
+                <h1>Modificación de página</h1>
 
                 <?php  if($permiso == Rol::obtenerRolDeIdRol(Rol::WEBMASTER)): ?>
                     <form action="/grafica/ControladoraModPagina.php" method="POST">
