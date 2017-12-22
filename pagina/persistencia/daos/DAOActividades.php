@@ -41,4 +41,21 @@ class DAOActividades extends DAO
         mysqli_free_result($rs);
         return $ret;
     }
+
+    /**
+     * @param Conexion $con
+     * @param Actividad $a
+     * @return void
+     * @throws ExceptionPersistencia
+     */
+    public function registroActividad(Conexion $con, Actividad $a) : void
+    {
+        $conexion = $con -> getConexion();
+        $query = sprintf(Consultas::ACTIVIDADES_REGISTRO, $a -> getComienzo(), $a->getDuracion(), $a->getNombre(), $a->getProfesor(), $a->getValido(), $a->getLunes(), $a->getMartes(), $a->getMiercoles(), $a->getJueves(), $a->getViernes());
+        $conexion -> query($query);
+        if($conexion -> affected_rows == 0)
+        {
+            throw new ExceptionPersistencia(ExceptionPersistencia::ERROR_INSERT);
+        }
+    }
 }

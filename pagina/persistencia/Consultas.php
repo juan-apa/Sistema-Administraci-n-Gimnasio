@@ -63,4 +63,11 @@ class Consultas
 
     const ACTIVIDADES_LISTADO = "SELECT * FROM Actividades";
 
+    const ACTIVIDADES_REGISTRO = "INSERT INTO Actividades (comienzo, duracion, nombre, profesor, valido, lunes, martes, miercoles, jueves, viernes) VALUES ('%s', %d, '%s', '%s', %d, %d, %d, %d, %d, %d)";
+
+    const PAGINA_TODO = "SELECT * FROM Pagina";
+
+    const PAGINA_BORRAR = "DELETE FROM Pagina";
+
+    const PAGINA_INSERTAR = "INSERT INTO Pagina VALUES('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')";
 }

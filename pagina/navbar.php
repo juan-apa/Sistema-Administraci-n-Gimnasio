@@ -24,12 +24,20 @@ $permiso = $con->getRol();
                     <span class="nav-link-text">Home</span>
                 </a>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Clases">
                 <a class="nav-link" href="listadoActividades.php">
                     <i class="fa fa-fw fa-clock-o"></i>
                     <span class="nav-link-text">Clases</span>
                 </a>
             </li>
+            <?php if ($permiso == Rol::obtenerRolDeIdRol(Rol::ADMINISTRADOR)): ?>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Registro clases">
+                <a class="nav-link" href="registroActividades.php">
+                    <i class="fa fa-fw fa-clock-o"></i>
+                    <span class="nav-link-text">Registro Clases</span>
+                </a>
+            </li>
+            <?php endif; ?>
 
             <?php if (($permiso == Rol::obtenerRolDeIdRol(Rol::ADMINISTRADOR)) || $permiso == Rol::obtenerRolDeIdRol(Rol::USUARIO)) : ?>
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Listados">
@@ -63,7 +71,7 @@ $permiso = $con->getRol();
                     </a>
                     <ul class="sidenav-second-level collapse" id="collapseUsuarios">
                         <li>
-                            <a href="navbar.php">Navbar</a>
+                            <a href="edicionPagina.php">Página</a>
                         </li>
                     </ul>
                 </li>

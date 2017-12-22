@@ -27,10 +27,10 @@ try{
             echo "<td>".$listado[$i] -> getProfesor()."</td>";
             $dias = '';
             $diasArr = $listado[$i] -> diasActividad();
-            for($i = 0; $i < sizeof($diasArr); $i++)
+            for($j = 0; $j < sizeof($diasArr); $j++)
             {
-                $dias = $dias.$diasArr[$i];
-                if($i != sizeof($diasArr) - 1)
+                $dias = $dias.$diasArr[$j];
+                if($j != sizeof($diasArr) - 1)
                     $dias = $dias.'<br/>';
             }
             echo "<td>".$dias."</td>";

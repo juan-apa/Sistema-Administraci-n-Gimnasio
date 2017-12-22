@@ -35,12 +35,14 @@ session_start();
 <div class="content-wrapper">
     <!-- Contenido -->
 
+    <?php include_once(dirname(__FILE__)).'/inicio.php';?>
 
 
 
 
-
-
+    <?php
+    echo "<script>alert('aca2')</script>";
+    ?>
     <!-- Fin Contenido -->
     <!-- Footer -->
     <?php include('footer.php') ?>

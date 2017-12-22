@@ -10,6 +10,7 @@ include_once(dirname(__FILE__).'/../persistencia/Conexion.php');
 include_once(dirname(__FILE__).'/../persistencia/daos/DAOUsuarios.php');
 include_once(dirname(__FILE__).'/../persistencia/daos/DAOPagos.php');
 include_once(dirname(__FILE__).'/../persistencia/daos/DAOActividades.php');
+include_once(dirname(__FILE__).'/../persistencia/daos/DAOPagina.php');
 include_once(dirname(__FILE__).'/objetos/Usuario.php');
 include_once(dirname(__FILE__).'/objetos/Rutina.php');
 include_once(dirname(__FILE__).'/../persistencia/excepciones/ExceptionPersistencia.php');
@@ -22,6 +23,7 @@ class Fachada
     private $usuarios;
     private $instancia = null;
     private $actividades;
+    private $pagina;
 
     /**
      * Fachada constructor.
@@ -32,6 +34,7 @@ class Fachada
         $this -> conexion = new Conexion();
         $this -> usuarios = new DAOUsuarios();
         $this -> actividades = new DAOActividades();
+        $this -> pagina = new DAOPagina();
     }
 
     /**
@@ -424,6 +427,15 @@ class Fachada
     }
 
     /**
+     * @param Actividad $a
+     * @throws ExceptionPersistencia
+     */
+    public function registroActividad(Actividad $a) : void
+    {
+        $this -> actividades -> registroActividad($this -> conexion, $a);
+    }
+
+    /**
      * @param int $cedulaUsuario
      * @return int
      * @throws ExceptionPersistencia
@@ -478,5 +490,49 @@ class Fachada
     public function facturacionAnio($anio) : int
     {
         return $this -> usuarios -> facturacionAnio($this -> conexion, $anio);
+    }
+
+    /**
+     * @return array
+     */
+    public function obtenerDatosPagina() : array
+    {
+        return $this -> pagina -> obtenerDatos($this -> conexion);
+    }
+
+    /**
+     * @param string $titulo
+     * @param string $c1ti
+     * @param string $c1te
+     * @param string $c2ti
+     * @param string $c2te
+     * @param string $c3ti
+     * @param string $c3te
+     * @param string $titulo2
+     * @param string $c4ti
+     * @param string $c4te
+     * @param string $c5ti
+     * @param string $c5te
+     * @param string $c6ti
+     * @param string $c6te
+     * @param string $fti
+     * @param string $fte
+     * @param string $c1i
+     * @param string $c2i
+     * @param string $c3i
+     * @param string $c4i
+     * @param string $c5i
+     * @param string $c6i
+     * @throws ExceptionPersistencia
+     */
+    public function modificarPagina(string $titulo, string $c1ti, string $c1te, string $c2ti, string $c2te,
+                                    string $c3ti, string $c3te, string $titulo2, string $c4ti, string $c4te, string $c5ti,
+                                    string $c5te, string $c6ti, string $c6te, string $fti, string $fte, string $c1i,
+                                    string $c2i, string $c3i, string $c4i, string $c5i, string $c6i) : void
+    {
+        echo "<script>alert('modificarPagina');</script>";
+        $this -> pagina -> modificarDatos($this -> conexion,  $titulo,  $c1ti,  $c1te,  $c2ti,  $c2te, $c3ti,  $c3te,
+                                            $titulo2,  $c4ti,  $c4te,  $c5ti, $c5te,  $c6ti,  $c6te,  $fti,  $fte,  $c1i,
+                                            $c2i,  $c3i,  $c4i,  $c5i,  $c6i);
     }
 }
