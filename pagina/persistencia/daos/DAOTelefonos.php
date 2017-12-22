@@ -12,16 +12,16 @@ include_once(dirname(__FILE__).'/../../logica/objetos/Telefono.php');
 
 class DAOTelefonos extends DAO
 {
-    private $cedulaUsuario;
+    private $idUsuario;
 
     /**
      * DAOTelefonos constructor.
      * @param integer $idUsuario
      */
-    public function __construct(int $cedulaUsuario)
+    public function __construct(int $idUsuario)
     {
         parent::__construct();
-        $this -> cedulaUsuario = $cedulaUsuario;
+        $this -> idUsuario = $idUsuario;
     }
 
     public function __destruct()
@@ -30,41 +30,59 @@ class DAOTelefonos extends DAO
     }
 
     /**
-     * @return integer
+     * @param Conexion $con
+     * @param int $telefono
+     * @throws ExceptionPersistencia
      */
-    public function getCedulaUsuario()
+    public function insback(Conexion $con, int $telefono)
     {
-        return $this -> cedulaUsuario;
+        $conexion = $con -> getConexion();
+        $query = sprintf(Consultas::TELEFONOS_INSERTAR, $this -> idUsuario, $telefono);
+        $conexion -> query($query);
+
+        if($conexion -> affected_rows == 0)
+        {
+            throw new ExceptionPersistencia(ExceptionPersistencia::ERROR_INSERT);
+        }
     }
 
     /**
-     * @param integer $cedulaUsuario
+     * @param Conexion $con
+     * @param int $telefono
+     * @throws ExceptionPersistencia
      */
-    public function setCedulaUsuario(int $cedulaUsuario)
+    public function delete(Conexion $con, int $telefono)
     {
-        $this -> cedulaUsuario = $cedulaUsuario;
+        $conexion = $con -> getConexion();
+        $query = sprintf(Consultas::TELEFONOS_BORRAR, $this -> idUsuario, $telefono);
+        $conexion -> query($query);
+
+        if($conexion -> affected_rows == 0)
+        {
+            throw new ExceptionPersistencia(ExceptionPersistencia::ERROR_DELETE);
+        }
     }
 
-    public function largo(Conexion $con)
+    /**
+     * @param Conexion $con
+     * @return array
+     */
+    public function listarTelefonos(Conexion $con) : array
     {
-        $ret = 0;
+        $ret = array();
+        $conexion = $con -> getConexion();
+        $query = sprintf(Consultas::TELEFONOS_LISTAR, $this -> idUsuario);
+        $rs = $conexion -> query($query);
+        $fila = $rs -> fetch_assoc();
 
+        while($fila)
+        {
+            array_push($ret, $fila['telefono']);
+            $filra = $rs -> fetch_assoc();
+        }
+
+        mysqli_free_result($rs);
         return $ret;
-    }
-
-    public function insback(Conexion $con, Telefono $telefono)
-    {
-        // TODO implementar metodo.
-    }
-
-    public function delete(Conexion $con, int $idTelefono)
-    {
-        // TODO implementar metodo.
-    }
-
-    public function listarTelefonos(Conexion $con)
-    {
-        // TODO implementar metodo.
     }
 
 }

@@ -16,6 +16,9 @@ include_once(dirname(__FILE__).'/../logica/objetos/Rol.php');
 try{
     $f = new Fachada();
     $listado = $f -> listadoUsuarios();
+    $admins = 0;
+    $webmasters = 0;
+    $usuarios = 0;
 
     for($i = 0; $i < sizeof($listado); $i++)
     {
@@ -43,6 +46,15 @@ try{
             echo "<td> <a href='../altaUsuario.php?cedPasada=".$listado[$i] -> getCedula()."'>Inactivo</a> </td>";
         }
         echo "<td style='text-align: center'> <a href='../modificacionUsuario.php?cedPasada=".$listado[$i] -> getCedula()."' class='btn btn-warning' role='button'><i class='fa fa-fw fa-pencil'></i></a> </td>";
+        if($f -> pagoAtrasado($listado[$i] -> getCedula()))
+        {
+            echo "<td>Atrasado</td>";
+        }
+        else
+        {
+            echo "<td>-</td>";
+        }
+
         echo "</tr>";
     }
 } catch (Exception $e) {

@@ -118,7 +118,6 @@ class DAOPagos extends DAO
      */
     public function insBack(Conexion $con, Pago $pago) : void
     {
-        echo "<script>alert('adentro insback')</script>";
         $conexion = $con -> getConexion();
         $query = sprintf(Consultas::PAGOS_INSBACK, $pago -> getFechaPago(),
             $pago -> getTipoPago(), $pago -> getMonto(), $pago -> getValido(),

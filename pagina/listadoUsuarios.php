@@ -14,6 +14,12 @@ include_once(dirname(__FILE__).'/grafica/Controladora.php');
 session_start();
 $con = new Controladora();
 $permiso = $con->getRol();
+$cantidades = array();
+try{
+    $cantidades = $con -> getF() -> cantidades();
+} catch (Exception $e) {
+    echo "<script>alert('Error al obtener las cantidades de usuarios de la base de datos.');</script>";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,6 +55,7 @@ $permiso = $con->getRol();
         </ol>
         <!-- Example DataTables Card-->
         <h1>Listado de Usuarios</h1>
+
         <?php  if($permiso == Rol::obtenerRolDeIdRol(Rol::ADMINISTRADOR)): ?>
         <div class="card-body">
             <div class="table-responsive">
@@ -64,6 +71,7 @@ $permiso = $con->getRol();
                         <th>Tipo</th>
                         <th>Estado</th>
                         <th>Modificar</th>
+                        <th>Pago Atrasado</th>
                     </tr>
                     </thead>
                     <tfoot class="thead-inverse">
@@ -77,6 +85,7 @@ $permiso = $con->getRol();
                         <th>Tipo</th>
                         <th>Estado</th>
                         <th>Modificar</th>
+                        <th>Pago Atrasado</th>
                     </tr>
                     </tfoot>
                     <tbody>
@@ -87,6 +96,9 @@ $permiso = $con->getRol();
                 </table>
             </div>
         </div>
+        <h4>Usuarios: <?php echo $cantidades[2]?></h4>
+        <h4>WebMasters: <?php echo $cantidades[1]?></h4>
+        <h4>Administradores: <?php echo $cantidades[0]?></h4>
         <?php else: ?>
             <h2 class="text-danger">Permisos insuficientes.</h2>
         <?php endif; ?>

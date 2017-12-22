@@ -344,6 +344,11 @@ class Usuario
         $this -> rutinas -> insBack($con, $rutina);
     }
 
+    /**
+     * @param Conexion $con
+     * @param Telefono $telefono
+     * @throws ExceptionPersistencia
+     */
     public function insertarTelefono(Conexion $con, Telefono $telefono): void
     {
         $this -> telefonos -> insback($con, $telefono);
@@ -414,4 +419,21 @@ class Usuario
     {
         $this -> pagos -> modificarPago($con, $idPago, $fecNuevo, $tipoNuevo, $montoNuevo);
     }
+
+    public function listarTelefonos(Conexion $con) : array
+    {
+        return $this -> telefonos -> listarTelefonos($con);
+    }
+
+    /**
+     * @param Conexion $con
+     * @return int
+     * @throws ExceptionPersistencia
+     */
+    public function atrasado(Conexion $con) : int
+    {
+        $idUltPago = $this -> pagos -> largo($con) - 1;
+        return $this -> pagos -> k_esimo($con, $idUltPago) -> atrasado();
+    }
+
 }

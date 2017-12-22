@@ -9,6 +9,7 @@
 include_once(dirname(__FILE__).'/../persistencia/Conexion.php');
 include_once(dirname(__FILE__).'/../persistencia/daos/DAOUsuarios.php');
 include_once(dirname(__FILE__).'/../persistencia/daos/DAOPagos.php');
+include_once(dirname(__FILE__).'/../persistencia/daos/DAOActividades.php');
 include_once(dirname(__FILE__).'/objetos/Usuario.php');
 include_once(dirname(__FILE__).'/objetos/Rutina.php');
 include_once(dirname(__FILE__).'/../persistencia/excepciones/ExceptionPersistencia.php');
@@ -20,6 +21,7 @@ class Fachada
     private $conexion;
     private $usuarios;
     private $instancia = null;
+    private $actividades;
 
     /**
      * Fachada constructor.
@@ -29,6 +31,7 @@ class Fachada
     {
         $this -> conexion = new Conexion();
         $this -> usuarios = new DAOUsuarios();
+        $this -> actividades = new DAOActividades();
     }
 
     /**
@@ -308,9 +311,7 @@ class Fachada
     {
         if($this -> usuarios -> member($this -> conexion, $cedulaUsuario))
         {
-            echo "<script>alert('adentro member')</script>";
             $usuario = $this -> usuarios -> obtenerUsuario($this -> conexion, $cedulaUsuario);
-            echo "<script>alert('Antes insertar')</script>";
             $usuario -> insertarPago($this->conexion, $pago);
         }
         else
@@ -412,5 +413,70 @@ class Fachada
         {
             throw new ExceptionUsuario(ExceptionUsuario::NO_EXISTE_USUARIO);
         }
+    }
+
+    /**
+     * @return array
+     */
+    public function listadoActividades() : array
+    {
+        return $this -> actividades -> listadoActividades($this -> conexion);
+    }
+
+    /**
+     * @param int $cedulaUsuario
+     * @return int
+     * @throws ExceptionPersistencia
+     * @throws ExceptionUsuario
+     */
+    public function pagoAtrasado(int $cedulaUsuario) : int
+    {
+        $ret = 1;
+        $arr = $this -> listadoPagos($cedulaUsuario);
+        $i = 0;
+        $salir = 0;
+        while($salir == 0 && $i < sizeof($arr))
+        {
+            if($arr[$i] -> getValido())
+            {
+                $ret = $arr[$i] -> atrasado();
+                $salir = 1;
+            }
+            $i++;
+        }
+        return $ret;
+    }
+
+    /**
+     * @return array
+     * @throws ExceptionPersistencia
+     */
+    public function cantidades() : array
+    {
+        $ret = array(0=>0,1=>0,2=>0);
+        $listado = $this -> listadoUsuarios();
+        for($i = 0; $i < sizeof($listado); $i++)
+        {
+            $ret[$listado[$i] -> getIdRol()] = $ret[$listado[$i] -> getIdRol()] + 1;
+        }
+        return $ret;
+    }
+
+    /**
+     * @param $mes
+     * @return int
+     */
+    public function facturacionMes($mes) : int
+    {
+        return $this -> usuarios -> facturacionMes($this -> conexion, $mes);
+    }
+
+    /**
+     * @param $anio
+     * @return int
+     */
+    public function facturacionAnio($anio) : int
+    {
+        return $this -> usuarios -> facturacionMes($this -> conexion, $anio);
     }
 }

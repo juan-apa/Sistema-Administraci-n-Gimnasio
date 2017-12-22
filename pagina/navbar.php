@@ -25,7 +25,7 @@
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="listadoActividades.php">
                     <i class="fa fa-fw fa-clock-o"></i>
                     <span class="nav-link-text">Clases</span>
                 </a>
@@ -39,9 +39,11 @@
                         <span class="nav-link-text">Listados</span>
                     </a>
                     <ul class="sidenav-second-level collapse" id="collapseListados">
+                        <?php if (($permiso == Rol::obtenerRolDeIdRol(Rol::ADMINISTRADOR))): ?>
                         <li>
                             <a href="listadoUsuarios.php">Listado de usuarios</a>
                         </li>
+                        <?php endif; ?>
                         <li>
                             <a href="listadoPagos.php">listado de pagos</a>
                         </li>
@@ -61,10 +63,7 @@
                     </a>
                     <ul class="sidenav-second-level collapse" id="collapseUsuarios">
                         <li>
-                            <a href="navbar.html">Navbar</a>
-                        </li>
-                        <li>
-                            <a href="cards.html">Cards</a>
+                            <a href="navbar.php">Navbar</a>
                         </li>
                     </ul>
                 </li>
@@ -118,13 +117,21 @@
                 </li>
             <?php endif; ?>
 
-
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Sobre nosotros">
-                <a class="nav-link" href="#">
-                    <i class="fa fa-fw fa-info-circle"></i>
-                    <span class="nav-link-text">Sobre nosotros</span>
+            <?php if($permiso == Rol::obtenerRolDeIdRol(Rol::WEBMASTER)): ?>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="modificacion pagina">
+                <a class="nav-link" href="modificarPagina.php">
+                    <i class="fa fa-fw fa-wrench"></i>
+                    <span class="nav-link-text">Página</span>
                 </a>
             </li>
+            <?php endif; ?>
+
+<!--            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Sobre nosotros">-->
+<!--                <a class="nav-link" href="#">-->
+<!--                    <i class="fa fa-fw fa-info-circle"></i>-->
+<!--                    <span class="nav-link-text">Sobre nosotros</span>-->
+<!--                </a>-->
+<!--            </li>-->
         </ul>
         <ul class="navbar-nav sidenav-toggler">
             <li class="nav-item">

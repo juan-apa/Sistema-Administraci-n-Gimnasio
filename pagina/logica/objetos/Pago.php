@@ -164,4 +164,12 @@ class Pago
         $this->duracion = $duracion;
     }
 
+    public function atrasado() : int
+    {
+        $ret = 0;
+        if(date('Y-m-d') > date('Y-m-d', strtotime($this -> fechaPago.' + '.$this -> getDuracion().' days')))
+            $ret = 1;
+        return $ret;
+    }
+
 }

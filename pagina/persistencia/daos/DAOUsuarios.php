@@ -5,7 +5,7 @@
  * Date: 11/20/17
  * Time: 8:37 PM
  */
-
+include_once(dirname(__FILE__).'/DAO.php');
 include_once(dirname(__FILE__).'/../Consultas.php');
 include_once(dirname(__FILE__).'/../../logica/objetos/Usuario.php');
 include_once(dirname(__FILE__).'/../Conexion.php');
@@ -279,6 +279,44 @@ class DAOUsuarios extends DAO
         {
             $fila = $rs -> fetch_assoc();
             $ret = $fila['valido'];
+        }
+        mysqli_free_result($rs);
+        return $ret;
+    }
+
+    /**
+     * @param Conexion $con
+     * @param int $mes
+     * @return int
+     */
+    public function facturacionMes(Conexion $con, int $mes) : int
+    {
+        $ret = 0;
+        $conexion = $con -> getConexion();
+        $query = sprintf(Consultas::PAGOS_FACTURACION_MES, $mes);
+        $rs = $conexion -> query($query);
+        if(isset($rs -> fetch_row()[0]))
+        {
+            $ret = $rs -> fetch_row()[0];
+        }
+        mysqli_free_result($rs);
+        return $ret;
+    }
+
+    /**
+     * @param Conexion $con
+     * @param int $anio
+     * @return int
+     */
+    public function facturacionAnio(Conexion $con, int $anio) : int
+    {
+        $ret = 0;
+        $conexion = $con -> getConexion();
+        $query = sprintf(Consultas::PAGOS_FACTURACION_ANIO, $anio);
+        $rs = $conexion -> query($query);
+        if(isset($rs -> fetch_row()[0]))
+        {
+            $ret = $rs -> fetch_row()[0];
         }
         mysqli_free_result($rs);
         return $ret;
