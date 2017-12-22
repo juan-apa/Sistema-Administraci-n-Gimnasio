@@ -58,10 +58,10 @@ try{
             <li class="breadcrumb-item">
                 <a href="#">Listados</a>
             </li>
-            <li class="breadcrumb-item active">Usuarios</li>
+            <li class="breadcrumb-item active">Pagos</li>
         </ol>
         <!-- Example DataTables Card-->
-        <h1>Listado de Usuarios</h1>
+        <h1>Listado de Pagos</h1>
         <?php  if($permiso == Rol::obtenerRolDeIdRol(Rol::ADMINISTRADOR)): ?>
             <form action="/listadoPagos.php" method="GET">
                 <div class="form-group">

@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d21f85c9-ee94-411a-8f0b-978a23837b17" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/grafica/ControladoraModPagina.php" afterPath="$PROJECT_DIR$/grafica/ControladoraModPagina.php" />
-      <change beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change beforePath="$PROJECT_DIR$/inicio.php" afterPath="$PROJECT_DIR$/inicio.php" />
       <change beforePath="$PROJECT_DIR$/listadoPagos.php" afterPath="$PROJECT_DIR$/listadoPagos.php" />
-      <change beforePath="$PROJECT_DIR$/logica/Fachada.php" afterPath="$PROJECT_DIR$/logica/Fachada.php" />
-      <change beforePath="$PROJECT_DIR$/navbar.php" afterPath="$PROJECT_DIR$/navbar.php" />
-      <change beforePath="$PROJECT_DIR$/persistencia/daos/DAOPagina.php" afterPath="$PROJECT_DIR$/persistencia/daos/DAOPagina.php" />
+      <change beforePath="$PROJECT_DIR$/modificacionPago.php" afterPath="$PROJECT_DIR$/modificacionPago.php" />
+      <change beforePath="$PROJECT_DIR$/registroActividades.php" afterPath="$PROJECT_DIR$/registroActividades.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -180,61 +175,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Consultas.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/persistencia/Consultas.php">
+      <file leaf-file-name="listadoPagos.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/listadoPagos.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="69" column="34" lean-forward="false" selection-start-line="69" selection-start-column="34" selection-end-line="69" selection-end-column="34" />
-              <folding>
-                <marker date="1513945743510" expanded="true" signature="142:182" ph="SELECT * FRO... Usuarios" />
-                <marker date="1513945743510" expanded="true" signature="217:478" ph="INSERT INTO Usuarios... " />
-                <marker date="1513945743510" expanded="true" signature="217:544" ph="INSERT INTO Usuarios... " />
-                <marker date="1513945743510" expanded="true" signature="579:625" ph="UPDATE Usuar... " />
-                <marker date="1513945743510" expanded="true" signature="613:625" ph="DELETE FROM " />
-                <marker date="1513945743510" expanded="true" signature="656:702" ph="UPDATE Usuar... " />
-                <marker date="1513945743510" expanded="true" signature="736:776" ph="SELECT * FRO... Usuarios" />
-                <marker date="1513945743510" expanded="true" signature="809:831" ph="SELECT * FRO... Usuarios" />
-                <marker date="1513945743510" expanded="true" signature="867:1116" ph="UPDATE Usuar... " />
-                <marker date="1513945743510" expanded="true" signature="867:1130" ph="UPDATE Usuar... " />
-                <marker date="1513945743510" expanded="true" signature="867:1184" ph="UPDATE Usuar... " />
-                <marker date="1513945743510" expanded="true" signature="1218:1281" ph="SELECT * FRO... Usuarios" />
-                <marker date="1513945743510" expanded="true" signature="1314:1359" ph="SELECT * FRO... Usuarios" />
-                <marker date="1513945743510" expanded="true" signature="1393:1418" ph="SELECT * FRO... Telefonos" />
-                <marker date="1513945743510" expanded="true" signature="1393:1483" ph="SELECT T.* F... Telefonos" />
-                <marker date="1513945743510" expanded="true" signature="1519:1577" ph="INSERT INTO Telefonos... " />
-                <marker date="1513945743510" expanded="true" signature="1611:1667" ph="DELETE FROM Telefonos... " />
-                <marker date="1513945743510" expanded="true" signature="1696:1773" ph="SELECT R.ROL... Usuarios" />
-                <marker date="1513945743510" expanded="true" signature="1802:1851" ph="SELECT P.idP... Pagos" />
-                <marker date="1513945743510" expanded="true" signature="1881:2010" ph="SELECT * FRO... Pagos" />
-                <marker date="1513945743510" expanded="true" signature="2041:2126" ph="SELECT * FRO... Pagos" />
-                <marker date="1513945743510" expanded="true" signature="2041:2133" ph="SELECT * FRO... Pagos" />
-                <marker date="1513945743510" expanded="true" signature="2041:2154" ph="SELECT P.*, Pagos" />
-                <marker date="1513945743510" expanded="true" signature="2041:2180" ph="SELECT P.*, Pagos" />
-                <marker date="1513945743510" expanded="true" signature="2211:2284" ph="INSERT INTO Pagos... " />
-                <marker date="1513945743510" expanded="true" signature="2211:2318" ph="INSERT INTO Pagos... " />
-                <marker date="1513945743510" expanded="true" signature="2347:2371" ph="SELECT T.* F... TipoPagos" />
-                <marker date="1513945743510" expanded="true" signature="2399:2457" ph="UPDATE Pagos... " />
-                <marker date="1513945743510" expanded="true" signature="2485:2543" ph="UPDATE Pagos... " />
-                <marker date="1513945743510" expanded="true" signature="2576:2663" ph="UPDATE Pagos... " />
-                <marker date="1513945743510" expanded="true" signature="2694:2755" ph="SELECT * FRO... Pagos" />
-                <marker date="1513945743510" expanded="true" signature="2795:2857" ph="SELECT SUM(m... Pagos" />
-                <marker date="1513945743510" expanded="true" signature="2795:2859" ph="SELECT SUM(m... Pagos" />
-                <marker date="1513945743510" expanded="true" signature="2898:2963" ph="SELECT SUM(m... Pagos" />
-                <marker date="1513945743510" expanded="true" signature="3000:3025" ph="SELECT * FRO... Actividades" />
-                <marker date="1513945743510" expanded="true" signature="3063:3230" ph="INSERT INTO Actividades... " />
-                <marker date="1513945743510" expanded="true" signature="3259:3279" ph="SELECT * FRO... Pagina" />
-                <marker date="1513945743510" expanded="true" signature="3310:3328" ph="DELETE FROM Pagina... " />
-                <marker date="1513945743510" expanded="true" signature="3361:3518" ph="INSERT INTO Pagina... " />
-              </folding>
+            <state relative-caret-position="375">
+              <caret line="63" column="28" lean-forward="false" selection-start-line="63" selection-start-column="28" selection-end-line="63" selection-end-column="28" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="listadoPagos.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/listadoPagos.php">
+      <file leaf-file-name="modificacionPago.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/modificacionPago.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="112" column="30" lean-forward="false" selection-start-line="112" selection-start-column="30" selection-end-line="112" selection-end-column="30" />
+            <state relative-caret-position="420">
+              <caret line="69" column="59" lean-forward="false" selection-start-line="69" selection-start-column="59" selection-end-line="69" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="registroActividades.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/registroActividades.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="77" column="41" lean-forward="false" selection-start-line="77" selection-start-column="41" selection-end-line="77" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -327,7 +292,6 @@
         <option value="$PROJECT_DIR$/persistencia/excepciones/ExceptionPago.php" />
         <option value="$PROJECT_DIR$/grafica/ControladoraListadoPagos.php" />
         <option value="$PROJECT_DIR$/grafica/ControladoraModPago.php" />
-        <option value="$PROJECT_DIR$/modificacionPago.php" />
         <option value="$PROJECT_DIR$/registroPago.php" />
         <option value="$PROJECT_DIR$/bajaPago.php" />
         <option value="$PROJECT_DIR$/grafica/ControladoraBajaPago.php" />
@@ -344,7 +308,6 @@
         <option value="$PROJECT_DIR$/persistencia/daos/DAOUsuarios.php" />
         <option value="$PROJECT_DIR$/grafica/ControladoraListadoActividades.php" />
         <option value="$PROJECT_DIR$/persistencia/daos/DAOActividades.php" />
-        <option value="$PROJECT_DIR$/registroActividades.php" />
         <option value="$PROJECT_DIR$/logica/objetos/Pagina.php" />
         <option value="$PROJECT_DIR$/altaPago.php" />
         <option value="$PROJECT_DIR$/edicionPagina.php" />
@@ -356,7 +319,9 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/inicio.php" />
         <option value="$PROJECT_DIR$/navbar.php" />
+        <option value="$PROJECT_DIR$/registroActividades.php" />
         <option value="$PROJECT_DIR$/listadoPagos.php" />
+        <option value="$PROJECT_DIR$/modificacionPago.php" />
       </list>
     </option>
   </component>
@@ -564,12 +529,12 @@
       <workItem from="1513740225906" duration="1003000" />
       <workItem from="1513768605762" duration="1283000" />
       <workItem from="1513858488899" duration="22059000" />
-      <workItem from="1513935555262" duration="15955000" />
+      <workItem from="1513935555262" duration="16226000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="149352000" />
+    <option name="totallyTimeSpent" value="149623000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="28" width="1368" height="741" extended-state="6" />
@@ -611,14 +576,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/modificacionPago.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="131" column="83" lean-forward="false" selection-start-line="131" selection-start-column="83" selection-end-line="131" selection-end-column="83" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bajaPago.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="455">
@@ -794,14 +751,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
           <caret line="53" column="132" lean-forward="false" selection-start-line="53" selection-start-column="132" selection-end-line="53" selection-end-column="132" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/registroActividades.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="33" column="167" lean-forward="false" selection-start-line="33" selection-start-column="167" selection-end-line="33" selection-end-column="167" />
           <folding />
         </state>
       </provider>
@@ -1039,10 +988,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/registroActividades.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="77" column="41" lean-forward="false" selection-start-line="77" selection-start-column="41" selection-end-line="77" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/listadoPagos.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="112" column="30" lean-forward="false" selection-start-line="112" selection-start-column="30" selection-end-line="112" selection-end-column="30" />
+        <state relative-caret-position="375">
+          <caret line="63" column="28" lean-forward="false" selection-start-line="63" selection-start-column="28" selection-end-line="63" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modificacionPago.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="69" column="59" lean-forward="false" selection-start-line="69" selection-start-column="59" selection-end-line="69" selection-end-column="59" />
           <folding />
         </state>
       </provider>

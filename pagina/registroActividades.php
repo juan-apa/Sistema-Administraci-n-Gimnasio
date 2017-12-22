@@ -69,13 +69,13 @@ if(isset($comienzo, $duracion, $nombre, $profesor))
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="index.php">Pagos</a>
+                <a href="index.php">Actividades</a>
             </li>
             <li class="breadcrumb-item active">Registro</li>
         </ol>
         <div class="row">
             <div class="col-12">
-                <h1>Registro de Pago</h1>
+                <h1>Registro de Actividad</h1>
 
                 <?php  if($permiso == Rol::obtenerRolDeIdRol(Rol::ADMINISTRADOR)): ?>
                     <form action="/registroActividades.php" method="GET">

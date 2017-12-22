@@ -67,7 +67,7 @@ if(isset($_GET['cedPasada'], $_GET['idPago'])){
             <li class="breadcrumb-item">
                 <a href="index.php">Pagos</a>
             </li>
-            <li class="breadcrumb-item active">Registro</li>
+            <li class="breadcrumb-item active">Modificacion</li>
         </ol>
         <div class="row">
             <div class="col-12">
